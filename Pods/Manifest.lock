@@ -1,0 +1,21 @@
+PODS:
+  - HCSStarRatingView (1.4.5)
+  - Reachability (3.1.1)
+  - SVProgressHUD (2.0.3)
+  - Toast (3.0)
+
+DEPENDENCIES:
+  - HCSStarRatingView (~> 1.4.5)
+  - Reachability (~> 3.1.1)
+  - SVProgressHUD
+  - Toast (~> 3.0)
+
+SPEC CHECKSUMS:
+  HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
+  Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  Toast: 32c59229abfcf41850162b83bb9259dc84372473
+
+PODFILE CHECKSUM: a49ee37cc1fea302340b17f1f489753359964b8c
+
+COCOAPODS: 1.0.1
