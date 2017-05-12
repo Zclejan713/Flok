@@ -31,7 +31,7 @@
     btnLogin.layer.borderWidth=2;
     btnLogin.layer.borderColor=[[UIColor whiteColor]CGColor];
 
-    scrlMain.contentSize=CGSizeMake(SCREEN_WIDTH, 750);
+    //scrlMain.contentSize=CGSizeMake(SCREEN_WIDTH, 750);
 
     
 }

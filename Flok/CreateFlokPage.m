@@ -79,7 +79,7 @@
     btnPostflok1.layer.borderWidth=0.5;
     btnPostflok1.layer.borderColor=appOrangedark.CGColor;
     btnPostflok2.layer.cornerRadius=4;
-    scrlMain.contentSize=CGSizeMake(scrlMain.frame.size.width, 1000);
+    scrlMain.contentSize=CGSizeMake(scrlMain.frame.size.width, 1100);
     
     [self adddonebutton:tfTitle];
     [self adddonebutton:tfAddr];

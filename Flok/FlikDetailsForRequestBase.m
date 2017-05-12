@@ -118,6 +118,8 @@ static CGFloat frameWidth;
 - (IBAction)featherTap:(UIButton *)sender {
 }
 
+
+
 - (IBAction)viewPhtTap:(UIButton *)sender {
     
     imgBgBanner.hidden=NO;
@@ -181,6 +183,7 @@ static CGFloat frameWidth;
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+
 
 - (IBAction)locationTap:(UIButton *)sender {
 }
@@ -727,6 +730,7 @@ static CGFloat frameWidth;
     
     
 }
+
 
 #pragma mark Save image
 

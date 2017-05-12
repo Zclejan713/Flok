@@ -10,6 +10,7 @@
 		3181AA8B03FFAEBFFE589972 /* Pods_Flok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2269C1825858C9E5F707F18 /* Pods_Flok.framework */; };
 		7B772666E289546F1173BC88 /* Pods_FlokTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC978FEE9E72E87590408A92 /* Pods_FlokTests.framework */; };
 		AA6E5C511DE33B41000E1755 /* SearchMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6E5C501DE33B41000E1755 /* SearchMessage.m */; };
+		AD000D141EC44B3100D2F701 /* UpdateProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD000D131EC44B3100D2F701 /* UpdateProfileViewController.m */; };
 		AD0459FF1D783FE40074BCBA /* WebImageOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0459FE1D783FE40074BCBA /* WebImageOperations.m */; };
 		AD0B03251DF5B004009AE6AD /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0B03231DF5B004009AE6AD /* NotificationCell.m */; };
 		AD0B03261DF5B004009AE6AD /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD0B03241DF5B004009AE6AD /* NotificationCell.xib */; };
@@ -146,6 +147,8 @@
 		A08A05576A0C5F273F34CE24 /* Pods-FlokTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlokTests/Pods-FlokTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA6E5C4F1DE33B41000E1755 /* SearchMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchMessage.h; sourceTree = "<group>"; };
 		AA6E5C501DE33B41000E1755 /* SearchMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchMessage.m; sourceTree = "<group>"; };
+		AD000D121EC44B3100D2F701 /* UpdateProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateProfileViewController.h; sourceTree = "<group>"; };
+		AD000D131EC44B3100D2F701 /* UpdateProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateProfileViewController.m; sourceTree = "<group>"; };
 		AD0459FD1D783FE40074BCBA /* WebImageOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebImageOperations.h; sourceTree = "<group>"; };
 		AD0459FE1D783FE40074BCBA /* WebImageOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebImageOperations.m; sourceTree = "<group>"; };
 		AD0B03221DF5B004009AE6AD /* NotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCell.h; sourceTree = "<group>"; };
@@ -512,6 +515,8 @@
 				ADF4CEE01DF93A1700D1986C /* HashTagFeed.m */,
 				AD7E9D331E38826000F19978 /* SecurityViewController.h */,
 				AD7E9D341E38826000F19978 /* SecurityViewController.m */,
+				AD000D121EC44B3100D2F701 /* UpdateProfileViewController.h */,
+				AD000D131EC44B3100D2F701 /* UpdateProfileViewController.m */,
 				AD2F50801D87D05700999E8D /* ChatClasses */,
 				AEBFB7A11D62FDCC002B0CE6 /* Supporting Files */,
 				AA6E5C4F1DE33B41000E1755 /* SearchMessage.h */,
@@ -996,6 +1001,7 @@
 				AEBFB7A91D62FDCC002B0CE6 /* LandingController.m in Sources */,
 				AEACE3871D6D669000FF3865 /* RegistraionPage1.m in Sources */,
 				AEBFB7A61D62FDCC002B0CE6 /* AppDelegate.m in Sources */,
+				AD000D141EC44B3100D2F701 /* UpdateProfileViewController.m in Sources */,
 				ADDFC3A11E1A625800AF82E9 /* TermsConditionsViewController.m in Sources */,
 				AEBFB7EC1D634B0C002B0CE6 /* MessagePage.m in Sources */,
 				AD6405A11D7D6AB10007A3FD /* myAnnotation.m in Sources */,
@@ -1191,6 +1197,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.ZC.Flok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1213,6 +1220,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.ZC.Flok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

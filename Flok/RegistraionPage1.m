@@ -48,6 +48,13 @@
     [tvTerms setEditable:NO];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textTapped:)];
     [tvTerms addGestureRecognizer:tap];
+    
+    vwTransparent.hidden=YES;
+    vwAlert.hidden=YES;
+    
+    vwAlert.layer.cornerRadius=5.0f;
+    vwAlert.layer.borderColor=[[UIColor blackColor] CGColor];
+    vwAlert.layer.borderWidth=2.0f;
 
 }
 
@@ -55,7 +62,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    
+    vwTransparent.hidden=YES;
+    vwAlert.hidden=YES;
+    isAlertShow=NO;
+}
 #pragma mark- Method
 - (IBAction)backTap:(id)sender
 {
@@ -437,11 +449,18 @@
     }
     else if (tfDate.text.length==0 || tfMonth.text.length==0 || tfYear.text.length==0)
     {
-        [Global showOnlyAlert:@"Empty!" :@"Please enter your Date of birth"];
+        //[Global showOnlyAlert:@"Empty!" :@"Please enter your Date of birth"];
+        vwAlert.hidden=NO;
+        vwTransparent.hidden=NO;
+        isAlertShow=YES;
     }
     else if (tfGender.text.length==0)
     {
-        [Global showOnlyAlert:@"Empty!" :@"Please enter your gender"];
+        if (isAlertShow==NO) {
+            vwAlert.hidden=NO;
+            vwTransparent.hidden=NO;
+        }
+        //[Global showOnlyAlert:@"Empty!" :@"Please enter your gender"];
     }
     else if (tfEmail.text.length==0)
     {
@@ -461,9 +480,13 @@
     }
     else
     {
-//        NSString *age=[NSString stringWithFormat:@"%@-%@-%@",tfYear.text,tfMonth.text,tfDate.text];
+        NSString *age;
         
-         NSString *age=[NSString stringWithFormat:@"%@-%@-%@",tfYear.text,tfMonth.text,tfDate.text];
+        if ([tfYear.text length]==0) {
+            age=@"";
+        }else{
+            age=[NSString stringWithFormat:@"%@-%@-%@",tfYear.text,tfMonth.text,tfDate.text];
+        }
         
         CLLocationCoordinate2D coordinate=[self getLocation];
         CGFloat mylat=coordinate.latitude;
@@ -481,15 +504,53 @@
         NSString *action=@"users/appsignup";
         NSString *dataString=[NSString stringWithFormat:@"full_name=%@&dob=%@&email=%@&username=%@&gender=%@&fb_user_id=%@&password=%@&profile_image=%@&device_type=ios&device_token_id=%@&lat=%f&lang=%f",tfFullname.text,age,tfEmail.text,tfUsername.text,tfGender.text,fbId,tfPwd.text,imgUrl,app.deviceToken,mylat,mylong];
        
-        
+        isAlertShow=NO;
         [[Global sharedInstance] setDelegate:(id)self];
         [[Global sharedInstance] serviceCall:dataString servicename:action serviceType:@"POST"];
         //[self moveToTabBarController];
         
     }
 }
-
-
+-(IBAction)confirmSignup:(id)sender{
+    
+    NSString *age;
+    
+    if ([tfYear.text length]==0) {
+        age=@"";
+    }else{
+        age=[NSString stringWithFormat:@"%@-%@-%@",tfYear.text,tfMonth.text,tfDate.text];
+    }
+    
+    CLLocationCoordinate2D coordinate=[self getLocation];
+    CGFloat mylat=coordinate.latitude;
+    CGFloat mylong=coordinate.longitude;
+    NSString *fbId=[app.fbUserDic valueForKey:@"id"];
+    if ([fbId length]==0) {
+        fbId=@"";
+    }
+   #if TARGET_IPHONE_SIMULATOR
+    mylat=22.5726;
+    mylong=88.3639;
+    
+    #endif
+    app.fbUserDic=nil;
+    NSString *action=@"users/appsignup";
+    NSString *dataString=[NSString stringWithFormat:@"full_name=%@&dob=%@&email=%@&username=%@&gender=%@&fb_user_id=%@&password=%@&profile_image=%@&device_type=ios&device_token_id=%@&lat=%f&lang=%f",tfFullname.text,age,tfEmail.text,tfUsername.text,tfGender.text,fbId,tfPwd.text,imgUrl,app.deviceToken,mylat,mylong];
+    
+    isAlertShow=NO;
+    [[Global sharedInstance] setDelegate:(id)self];
+    [[Global sharedInstance] serviceCall:dataString servicename:action serviceType:@"POST"];
+    
+    vwTransparent.hidden=YES;
+    vwAlert.hidden=YES;
+}
+-(IBAction)cancelAlert:(id)sender{
+    
+    vwTransparent.hidden=YES;
+    vwAlert.hidden=YES;
+    isAlertShow=NO;
+    
+}
 #pragma mark WebServiceCallDeleGate Methods
 
 -(void)webserviceCallFailOrError : (NSString *)errorMessage withFlag : (NSString*)serviceName{

@@ -1,4 +1,4 @@
-//
+  //
 //  SettingPage.m
 //  Flok
 //
@@ -25,7 +25,7 @@
     DistanceSlider.value = 10;
     
     miles=[[NSUserDefaults standardUserDefaults] objectForKey:@"miles"];
-    
+    scrlMain.contentSize=CGSizeMake(SCREEN_WIDTH, 580);
     
     slider = [[RangeSlider alloc] initWithFrame:CGRectMake(0, 0,vwTemp.frame.size.width, 30)]; // the slider enforces a height of 30, although I'm not sure that this is necessary
     
@@ -45,11 +45,9 @@
     reportLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 30, 310, 30)]; // a label to see the values of the slider in this demo
     reportLabel.adjustsFontSizeToFitWidth = YES;
     reportLabel.textAlignment = NSTextAlignmentCenter;
-    
     NSString *report = [NSString stringWithFormat:@"current slider range is %f to %f", slider.min, slider.max];
     
     reportLabel.text = report;
-    
     [vwTemp addSubview:slider];
     
     if (isPrivate==YES) {
@@ -69,8 +67,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     
- 
-    
+
     arrGender=[[NSMutableArray alloc]initWithArray:@[@"Male",@"Female",@"Both"]];
     UIButton *btnrad=[UIButton buttonWithType:UIButtonTypeSystem];
     if ([strGender isEqualToString:@"M"])
@@ -80,10 +77,8 @@
     else
         btnrad.tag=1;
     [self radioTap:btnrad];
-   // age=@"25";
-   // miles=@"10";
-   
-    NSLog(@"--%f---%f",slider.max,slider.min);
+  
+   // NSLog(@"--%f---%f",slider.max,slider.min);
     
     
     [self getUserSettingInfo];

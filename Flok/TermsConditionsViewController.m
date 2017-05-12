@@ -32,8 +32,7 @@
         lblTitle.text=@"Terms & Conditions";
         urlAddress =@"terms_of_use.html";
        
-      // http://104.131.83.218/flok_new/terms_of_use.html
-      // http://104.131.83.218/flok_new/privicy_policy.html
+      
 
     }
     [self getTreams];

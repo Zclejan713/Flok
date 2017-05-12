@@ -14,6 +14,8 @@
 {
     IBOutlet UIScrollView *scrlMain;
     IBOutlet UIView *vwMain;
+    IBOutlet UIView *vwAlert;
+    IBOutlet UIView *vwTransparent;
     IBOutlet UITextField *tfFullname;
     IBOutlet UITextField *tfDate;
     IBOutlet UITextField *tfMonth;
@@ -31,6 +33,7 @@
     NSMutableArray *arrGender;
     UIPickerView *myPickerView;
     NSInteger selectedRow;
+    BOOL isAlertShow;
     
     
 

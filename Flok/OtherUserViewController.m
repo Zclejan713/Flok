@@ -164,13 +164,7 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
--(IBAction)reportUserAction:(id)sender{
-    
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Report this user for inappropriate behavior", @"Block user", nil];
-    
-    [actionSheet showInView:self.view];
 
-}
 - (UIViewController *)TopviewController
 {
     NSInteger numberOfViewControllers = self.navigationController.viewControllers.count;
@@ -926,6 +920,15 @@
   
 }
 
+-(IBAction)reportForAbuse:(id)sender{
+    
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel"           destructiveButtonTitle:nil otherButtonTitles:@"Report this post", nil];
+    
+    [actionSheet showInView:self.view];
+    [actionSheet setTag:1];
+    
+}
 -(IBAction)btnFollowAction:(id)sender{
     
     UIButton *btn=(UIButton*)sender;
@@ -1646,7 +1649,7 @@
         NSDateComponentsFormatter *formatter = [[NSDateComponentsFormatter alloc] init];
         formatter.unitsStyle = NSDateComponentsFormatterUnitsStyleFull;
         
-        NSDateComponentsFormatter *formatter2 = [[NSDateComponentsFormatter alloc] init];
+        //NSDateComponentsFormatter *formatter2 = [[NSDateComponentsFormatter alloc] init];
         formatter.unitsStyle = NSDateComponentsFormatterUnitsStyleFull;
         
         //NSDate *now = [NSDate date];
@@ -1696,7 +1699,8 @@
                 intervalTime=[NSString stringWithFormat:@"%@ %ld minutes",[formatter stringFromDateComponents:components] ,[components minute]];
             }else{
                 
-            } intervalTime=[NSString stringWithFormat:@"%@ %ld minute",[formatter stringFromDateComponents:components] ,[components minute]];
+                intervalTime=[NSString stringWithFormat:@"%@ %ld minute",[formatter stringFromDateComponents:components] ,[components minute]];
+            }
             
             
         } else if (components.minute > 0) {

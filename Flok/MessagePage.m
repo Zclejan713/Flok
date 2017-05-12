@@ -196,10 +196,10 @@
         NSString *count=[NSString stringWithFormat:@"%@",[dict valueForKey:@"getUnreadChatsCount"]];
         if (![count isEqualToString:@"0"]) {
             tCell.lblCount.text=count;
-            tCell.imgRound.hidden=NO;
-            tCell.imgRound.layer.cornerRadius=tCell.imgRound.frame.size.width/2;
+            tCell.lblCount.hidden=NO;
+            
         }else{
-           tCell.imgRound.hidden=YES;
+             tCell.lblCount.hidden=YES;
         }
         tCell.tvdesc.text=[dict valueForKey:@"last_message"];
         tCell.lblnm.text=[dict valueForKey:@"name"];
@@ -222,6 +222,9 @@
           tCell.btnProfile.tag=indexPath.row;
         [tCell.btnProfile addTarget:self action:@selector(showOtherProfile:) forControlEvents:UIControlEventTouchUpInside];
         tCell.selectionStyle=UITableViewCellSelectionStyleNone;
+        
+        tCell.lblCount.layer.cornerRadius=tCell.lblCount.frame.size.width/2;
+        tCell.lblCount.layer.masksToBounds = YES;
         return tCell;
         
     }else if (tableView==tblFriend) {

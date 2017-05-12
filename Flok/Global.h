@@ -13,8 +13,8 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-#define BASE_URL @"http://104.131.83.218/flok_new/"
-//#define BASE_URL @"http://107.170.152.166/team2/rishtawebservice/webservice/"
+//#define BASE_URL @"http://104.131.83.218/flok_new/"
+#define BASE_URL @"http://findyourflok.com/"
 
 
 

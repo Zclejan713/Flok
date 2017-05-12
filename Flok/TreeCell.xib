@@ -26,8 +26,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" id="cHd-O8-NrZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
+                    <view contentMode="scaleToFill" misplaced="YES" id="cHd-O8-NrZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-profile" id="wZe-QJ-StW">
@@ -103,14 +103,6 @@
                                 <color key="textColor" red="0.41568627450000001" green="0.41960784309999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dfp-bt-nL1">
-                                <rect key="frame" x="177" y="92" width="63" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.0" green="0.62989267680000005" blue="0.00019282513569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TZy-xT-DtF">
                                 <rect key="frame" x="239" y="96" width="1" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -133,14 +125,6 @@
                                 <color key="textColor" red="0.85882352939999995" green="0.36078431370000003" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PXr-ez-oLt">
-                                <rect key="frame" x="239" y="92" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.97647058819999999" green="0.35686274509999999" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OH8-aq-H8B">
                                 <rect key="frame" x="40" y="131" width="282" height="1"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -153,8 +137,8 @@
                                 <rect key="frame" x="23" y="23" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aUR-Oe-FYS">
-                                <rect key="frame" x="111" y="84" width="70" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aUR-Oe-FYS">
+                                <rect key="frame" x="111" y="84" width="61" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                 <state key="normal">
@@ -164,35 +148,6 @@
                             <view contentMode="scaleToFill" id="K0I-Qo-Bxg">
                                 <rect key="frame" x="56" y="91" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kbp-5P-TeQ">
-                                        <rect key="frame" x="63" y="5" width="1" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.41568627450000001" green="0.41960784309999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="reflok" id="WPA-wP-WYt">
-                                        <rect key="frame" x="13" y="5" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R4a-FI-Wle">
-                                        <rect key="frame" x="31" y="5" width="32" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bc0-n4-vJ9">
-                                        <rect key="frame" x="-2" y="0.0" width="65" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                        <state key="normal">
-                                            <color key="titleColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aeG-fh-9q1">
@@ -213,8 +168,24 @@
                                 <rect key="frame" x="284" y="51" width="33" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PXr-ez-oLt">
+                                <rect key="frame" x="240" y="85" width="76" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.35686274509999999" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dfp-bt-nL1">
+                                <rect key="frame" x="171" y="85" width="69" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.0" green="0.62989267680000005" blue="0.00019282513569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                             <view alpha="0.55000000000000004" contentMode="scaleToFill" misplaced="YES" id="tGj-NO-mjG">
-                                <rect key="frame" x="0.0" y="2" width="320" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -233,16 +204,13 @@
                 <outlet property="btnLike" destination="Dfp-bt-nL1" id="n5N-89-Hlr"/>
                 <outlet property="btnMsg" destination="aUR-Oe-FYS" id="6wG-8u-xwX"/>
                 <outlet property="btnProfile" destination="YT5-Y2-zKg" id="o3w-RB-mbb"/>
-                <outlet property="btnReflok" destination="Bc0-n4-vJ9" id="4ga-kH-a6z"/>
                 <outlet property="imgFlag" destination="wZe-QJ-StW" id="2ww-hE-ZVw"/>
-                <outlet property="imgReflok" destination="WPA-wP-WYt" id="cmV-a1-GxN"/>
                 <outlet property="indicator" destination="El5-3x-cxk" id="SkR-Tz-Pqq"/>
                 <outlet property="lblDisLikeCount" destination="xo2-M7-jQQ" id="2i6-bh-sjp"/>
                 <outlet property="lblDistance" destination="7LB-6a-qGz" id="hjK-vV-xmq"/>
                 <outlet property="lblFlokName" destination="GCg-Jw-wFh" id="r4W-sK-iw7"/>
                 <outlet property="lblLikeCount" destination="9se-s3-hw3" id="K3E-29-m9E"/>
                 <outlet property="lblName" destination="Cgu-Q2-d0N" id="5rP-sh-T0M"/>
-                <outlet property="lblReflokCount" destination="R4a-FI-Wle" id="3bL-K9-u1X"/>
                 <outlet property="lblUserName" destination="4xk-g7-rkj" id="0Zx-BS-ago"/>
                 <outlet property="vwExpired" destination="tGj-NO-mjG" id="lx2-44-mLJ"/>
                 <outlet property="vwReflok" destination="K0I-Qo-Bxg" id="xcr-rQ-ZHK"/>
@@ -257,7 +225,6 @@
         <image name="no-profile" width="62" height="39"/>
         <image name="note-edit" width="19" height="19"/>
         <image name="red_arrow" width="16" height="16"/>
-        <image name="reflok" width="20" height="20"/>
         <image name="rubbish-bin" width="19" height="19"/>
         <image name="time" width="12" height="12"/>
     </resources>

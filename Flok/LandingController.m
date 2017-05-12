@@ -44,6 +44,12 @@
            // [self moveToTabBarController];
         }
     }
+   /* else{
+       
+        UIViewController *vc=[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"UpdateProfileViewController"];
+        [self.navigationController pushViewController:vc animated:YES];
+
+    }*/
 
 }
 
@@ -76,7 +82,7 @@
      handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
          if (error) {
              NSLog(@"Process error: %@",error);
-             //[self showOnlyAlert:@"Sorry" :@"We cannot fetch this user's credential from facebook, Please try with another user."];
+            
          } else if (result.isCancelled) {
              NSLog(@"Cancelled");
          } else {

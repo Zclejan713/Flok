@@ -33,6 +33,7 @@
     IBOutlet UIImageView *img4;
     IBOutlet UIView *vwFriend;
     IBOutlet UITableView *tblFriend;
+    IBOutlet UIImageView *add1;
     IBOutlet UIImageView *add2;
     IBOutlet UIImageView *add3;
     IBOutlet UIImageView *add4;

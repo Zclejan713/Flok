@@ -59,6 +59,12 @@
     btnAdd.layer.borderColor = [UIColor whiteColor].CGColor;
     btnAdd.layer.borderWidth = 1.0f;
     
+    img2.image=[UIImage imageNamed:@"upload_small"];
+    img3.image=[UIImage imageNamed:@"upload_small"];
+    img4.image=[UIImage imageNamed:@"upload_small"];
+    add2.hidden=YES;
+    add3.hidden=YES;
+    add4.hidden=YES;
     [self getProfileInfo];
    /* [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWasShown:)
@@ -121,8 +127,9 @@
         
     }
     else{
+         scroll.contentSize=CGSizeMake(self.view.frame.size.width,1000);
         [UIView animateWithDuration:0.4f delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-            scroll.contentOffset = CGPointMake(0, textField.frame.origin.y-200);
+            scroll.contentOffset = CGPointMake(0, textField.frame.origin.y-150);
         } completion:NULL];
         
         NSLog(@"textView.frame.origin.y %f",textField.frame.origin.y-250);
@@ -137,13 +144,14 @@
     [UIView animateWithDuration:0.4f delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         scroll.contentOffset = CGPointMake(0, 0);
     }completion:NULL];
+    scroll.contentSize=CGSizeMake(self.view.frame.size.width,900);
     return YES;
 }
 #pragma mark- Textview delegate
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
-    
+    scroll.contentSize=CGSizeMake(self.view.frame.size.width,1000);
     [UIView animateWithDuration:0.4f delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-        scroll.contentOffset = CGPointMake(0, textView.frame.origin.y-200);
+        scroll.contentOffset = CGPointMake(0, textView.frame.origin.y-100);
     } completion:NULL];
     
         return YES;
@@ -239,13 +247,27 @@
     NSString *userImg=[dict valueForKey:@"image"];
     
     if ([userImg length]==0) {
-        profileImg.image=[UIImage imageNamed:@"no-profile"];
+        profileImg.image=[UIImage imageNamed:@"upload_photo"];
+        add1.hidden=YES;
     }else{
         
         [self setImageWithurl:[dict valueForKey:@"image"] andImageView:profileImg and:nil];
     }
     arrImage=[[NSArray alloc] initWithArray:[dict valueForKey:@"allimages"]];
-    [self profileScrollImage:[dict valueForKey:@"allimages"]];
+    if(arrImage.count>0){
+        [self profileScrollImage:[dict valueForKey:@"allimages"]];
+    }else{
+       [self setImageWithurl:[dict valueForKey:@"image"] andImageView:img1 and:nil];
+        img1.image=[UIImage imageNamed:@"upload_small"];
+        img2.image=[UIImage imageNamed:@"upload_small"];
+        img3.image=[UIImage imageNamed:@"upload_small"];
+        img4.image=[UIImage imageNamed:@"upload_small"];
+        add1.hidden=YES;
+        add2.hidden=YES;
+        add3.hidden=YES;
+        add4.hidden=YES;
+    }
+    
 }
 
 -(void)profileScrollImage:(NSMutableArray*)myarr
@@ -253,13 +275,46 @@
     for (int i=0; i<myarr.count; i++) {
         NSDictionary *dict=[myarr objectAtIndex:i];
         if (i==0) {
-            [self setImageWithurl:[dict valueForKey:@"image"] andImageView:img1 and:nil];
+            NSString *userImg=[dict valueForKey:@"image"];
+            
+            if ([userImg length]==0) {
+                profileImg.image=[UIImage imageNamed:@"upload_small"];
+                add1.hidden=YES;
+            }else{
+                add1.hidden=NO;
+                [self setImageWithurl:[dict valueForKey:@"image"] andImageView:img1 and:nil];;
+            }
+            
         }else if (i==1){
-             [self setImageWithurl:[dict valueForKey:@"image"] andImageView:img2 and:nil];
+            NSString *userImg=[dict valueForKey:@"image"];
+            if ([userImg length]==0) {
+                profileImg.image=[UIImage imageNamed:@"upload_small"];
+                add2.hidden=YES;
+            }else{
+                add2.hidden=NO;
+                [self setImageWithurl:[dict valueForKey:@"image"] andImageView:img2 and:nil];
+            }
+            
         }else if (i==2){
-            [self setImageWithurl:[dict valueForKey:@"image"] andImageView:img3 and:nil];
+            NSString *userImg=[dict valueForKey:@"image"];
+            if ([userImg length]==0) {
+                profileImg.image=[UIImage imageNamed:@"upload_small"];
+                add3.hidden=YES;
+            }else{
+                add3.hidden=NO;
+                [self setImageWithurl:[dict valueForKey:@"image"] andImageView:img3 and:nil];
+            }
+            
         }else if (i==3){
-            [self setImageWithurl:[dict valueForKey:@"image"] andImageView:img4 and:nil];
+            NSString *userImg=[dict valueForKey:@"image"];
+            if ([userImg length]==0) {
+                profileImg.image=[UIImage imageNamed:@"upload_small"];
+                add4.hidden=YES;
+            }else{
+                add4.hidden=NO;
+                [self setImageWithurl:[dict valueForKey:@"image"] andImageView:img4 and:nil];
+            }
+            
         }
     }
 }
@@ -366,7 +421,7 @@
         
     }else if([serviceName isEqualToString:@"users/updateProfile"])
     {
-        
+        [Global showOnlyAlert:@"Success" :@"Data saved successfully" ];
         NSDictionary *DicFlok=[data valueForKey:@"UserDetails"];
         [self setDataToVewpage:DicFlok];
     }

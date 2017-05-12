@@ -187,6 +187,14 @@ static CGFloat frameWidth;
     imgBgBanner.hidden=NO;
     vwTransparent.hidden=NO;
 }
+-(IBAction)reportUserAction:(id)sender{
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Report this post",@"Cancel", nil];
+    
+    [actionSheet setTag:1];
+    [actionSheet showInView:self.view];
+    
+}
 -(IBAction)viewProfile:(id)sender{
     
     UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -774,6 +782,13 @@ static CGFloat frameWidth;
             [btnJoinfolk setTag:0];
         }
         
+    }else if([serviceName isEqualToString:@"flok/reportToAdmin"])
+    {
+        if ([[data valueForKey:@"Ack"] intValue]==1) {
+            
+            [Global showOnlyAlert:@"Flok!" :@"Successfully submitted"];
+        }
+        
     }
     
     else if([serviceName isEqualToString:@"flok/postFlokComment"]) {
@@ -789,7 +804,17 @@ static CGFloat frameWidth;
     
 }
 
-
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (actionSheet.tag==1) {
+        
+        if(buttonIndex == 0)
+            
+        {
+            [self reportToAdmin];
+        }
+    }
+}
 -(void)setDataToVewpage:(NSDictionary*)dict{
     
     DicFlok=dict;
@@ -802,6 +827,8 @@ static CGFloat frameWidth;
             vwTalk.hidden=NO;
         }
         [tblvw reloadData];
+        imgReport.hidden=YES;
+        btnReport.hidden=YES;
     }
     lblTitle.text=[dict valueForKey:@"title"];
     NSString *tempLike=[NSString stringWithFormat:@"%@",[dict valueForKey:@"likecount"]];
@@ -1038,7 +1065,7 @@ static CGFloat frameWidth;
     int joined=[[dict valueForKey:@"already_joined_count"] intValue];
     Flokker=[NSString stringWithFormat:@"Flokkers %d/%d",joined,maxLimit];
     lblJoin.text=[NSString stringWithFormat:@"%d/%d",joined,maxLimit];
-    if (maxLimit>5) {
+    if (maxLimit>4) {
         int min=maxLimit/5;
         int middle=min*2;
         int half=min*3;
@@ -1050,8 +1077,9 @@ static CGFloat frameWidth;
         }else{
             isFlokLimited=NO;
         }
-        //joined=70;
-        if (joined>0 && joined<min) {
+        if (joined==0){
+            [btnLimit setBackgroundImage:[UIImage imageNamed:@"blankLimit-1"] forState:UIControlStateNormal];
+        }else if (joined>0 && joined<min) {
             [btnLimit setBackgroundImage:[UIImage imageNamed:@"lowLimit"] forState:UIControlStateNormal];
             
         }else if (joined>=min && joined<middle) {
@@ -1074,8 +1102,11 @@ static CGFloat frameWidth;
     }else{
         if (joined==0){
             [btnLimit setBackgroundImage:[UIImage imageNamed:@"blankLimit-1"] forState:UIControlStateNormal];
-        }else if (joined>0){
+        }else if (joined>0 && joined<maxLimit){
             [btnLimit setBackgroundImage:[UIImage imageNamed:@"lowLimit"] forState:UIControlStateNormal];
+        }else if(joined==maxLimit){
+            // imgLimit.image=[UIImage imageNamed:@"fulLimit"];
+            [btnLimit setBackgroundImage:[UIImage imageNamed:@"fullLimit-1"] forState:UIControlStateNormal];
         }
     }
     
@@ -1170,6 +1201,13 @@ static CGFloat frameWidth;
     [[Global sharedInstance] serviceCall:dataString servicename:@"flok/listFlokComments" serviceType:@"POST"];
      tfComment.text=nil;
     
+}
+
+-(void)reportToAdmin{
+    
+    NSString *dataString=[NSString stringWithFormat:@"my_id=%@&flok_id=%@&user_id=%@",userId,flokId,[DicFlok valueForKey:@"user_id"]];
+    [[Global sharedInstance] setDelegate:(id)self];
+    [[Global sharedInstance] serviceCall:dataString servicename:@"flok/reportToAdmin" serviceType:@"POST"];
 }
 
 #pragma mark Save image
@@ -1414,7 +1452,7 @@ static CGFloat frameWidth;
             NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@",[DicFlok valueForKey:@"id"],userId];
             [[Global sharedInstance] setDelegate:(id)self];
             [[Global sharedInstance] serviceCall:dataString servicename:@"users/leaveFlok" serviceType:@"POST"];
-            // http://104.131.83.218/flok_new/users/leaveFlok
+           
             
         }
     }else if (alertView.tag==2){

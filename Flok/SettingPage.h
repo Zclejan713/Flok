@@ -15,7 +15,7 @@
     IBOutlet UITextField *tfGender;
     IBOutlet UISlider *DistanceSlider;
     IBOutlet UIImageView *imgCheck;
-  //  IBOutlet UISlider *ageSlider;
+    IBOutlet UIScrollView *scrlMain;
     IBOutlet UILabel *lblMiles;
     IBOutlet UILabel *lblMaxAge;
     IBOutlet UILabel *lblMinAge;

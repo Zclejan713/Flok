@@ -45,7 +45,7 @@
     [super viewDidLoad];
     NSLog(@"TreePage");
     //[[UITabBar appearance]  setDelegate:self];
-    
+     isValueGet=NO;
      [self performSelector:@selector(getProfileInfo) withObject:self afterDelay:1.0 ];
     
    // self.view.backgroundColor=[UIColor clearColor];
@@ -108,7 +108,10 @@
     refreshControl = [[UIRefreshControl alloc]init];
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
     [tblNew addSubview:refreshControl];
+    [tblHot addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(pullToRefresh) forControlEvents:UIControlEventValueChanged];
+    
+    
 
 }
 
@@ -117,7 +120,7 @@
      [btnBubble setFrame:CGRectMake(btnBubble.frame.origin.x,-60, btnBubble.frame.size.width, btnBubble.frame.size.height)];
     [super viewWillAppear:YES];
     vwLocService.hidden=YES;
-    isValueGet=NO;
+   
     
     miles=[[NSUserDefaults standardUserDefaults] objectForKey:@"miles"];
     coming_miles=[[NSUserDefaults standardUserDefaults] objectForKey:@"miles"];
@@ -129,13 +132,16 @@
         if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied){
             vwLocService.hidden=NO;
             tblNew.hidden=YES;
+            tblHot.hidden=YES;
         }else{
             vwLocService.hidden=YES;
             tblNew.hidden=NO;
+            tblHot.hidden=NO;
         }
     }else{
         vwLocService.hidden=NO;
         tblNew.hidden=YES;
+        tblHot.hidden=YES;
     }
     
     if (isValueGet) {
@@ -161,7 +167,7 @@
 -(void)viewDidDisappear:(BOOL)animated
 {
     [updateTimer invalidate];
-    isValueGet=NO;
+    //isValueGet=NO;
 }
 -(IBAction)enabledLocation:(id)sender{
    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
@@ -197,13 +203,16 @@
         if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied){
             vwLocService.hidden=NO;
             tblNew.hidden=YES;
+            tblHot.hidden=YES;
         }else{
             vwLocService.hidden=YES;
             tblNew.hidden=NO;
+            tblHot.hidden=NO;
         }
     }else{
         vwLocService.hidden=NO;
         tblNew.hidden=YES;
+        tblHot.hidden=YES;
     }
     
     if (!isValueGet) {
@@ -279,7 +288,7 @@
      NSString *strTime=[self getLocateDate];
      if([latitude length]!=0){
     userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
-    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&lat=%@&lang=%@&type=%@&distance=%@&&current_time=%@",userId,latitude,longitude,type,miles,strTime];
+    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&lat=%@&lang=%@&type=%@&distance=%@&current_time=%@",userId,latitude,longitude,type,miles,strTime];
     [[Global sharedInstance] setDelegate:(id)self];
     [[Global sharedInstance] serviceCall:dataString servicename:@"flok/hottest" serviceType:@"POST"];
      }
@@ -315,8 +324,12 @@
     
     TreeCell *cell=(TreeCell*)superView1;
     NSIndexPath *indexPath;
+    if (segmentedControl.selectedSegmentIndex == 0) {
+        indexPath = [tblNew indexPathForCell:cell];
+    }else{
+        indexPath = [tblHot indexPathForCell:cell];
+    }
     
-    indexPath = [tblNew indexPathForCell:cell];
         
 
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:indexPath.row]];
@@ -336,9 +349,11 @@
     }
     
     TreeCell *cell=(TreeCell*)superView1;
-    
-    
-    tempIndexPath = [tblNew indexPathForCell:cell];
+    if (segmentedControl.selectedSegmentIndex == 0) {
+        tempIndexPath = [tblNew indexPathForCell:cell];
+    }else{
+        tempIndexPath = [tblHot indexPathForCell:cell];
+    }
     tempDic = [[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:tempIndexPath.row]];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert"
@@ -400,7 +415,7 @@
 }
 - (IBAction)segmentSwitch:(id)sender {
     
-    
+    arrList=[[NSMutableArray alloc] init];
     isNewUpdate=NO;
     if (segmentedControl.selectedSegmentIndex == 0) {
         type=@"local";
@@ -416,7 +431,7 @@
                 [self distanceFlok:self];
             }
         }
-        
+         //[tblNew reloadData];
         [scrlMain setContentOffset:CGPointMake(0, 0) animated:YES];
     }
     else{
@@ -432,7 +447,7 @@
                 [self distanceFlok:self];
             }
         }
-       
+        //[tblHot reloadData];
         [scrlMain setContentOffset:CGPointMake(self.view.frame.size.width, 0) animated:YES];
     }
     
@@ -652,15 +667,15 @@
 {
     if (tableView==tblNew)
     {
-        return 132;
+        return 131;
     }
     if (tableView==tblHot)
     {
-        return 132;
+        return 131;
     }
     if (tableView==tblDistance)
     {
-        return 132;
+        return 131;
     }
     return 0.0;
 }
@@ -848,9 +863,27 @@
         
         [tCell.btnLike addTarget:self action:@selector(flokLike:)forControlEvents:UIControlEventTouchUpInside];
         [tCell.btnDislike addTarget:self action:@selector(flokDisLike:)forControlEvents:UIControlEventTouchUpInside];
-        [tCell.btnReflok addTarget:self action:@selector(ReflokAction:)forControlEvents:UIControlEventTouchUpInside];
+       
         
-        
+        if ([userId isEqualToString:[dict valueForKey:@"user_id"]]) {
+            tCell.btnMsg.hidden=YES;
+            tCell.MsgImg.hidden=YES;
+            
+            tCell.btnEdit.hidden=NO;
+            tCell.btnDelete.hidden=NO;
+            tCell.btnEditImg.hidden=NO;
+            tCell.btnDeleteImg.hidden=NO;
+            [tCell.btnDelete addTarget:self action:@selector(flokDelete:)forControlEvents:UIControlEventTouchUpInside];
+            [tCell.btnEdit addTarget:self action:@selector(flokEdit:)forControlEvents:UIControlEventTouchUpInside];
+        }else{
+            tCell.btnEdit.hidden=YES;
+            tCell.btnDelete.hidden=YES;
+            tCell.btnEditImg.hidden=YES;
+            tCell.btnDeleteImg.hidden=YES;
+            [tCell.btnMsg addTarget:self action:@selector(messageAction:)forControlEvents:UIControlEventTouchUpInside];
+            
+            
+        }
         
         if ([userId isEqualToString:[dict valueForKey:@"user_id"]]) {
             tCell.btnMsg.hidden=YES;
@@ -1115,17 +1148,11 @@
     TreeCell *cell=(TreeCell*)superView1;
     int temp=[cell.lblLikeCount.text intValue]+1;
     NSIndexPath *indexPath;
-    if ([table_View isEqualToString:@"tblNew"])
-    {
-       indexPath = [tblNew indexPathForCell:cell];
-        
-    }else if ([table_View isEqualToString:@"tblHot"])
-    {
+
+    if (segmentedControl.selectedSegmentIndex == 0) {
+        indexPath = [tblNew indexPathForCell:cell];
+    }else{
         indexPath = [tblHot indexPathForCell:cell];
-    }
-    else if ([table_View isEqualToString:@"tblDistance"])
-    {
-        indexPath = [tblDistance indexPathForCell:cell];
     }
     
     NSMutableDictionary *oldDic = [[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:indexPath.row]];
@@ -1164,18 +1191,12 @@
      int temp=[cell.lblDisLikeCount.text intValue]+1;
     //tempCell=(TreeCell*)cell;
     NSIndexPath *indexPath;
-    if ([table_View isEqualToString:@"tblNew"])
-    {
+    if (segmentedControl.selectedSegmentIndex == 0) {
         indexPath = [tblNew indexPathForCell:cell];
-        
-    }else if ([table_View isEqualToString:@"tblHot"])
-    {
+    }else{
         indexPath = [tblHot indexPathForCell:cell];
     }
-    else if ([table_View isEqualToString:@"tblDistance"])
-    {
-        indexPath = [tblDistance indexPathForCell:cell];
-    }
+    
     NSMutableDictionary *oldDic = [[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:indexPath.row]];
     
     NSInteger status=[[oldDic valueForKey:@"isDisLikedByMe"] integerValue];
@@ -1353,10 +1374,18 @@
     }else if ([serviceName isEqualToString:@"flok/deleteFlok"]){
         
         if ([[data valueForKey:@"Ack"] intValue]==1) {
-            [tblNew beginUpdates];
-            [arrList removeObject:tempDic];
-            [tblNew deleteRowsAtIndexPaths:[NSArray arrayWithObject:tempIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            [tblNew endUpdates];
+            
+            if (segmentedControl.selectedSegmentIndex == 0) {
+                [tblNew beginUpdates];
+                [arrList removeObject:tempDic];
+                [tblNew deleteRowsAtIndexPaths:[NSArray arrayWithObject:tempIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+                [tblNew endUpdates];
+            }else{
+                [tblHot beginUpdates];
+                [arrList removeObject:tempDic];
+                [tblHot deleteRowsAtIndexPaths:[NSArray arrayWithObject:tempIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+                [tblHot endUpdates];
+            }
         }
         
     }else if([serviceName isEqualToString:@"users/userprofile"])
@@ -1749,11 +1778,7 @@
         return  @"Happening Now!";
     }
     else {
-       /* NSInteger seconds1 = timeUntilEnd % 60;
-        NSInteger minutes1 = (timeUntilEnd / 60) % 60;
-        NSInteger hours1 = (timeUntilEnd / 3600);
-        return  [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)hours1, (long)minutes1, (long)seconds1];*/
-        
+       
         df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:[NSTimeZone localTimeZone].secondsFromGMT];
         NSString *localDateString = [df stringFromDate:date];
         
@@ -1804,16 +1829,18 @@
                  intervalTime=[NSString stringWithFormat:@"%@ %ld hours",[formatter stringFromDateComponents:components] ,(long)[components hour]];
             }else{
                  intervalTime=[NSString stringWithFormat:@"%@ %ld hour",[formatter stringFromDateComponents:components] ,(long)[components hour]];
+                
             }
            
         } else if (components.hour > 0) {
             formatter.allowedUnits = NSCalendarUnitHour;
             NSInteger minute = [components minute];
+            
             if (minute>1) {
                  intervalTime=[NSString stringWithFormat:@"%@ %ld minutes",[formatter stringFromDateComponents:components] ,[components minute]];
             }else{
-                
-            } intervalTime=[NSString stringWithFormat:@"%@ %ld minute",[formatter stringFromDateComponents:components] ,[components minute]];
+              intervalTime=[NSString stringWithFormat:@"%@ %ld minute",[formatter stringFromDateComponents:components] ,[components minute]];
+            }
            
             
         } else if (components.minute > 0) {

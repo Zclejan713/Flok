@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 
 
-@interface OtherUserFlok : UIViewController
+@interface OtherUserFlok : UIViewController<UIActionSheetDelegate>
 {
     IBOutlet UIButton *btnBack;
     IBOutlet UIScrollView *scrlMain;
@@ -44,6 +44,8 @@
     IBOutlet UIView *vwHideMap;
     IBOutlet UITextView *tfComment;
     IBOutlet UITextView *tvDes;
+    IBOutlet UIButton *btnReport;
+    IBOutlet UIImageView *imgReport;
     NSMutableArray *arrMain;
     NSDictionary *DicFlok;
     NSDictionary *userDic;

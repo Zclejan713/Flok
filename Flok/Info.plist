@@ -31,7 +31,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0.4</string>
 	<key>FacebookAppID</key>
 	<string>1237531842933902</string>
 	<key>FacebookDisplayName</key>
@@ -55,7 +55,7 @@
 	<key>NSContactsUsageDescription</key>
 	<string>Flok needs access your contacts</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Flok needs location</string>
+	<string>Flok uses an adjustable geocircle to identify the distance between you and posts around you, so it needs your location.</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Flok needs location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

@@ -238,7 +238,7 @@
     myview.tintColor=appGreen;
     myview.backgroundColor=[UIColor clearColor];
     myview.userInteractionEnabled=NO;
-    //[myview addTarget:self action:@selector(didChangeValue:) forControlEvents:UIControlEventValueChanged];
+    
     
 }
 
@@ -493,9 +493,8 @@
         UIFont *myFont=[UIFont fontWithName:@"Helvetica" size:8];
         [name setFont:myFont];
         [scrlImg addSubview:name];
-        //[scrlImg setBackgroundColor:[UIColor redColor]];
         [scrlImg addSubview:imageView];
-        //scrlImg.pagingEnabled=YES;
+        
         
         imgx=imgx+imgW+20;
         lblx=lblx+imgW+20;
@@ -849,7 +848,7 @@
     if (segmentedControl.selectedSegmentIndex == 0) {
         dict=[arrShared objectAtIndex:[btn tag]];
     }else{
-        dict=[arrPost objectAtIndex:[btn tag]];
+        dict=[arrShared objectAtIndex:[btn tag]];
     }
     UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     OtherUserViewController *vc=(OtherUserViewController*)[storyboard instantiateViewControllerWithIdentifier:@"OtherUserViewController"];
@@ -1043,7 +1042,7 @@
             //[self viewWillAppear:YES];
             //[self setDataToVewpage:DicFlok];
             vwTemp.hidden=YES;
-            
+           // dob, gender;
         }
         else{
             [Global showOnlyAlert:@"Flok!" :[data valueForKey:@"msg"]];
@@ -1122,7 +1121,7 @@
         
         
         [tblMain beginUpdates];
-        [arrPost removeObject:tempDic];
+        [arrShared removeObject:tempDic];
         [tblMain deleteRowsAtIndexPaths:[NSArray arrayWithObject:tempIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         [tblMain endUpdates];
     }
@@ -1352,7 +1351,7 @@
     }
     else{
         
-        dict=[[NSMutableDictionary alloc] initWithDictionary:[arrPost objectAtIndex:indexPath.row]];
+        dict=[[NSMutableDictionary alloc] initWithDictionary:[arrShared objectAtIndex:indexPath.row]];
     }
     
     EditFlokViewController *vc=(EditFlokViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"EditFlokViewController"];
@@ -1381,7 +1380,7 @@
     }
     else{
         
-        tempDic=[[NSMutableDictionary alloc] initWithDictionary:[arrPost objectAtIndex:tempIndexPath.row]];
+        tempDic=[[NSMutableDictionary alloc] initWithDictionary:[arrShared objectAtIndex:tempIndexPath.row]];
     }
 
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
@@ -1688,7 +1687,7 @@
 
 -(NSString *)timerValue: (NSString *)time
 {
-    NSLog(@"****************************%@",time);
+    //NSLog(@"****************************%@",time);
     NSArray *myArray = [time componentsSeparatedByString:@"/"];
     NSArray *Array = [[myArray objectAtIndex:2] componentsSeparatedByString:@" "];
     if(Array.count>2){
@@ -1768,7 +1767,8 @@
                 intervalTime=[NSString stringWithFormat:@"%@ %ld minutes",[formatter stringFromDateComponents:components] ,[components minute]];
             }else{
                 
-            } intervalTime=[NSString stringWithFormat:@"%@ %ld minute",[formatter stringFromDateComponents:components] ,[components minute]];
+                intervalTime=[NSString stringWithFormat:@"%@ %ld minute",[formatter stringFromDateComponents:components] ,[components minute]];
+            }
             
             
         } else if (components.minute > 0) {

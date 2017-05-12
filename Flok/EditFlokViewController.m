@@ -99,8 +99,7 @@
         [arrPeople addObject:[NSString stringWithFormat:@"%d",i]];
     }
     
-    strLocal=@"local";
-    strAccess=@"all access";
+    
     tvDesc.text=@"Enter your optional description";
     app= (AppDelegate *)[UIApplication sharedApplication].delegate;
      [vwFriend setFrame:CGRectMake(0, self.view.frame.size.height, vwFriend.frame.size.width, vwFriend.frame.size.height)];
@@ -1530,12 +1529,12 @@ calloutAccessoryControlTapped:(UIControl *)control
     NSString *type=strLocal;
     
     NSString *access=strAccess;
-    if([strAccess isEqualToString:@"all access"]){
+    /*if([strAccess isEqualToString:@"all access"]){
         access=@"0";
     }
     else if ([strAccess isEqualToString:@"request based"]){
         access=@"1";
-    }
+    }*/
     NSString *strHashtag;
     if (arrHashtag.count>0) {
         strHashtag = [[arrHashtag valueForKey:@"description"] componentsJoinedByString:@""];
@@ -1895,7 +1894,8 @@ calloutAccessoryControlTapped:(UIControl *)control
         [segLocalsocial setSelectedSegmentIndex:2];
         
     }
-        
+    strLocal=[dict valueForKey:@"type"];
+    strAccess=[dict valueForKey:@"access"];
     tfAddr.text=[dict valueForKey:@"address"];
     
     CLLocationCoordinate2D center;

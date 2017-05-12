@@ -36,7 +36,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 -(IBAction)submitAction:(id)sender{
-    //http://104.131.83.218/flok_new/users/reportToAdmin
+  
 
     if ([tvDes.text length]!=0) {
         NSString *userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
