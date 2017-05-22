@@ -950,13 +950,14 @@
          
                         completion:nil];
 
-        NSString *temp=[OtherUserdic valueForKey:@"id"];
+        NSString *temp=[OtherUserdic valueForKey:@"user_id"];
         if ([temp length]!=0) {
-            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[OtherUserdic valueForKey:@"id"]];
+            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[OtherUserdic valueForKey:@"user_id"]];
             [[Global sharedInstance] setDelegate:(id)self];
             [[Global sharedInstance] serviceCall:dataString servicename:@"users/follow" serviceType:@"POST"];
         }else{
-            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[OtherUserdic valueForKey:@"user_id"]];
+    
+            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[OtherUserdic valueForKey:@"id"]];
             [[Global sharedInstance] setDelegate:(id)self];
             [[Global sharedInstance] serviceCall:dataString servicename:@"users/follow" serviceType:@"POST"];
         }
@@ -972,13 +973,13 @@
          
                         completion:nil];
         //NSString *userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
-        NSString *temp=[OtherUserdic valueForKey:@"id"];
+        NSString *temp=[OtherUserdic valueForKey:@"user_id"];
         if ([temp length]!=0) {
-            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[OtherUserdic valueForKey:@"id"]];
+            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[OtherUserdic valueForKey:@"user_id"]];
             [[Global sharedInstance] setDelegate:(id)self];
             [[Global sharedInstance] serviceCall:dataString servicename:@"users/unfollow" serviceType:@"POST"];
         }else{
-            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[OtherUserdic valueForKey:@"user_id"]];
+            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[OtherUserdic valueForKey:@"id"]];
             [[Global sharedInstance] setDelegate:(id)self];
             [[Global sharedInstance] serviceCall:dataString servicename:@"users/unfollow" serviceType:@"POST"];
         }

@@ -39,6 +39,7 @@
     IBOutlet UIView *vwTemp;
     NSInteger totalImg;
     BOOL isPrivate;
+    
     UISegmentedControl *segmentedControl;
     NSMutableArray *arrPost;
     NSMutableArray *arrShared;

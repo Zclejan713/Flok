@@ -19,6 +19,8 @@
 #import "EditFlokViewController.h"
 #import "HashTagFeed.h"
 
+#define YOUR_APP_STORE_ID 1211127624
+
 @interface MePage ()
 {
     NSMutableArray *arrimg;
@@ -87,7 +89,15 @@
     [self fetchUserInfo];
     
 }
-
+-(void)rateThisApp{
+    
+ //Change this one to your ID
+    
+    static NSString *const iOS7AppStoreURLFormat = @"itms-apps://itunes.apple.com/app/id%d";
+    static NSString *const iOSAppStoreURLFormat = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%d";
+    
+    [NSURL URLWithString:[NSString stringWithFormat:([[UIDevice currentDevice].systemVersion floatValue] >= 7.0f)? iOS7AppStoreURLFormat: iOSAppStoreURLFormat, YOUR_APP_STORE_ID]]; // Would contain the right link
+}
 
 - (IBAction)backbtnclcik:(id)sender {
     

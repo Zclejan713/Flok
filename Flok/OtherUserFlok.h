@@ -60,6 +60,7 @@
     BOOL isOP;
     BOOL isRecentJoin;
     BOOL isFlokLimited;
+    BOOL isCommentViewShow;
     float keyHeight;
     
 }

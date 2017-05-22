@@ -99,6 +99,7 @@ static CGFloat frameWidth;
 }
 -(void)viewWillAppear:(BOOL)animated{
     AppDelegate *app= (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [vwComment setFrame:CGRectMake(0, self.view.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
     if (app.isRemoveFromFlok==YES) {
        [self getFlokDetails];
         app.isRemoveFromFlok=NO;
@@ -106,12 +107,43 @@ static CGFloat frameWidth;
 }
 -(void)viewDidAppear:(BOOL)animated{
     
+    if (isCommentViewShow==YES) {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        self.view .frame = CGRectMake(self.view.frame.origin.x, 0,
+                                      self.view.frame.size.width, self.view.frame.size.height);
+        
+        vwComment.frame = CGRectMake(vwComment.frame.origin.x,self.view.frame.size.height-vwComment.frame.size.height ,vwComment.frame.size.width,vwComment.frame.size.height);
+        
+         [UIView commitAnimations];
+        
+    }
+    
+    
+   /* CGRect frameTbl=tblvw.frame;
+    frameTbl.size.height=frameTbl.size.height+keyHeight;
+    tblvw.frame=frameTbl;
+   
+    isKeyOpen=NO;
+    [tfComment resignFirstResponder];*/
+
+    
+}
+-(void)viewDidDisappear:(BOOL)animated{
+    
+
+    /* vwComment.frame = CGRectMake(vwComment.frame.origin.x,self.view.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height);
+    isKeyOpen=NO;
+    [tfComment resignFirstResponder];*/
+    
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDuration:0.5];
     [UIView setAnimationBeginsFromCurrentState:YES];
-    self.view .frame = CGRectMake(self.view.frame.origin.x, 0,
-                                  self.view.frame.size.width, self.view.frame.size.height);
+    /* self.view .frame = CGRectMake(self.view.frame.origin.x, 0,
+     self.view.frame.size.width, self.view.frame.size.height);*/
     
     vwComment.frame = CGRectMake(vwComment.frame.origin.x,self.view.frame.size.height-vwComment.frame.size.height ,vwComment.frame.size.width,vwComment.frame.size.height);
     
@@ -121,8 +153,6 @@ static CGFloat frameWidth;
     [UIView commitAnimations];
     isKeyOpen=NO;
     [tfComment resignFirstResponder];
-
-    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -229,6 +259,7 @@ static CGFloat frameWidth;
                 [[Global sharedInstance] setDelegate:(id)self];
                 [[Global sharedInstance] serviceCall:dataString servicename:@"flok/joinFlok" serviceType:@"POST"];
                 [vwComment setFrame:CGRectMake(0, self.view.frame.size.height-vwComment.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
+                isCommentViewShow=YES;
                  [tblvw setFrame:CGRectMake(0, tblvw.frame.origin.y,tblvw.frame.size.width,tblvw.frame.size.height-vwComment.frame.size.height)];
                 lblLocation.text=[DicFlok valueForKey:@"address"];
                 btnShowMap.hidden=NO;
@@ -515,14 +546,13 @@ static CGFloat frameWidth;
             [UIView setAnimationDelegate:self];
             [UIView setAnimationDuration:0.5];
             [UIView setAnimationBeginsFromCurrentState:YES];
-            self.view .frame = CGRectMake(self.view.frame.origin.x, 0,
-                                          self.view.frame.size.width, self.view.frame.size.height);
+           /* self.view .frame = CGRectMake(self.view.frame.origin.x, 0,
+                                          self.view.frame.size.width, self.view.frame.size.height);*/
             
             vwComment.frame = CGRectMake(vwComment.frame.origin.x,self.view.frame.size.height-vwComment.frame.size.height ,vwComment.frame.size.width,vwComment.frame.size.height);
             
             CGRect frameTbl=tblvw.frame;
             frameTbl.size.height=frameTbl.size.height+keyHeight;
-            //frameTbl.size.height-keyboardFrameBeginRect.size.height+70
             tblvw.frame=frameTbl;
             [UIView commitAnimations];
             isKeyOpen=NO;
@@ -535,8 +565,8 @@ static CGFloat frameWidth;
             [UIView setAnimationDelegate:self];
             [UIView setAnimationDuration:0.5];
             [UIView setAnimationBeginsFromCurrentState:YES];
-            self.view .frame = CGRectMake(self.view.frame.origin.x, 0,
-                                          self.view.frame.size.width, self.view.frame.size.height);
+            /*self.view .frame = CGRectMake(self.view.frame.origin.x, 0,
+                                          self.view.frame.size.width, self.view.frame.size.height);*/
             
             vwComment.frame = CGRectMake(vwComment.frame.origin.x,self.view.frame.size.height-vwComment.frame.size.height ,vwComment.frame.size.width,vwComment.frame.size.height);
             
@@ -658,8 +688,8 @@ static CGFloat frameWidth;
         [UIView setAnimationDelegate:self];
         [UIView setAnimationDuration:0.5];
         [UIView setAnimationBeginsFromCurrentState:YES];
-        self.view .frame = CGRectMake(self.view.frame.origin.x, 0,
-                                      self.view.frame.size.width, self.view.frame.size.height);
+       /* self.view .frame = CGRectMake(self.view.frame.origin.x, 0,
+                                      self.view.frame.size.width, self.view.frame.size.height);*/
         
         vwComment.frame = CGRectMake(vwComment.frame.origin.x,self.view.frame.size.height-vwComment.frame.size.height ,vwComment.frame.size.width,vwComment.frame.size.height);
         
@@ -932,7 +962,7 @@ static CGFloat frameWidth;
                 vwTalk.hidden=NO;
             }
             [tblvw reloadData];
-            
+            isCommentViewShow=YES;
             [vwComment setFrame:CGRectMake(0, self.view.frame.size.height-vwComment.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
             
             lblLocation.text=[dict valueForKey:@"address"];
@@ -999,7 +1029,10 @@ static CGFloat frameWidth;
             vwHideMap.hidden=YES;
             lblRequest.hidden=YES;
             [tblvw setFrame:CGRectMake(0, tblvw.frame.origin.y,tblvw.frame.size.width,tblvw.frame.size.height+vwComment.frame.size.height)];
-            [vwComment setFrame:CGRectMake(0, self.view.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
+            [vwComment setFrame:CGRectMake(0, self.view.frame.size.height-vwComment.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
+            
+            isCommentViewShow=YES;
+          //  [vwComment setFrame:CGRectMake(0, self.view.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
         }
  
     }
@@ -1033,7 +1066,7 @@ static CGFloat frameWidth;
     if ([userId isEqualToString:user_Id]) {
         btnJoinfolk.hidden=YES;
         isOP=YES;
-        
+        isCommentViewShow=YES;
         [vwComment setFrame:CGRectMake(0, self.view.frame.size.height-vwComment.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
          [tblvw setFrame:CGRectMake(0, tblvw.frame.origin.y,tblvw.frame.size.width,tblvw.frame.size.height-vwComment.frame.size.height)];
         lblLocation.text=[dict valueForKey:@"address"];
