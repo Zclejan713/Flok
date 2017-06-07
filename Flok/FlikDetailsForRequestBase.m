@@ -134,11 +134,11 @@ static CGFloat frameWidth;
 }
 - (IBAction)joinfolkTap:(id)sender {
     
-    
+    NSString *strTime=[self getCurrentDate];
     BOOL access_type=[[DicFlok valueForKey:@"is_access"] boolValue];
     if (access_type==1) {
        
-        NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@",[DicFlok valueForKey:@"id"],userId];
+        NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@&date_time=%@",[DicFlok valueForKey:@"id"],userId,strTime];
         [[Global sharedInstance] setDelegate:(id)self];
         [[Global sharedInstance] serviceCall:dataString servicename:@"flok/joinFlok" serviceType:@"POST"];
         
@@ -157,8 +157,8 @@ static CGFloat frameWidth;
     if (buttonIndex == 1) {
         //UIButton *btn=(UIButton*)sender;
         //[Global disableAfterClick:btn];
-        
-        NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@",[DicFlok valueForKey:@"id"],userId];
+        NSString *strTime=[self getCurrentDate];
+        NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@&date_time=%@",[DicFlok valueForKey:@"id"],userId,strTime];
         [[Global sharedInstance] setDelegate:(id)self];
         [[Global sharedInstance] serviceCall:dataString servicename:@"flok/joinFlok" serviceType:@"POST"];
     }
@@ -714,8 +714,8 @@ static CGFloat frameWidth;
     vwComment.frame=vwframe;
 }
 -(void)postCommentAPI{
-    
-    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&flok_id=%@&comment=%@",userId,flokId,tfComment.text];
+    NSString *strTime=[self getCurrentDate];
+    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&flok_id=%@&comment=%@&date_time=%@",userId,flokId,tfComment.text,strTime];
     [[Global sharedInstance] setDelegate:(id)self];
     [[Global sharedInstance] serviceCall:dataString servicename:@"flok/postFlokComment" serviceType:@"POST"];
     tfComment.text=nil;

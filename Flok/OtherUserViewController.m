@@ -670,7 +670,7 @@
     NSIndexPath *indexPath;
     
     indexPath = [tblMain indexPathForCell:cell];
-    
+    NSString *strTime=[self getLocateDate];
     
     NSMutableDictionary *oldDic = [[NSMutableDictionary alloc] initWithDictionary:[arrShared objectAtIndex:indexPath.row]];
     int status=[[oldDic valueForKey:@"isLikedByMe"] intValue];
@@ -684,7 +684,7 @@
         
         NSString *postid=[oldDic valueForKey:@"id"];
        // NSString *userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
-        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&flok_id=%@",userId,postid];
+        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&flok_id=%@&date_time=%@",userId,postid,strTime];
         [[Global sharedInstance] setDelegate:(id)self];
         [[Global sharedInstance] serviceCall:dataString servicename:@"flok/like" serviceType:@"POST"];
         
@@ -891,14 +891,14 @@
     if ([btn tag]==1) {
         UIButton *btn=(UIButton*)sender;
         [Global disableAfterClick:btn];
-        
+         NSString *strTime=[self getCurrentDate];
         NSString *temp=[OtherUserdic valueForKey:@"id"];
         if ([temp length]!=0) {
-            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[OtherUserdic valueForKey:@"id"]];
+            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@&date_time=%@",userId,[OtherUserdic valueForKey:@"id"],strTime];
             [[Global sharedInstance] setDelegate:(id)self];
             [[Global sharedInstance] serviceCall:dataString servicename:@"users/follow" serviceType:@"POST"];
         }else{
-            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[OtherUserdic valueForKey:@"user_id"]];
+            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@&date_time=%@",userId,[OtherUserdic valueForKey:@"user_id"],strTime];
             [[Global sharedInstance] setDelegate:(id)self];
             [[Global sharedInstance] serviceCall:dataString servicename:@"users/follow" serviceType:@"POST"];
         }
@@ -922,12 +922,12 @@
 
 -(IBAction)reportForAbuse:(id)sender{
     
-    
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel"           destructiveButtonTitle:nil otherButtonTitles:@"Report this post", nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"           destructiveButtonTitle:nil otherButtonTitles:@"Report to this user for inappropriate behavior",@"Block", nil];
     
     [actionSheet showInView:self.view];
     [actionSheet setTag:1];
     
+     /* UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Select image" delegate:self cancelButtonTitle:@"Cancel"           destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Gallery", nil];*/
 }
 -(IBAction)btnFollowAction:(id)sender{
     
@@ -951,13 +951,14 @@
                         completion:nil];
 
         NSString *temp=[OtherUserdic valueForKey:@"user_id"];
+        NSString *strTime=[self getCurrentDate];
         if ([temp length]!=0) {
-            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[OtherUserdic valueForKey:@"user_id"]];
+            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@&date_time=%@",userId,[OtherUserdic valueForKey:@"user_id"],strTime];
             [[Global sharedInstance] setDelegate:(id)self];
             [[Global sharedInstance] serviceCall:dataString servicename:@"users/follow" serviceType:@"POST"];
         }else{
     
-            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[OtherUserdic valueForKey:@"id"]];
+            NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@&date_time=%@",userId,[OtherUserdic valueForKey:@"id"],strTime];
             [[Global sharedInstance] setDelegate:(id)self];
             [[Global sharedInstance] serviceCall:dataString servicename:@"users/follow" serviceType:@"POST"];
         }
@@ -1219,12 +1220,13 @@
         vc.OtherUserId=[OtherUserdic valueForKey:@"user_id"];
         vc.OtherUserImg=[OtherUserdic valueForKey:@"user_image"];
         vc.OtherUserName=[OtherUserdic valueForKey:@"full_name"];
+        vc.userDic=OtherUserdic;
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if(buttonIndex == 1)
         
     {
-      UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Warning" message:@"Are you sure you want block this user?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Block", nil] ;
+      UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Warning" message:@"Are you sure you want block this user?" delegate:self cancelButtonTitle:@"Sure" otherButtonTitles:@"Cancel", nil] ;
         
         [alert setTag:5];
         [alert show];

@@ -14,17 +14,24 @@
 @end
 
 @implementation InappropriateReport
-@synthesize OtherUserId,OtherUserImg,OtherUserName;
+@synthesize OtherUserId,OtherUserImg,OtherUserName,userDic;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"userDic---%@",userDic);
     vwBg.layer.cornerRadius=5.f;
     vwBg.layer.borderColor=[[UIColor grayColor] CGColor];
     vwBg.layer.borderWidth=1.0f;
     tvDes.text=@"Enter your description";
     [tvDes setTextColor:[UIColor lightGrayColor]];
-    lblName.text=OtherUserName;
-    [self setImageWithurl:OtherUserImg andImageView:imgProfile and:nil];
+    if ([OtherUserName length]!=0) {
+        lblName.text=OtherUserName;
+        [self setImageWithurl:OtherUserImg andImageView:imgProfile and:nil];
+    }else{
+        lblName.text=[userDic valueForKey:@"uploaded_by"];
+        [self setImageWithurl:[userDic valueForKey:@"uploaded_by_userImage"] andImageView:imgProfile and:nil];
+    }
+   
     [self adddonebutton:tvDes];
 }
 

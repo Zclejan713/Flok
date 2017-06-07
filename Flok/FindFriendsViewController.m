@@ -196,8 +196,8 @@
 
        NSMutableDictionary *Dic = [[NSMutableDictionary alloc] initWithDictionary:[arrFind objectAtIndex:indexPath.row]];
     
-   // NSString *userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
-    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,[Dic valueForKey:@"id"]];
+    NSString *strTime=[self getCurrentDate];
+    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@&date_time=%@",userId,[Dic valueForKey:@"id"],strTime];
     [[Global sharedInstance] setDelegate:(id)self];
     [[Global sharedInstance] serviceCall:dataString servicename:@"users/follow" serviceType:@"POST"];
     }
@@ -221,9 +221,10 @@
     if (status==0) {
         [cell.btnFollow setBackgroundImage:[UIImage imageNamed:@"friend"] forState:UIControlStateNormal];
         [valuedict setObject:[NSString stringWithFormat:@"%d",1 ] forKey:@"is_friend"];
-      
+        
+        NSString *strTime=[self getCurrentDate];
         NSString *otherUserId=[self getUserIdPhone:[oldDic valueForKey:@"Phone"]];
-        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,otherUserId];
+        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@&date_time=%@",userId,otherUserId,strTime];
         [[Global sharedInstance] setDelegate:(id)self];
         [[Global sharedInstance] serviceCall:dataString servicename:@"users/follow" serviceType:@"POST"];
     }
@@ -250,8 +251,9 @@
         
         NSMutableDictionary *Dic = [[NSMutableDictionary alloc] initWithDictionary:[arrFacebook objectAtIndex:indexPath.row]];
         
+        NSString *strTime=[self getCurrentDate];
         NSString *otherUserId=[self getUserId:[Dic valueForKey:@"id"]];
-        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",userId,otherUserId];
+        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@&date_time=%@",userId,otherUserId,strTime];
         [[Global sharedInstance] setDelegate:(id)self];
         [[Global sharedInstance] serviceCall:dataString servicename:@"users/follow" serviceType:@"POST"];
     }
@@ -1236,6 +1238,15 @@
     }
     return @"0";
 }
-
+-(NSString *)getCurrentDate{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    
+    NSTimeZone *gmt = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    [dateFormatter setTimeZone:gmt];
+    NSString *timeStamp = [dateFormatter stringFromDate:[NSDate date]];
+    return timeStamp;
+}
 
 @end

@@ -106,10 +106,13 @@
     feed_state=1;
     
     refreshControl = [[UIRefreshControl alloc]init];
+    refreshControlHot = [[UIRefreshControl alloc]init];
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    refreshControlHot.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
     [tblNew addSubview:refreshControl];
-    [tblHot addSubview:refreshControl];
+    [tblHot addSubview:refreshControlHot];
     [refreshControl addTarget:self action:@selector(pullToRefresh) forControlEvents:UIControlEventValueChanged];
+    [refreshControlHot addTarget:self action:@selector(pullToRefresh) forControlEvents:UIControlEventValueChanged];
     
     
 
@@ -301,7 +304,7 @@
      NSString *strTime=[self getLocateDate];
     if([latitude length]!=0){
     userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
-    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&lat=%@&lang=%@&distance=%@&type=%@&&current_time=%@",userId,latitude,longitude,miles,type,strTime];
+    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&lat=%@&lang=%@&distance=%@&type=%@&current_time=%@",userId,latitude,longitude,miles,type,strTime];
     [[Global sharedInstance] setDelegate:(id)self];
     [[Global sharedInstance] serviceCall:dataString servicename:@"flok/listFlokByDistance" serviceType:@"POST"];
      }
@@ -488,7 +491,7 @@
 }
 
 -(IBAction)newflok:(id)sender{
-    
+    isNewUpdate=NO;
     table_View =@"tblNew";
    [self getFlokList];
    [self changeTabHeaderView:1];
@@ -1144,7 +1147,7 @@
         
         superView1 = [superView1 superview];
     }
-    
+     
     TreeCell *cell=(TreeCell*)superView1;
     int temp=[cell.lblLikeCount.text intValue]+1;
     NSIndexPath *indexPath;
@@ -1154,6 +1157,8 @@
     }else{
         indexPath = [tblHot indexPathForCell:cell];
     }
+    NSString *strTime=[self getCurrentDate];
+    //NSString *strTime=[self getLocateDate];
     
     NSMutableDictionary *oldDic = [[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:indexPath.row]];
     NSInteger status=[[oldDic valueForKey:@"isLikedByMe"] integerValue];
@@ -1167,7 +1172,7 @@
         
         NSString *postid=[oldDic valueForKey:@"id"];
         NSString *user_Id=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
-        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&flok_id=%@",user_Id,postid];
+        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&flok_id=%@&date_time=%@",user_Id,postid,strTime];
         [[Global sharedInstance] setDelegate:(id)self];
         [[Global sharedInstance] serviceCall:dataString servicename:@"flok/like" serviceType:@"POST"];
     
@@ -1196,7 +1201,7 @@
     }else{
         indexPath = [tblHot indexPathForCell:cell];
     }
-    
+     NSString *strTime=[self getCurrentDate];
     NSMutableDictionary *oldDic = [[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:indexPath.row]];
     
     NSInteger status=[[oldDic valueForKey:@"isDisLikedByMe"] integerValue];
@@ -1210,7 +1215,7 @@
     
         NSString *postid=[oldDic valueForKey:@"id"];
         NSString *user_Id=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
-        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&flok_id=%@",user_Id,postid];
+        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&flok_id=%@&date_time=%@",user_Id,postid,strTime];
         [[Global sharedInstance] setDelegate:(id)self];
         [[Global sharedInstance] serviceCall:dataString servicename:@"flok/dislike" serviceType:@"POST"];
      }
@@ -1223,9 +1228,11 @@
     
     [Global showOnlyAlert:@"Error" :errorMessage ];
      [refreshControl endRefreshing];
+     [refreshControlHot endRefreshing];
 }
 -(void)WebServiceCallFinishWithData : (NSDictionary *)data withFlag : (NSString*)serviceName{
      [refreshControl endRefreshing];
+     [refreshControlHot endRefreshing];
     if([serviceName isEqualToString:@"flok/listFlok"])
     {
         
@@ -1937,6 +1944,16 @@
     NSLog(@"start date-- %@",[NSString stringWithFormat:formatString, [formatter stringFromDateComponents:components]]);
     return [NSString stringWithFormat:formatString, [formatter stringFromDateComponents:components]];
     
+}
+-(NSString *)getCurrentDate{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    
+    NSTimeZone *gmt = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    [dateFormatter setTimeZone:gmt];
+    NSString *timeStamp = [dateFormatter stringFromDate:[NSDate date]];
+    return timeStamp;
 }
 
 @end

@@ -172,7 +172,8 @@
             dic=[arrListeners objectAtIndex:[sender tag]];
         }
         [cell.btnUnfriend setBackgroundImage:[UIImage imageNamed:@"friend"] forState:UIControlStateNormal];
-        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@",my_id,[dic valueForKey:@"id"]];
+        NSString *strTime=[self getCurrentDate];
+        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&follow_id=%@&date_time=%@",my_id,[dic valueForKey:@"id"],strTime];
         [[Global sharedInstance] setDelegate:(id)self];
         [[Global sharedInstance] serviceCall:dataString servicename:@"users/follow" serviceType:@"POST"];
     }else{
@@ -585,5 +586,16 @@
         }
     }
     return NO;
+}
+
+-(NSString *)getCurrentDate{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    
+    NSTimeZone *gmt = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    [dateFormatter setTimeZone:gmt];
+    NSString *timeStamp = [dateFormatter stringFromDate:[NSDate date]];
+    return timeStamp;
 }
 @end

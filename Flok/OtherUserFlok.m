@@ -254,8 +254,8 @@ static CGFloat frameWidth;
             
             BOOL access_type=[[DicFlok valueForKey:@"is_access"] boolValue];
             if (access_type==1) {
-                
-                NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@",[DicFlok valueForKey:@"id"],userId];
+                NSString *strTime=[self getCurrentDate];
+                NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@&date_time=%@",[DicFlok valueForKey:@"id"],userId,strTime];
                 [[Global sharedInstance] setDelegate:(id)self];
                 [[Global sharedInstance] serviceCall:dataString servicename:@"flok/joinFlok" serviceType:@"POST"];
                 [vwComment setFrame:CGRectMake(0, self.view.frame.size.height-vwComment.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
@@ -273,7 +273,9 @@ static CGFloat frameWidth;
                 
             }
         }else{
-            NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@",[DicFlok valueForKey:@"id"],userId];
+            
+            NSString *strTime=[self getCurrentDate];
+            NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@&date_time=%@",[DicFlok valueForKey:@"id"],userId,strTime];
             [[Global sharedInstance] setDelegate:(id)self];
             [[Global sharedInstance] serviceCall:dataString servicename:@"flok/joinFlok" serviceType:@"POST"];
             [vwComment setFrame:CGRectMake(0, self.view.frame.size.height-vwComment.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
@@ -1028,10 +1030,18 @@ static CGFloat frameWidth;
             btnShowMap.hidden=NO;
             vwHideMap.hidden=YES;
             lblRequest.hidden=YES;
-            [tblvw setFrame:CGRectMake(0, tblvw.frame.origin.y,tblvw.frame.size.width,tblvw.frame.size.height+vwComment.frame.size.height)];
+            [tblvw setFrame:CGRectMake(0, tblvw.frame.origin.y,tblvw.frame.size.width,tblvw.frame.size.height)];
             [vwComment setFrame:CGRectMake(0, self.view.frame.size.height-vwComment.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
             
             isCommentViewShow=YES;
+            /////////// Ritwik /////////
+            arrMain=[[NSMutableArray alloc] initWithArray:[DicFlok valueForKey:@"comments"]];
+            if (arrMain.count==0) {
+                vwTalk.hidden=YES;
+            }else{
+                vwTalk.hidden=NO;
+            }
+            [tblvw reloadData];
           //  [vwComment setFrame:CGRectMake(0, self.view.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
         }
  
@@ -1051,10 +1061,6 @@ static CGFloat frameWidth;
         flokshortDatelbl.text=[NSString stringWithFormat:@"%@ at %@ - %@ at %@",shortTimeStart,[dict valueForKey:@"start_time"],shortTimeEnd,[dict valueForKey:@"end_time"]];
     }
     
-    
-    
-
- 
     BOOL isExp=[[dict valueForKey:@"isExpired"] boolValue];
     if (isExp==YES) {
         btnJoinfolk.hidden=YES;
@@ -1068,24 +1074,21 @@ static CGFloat frameWidth;
         isOP=YES;
         isCommentViewShow=YES;
         [vwComment setFrame:CGRectMake(0, self.view.frame.size.height-vwComment.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
-         [tblvw setFrame:CGRectMake(0, tblvw.frame.origin.y,tblvw.frame.size.width,tblvw.frame.size.height-vwComment.frame.size.height)];
+        // [tblvw setFrame:CGRectMake(0, tblvw.frame.origin.y,tblvw.frame.size.width,tblvw.frame.size.height-vwComment.frame.size.height)];
         lblLocation.text=[dict valueForKey:@"address"];
         btnShowMap.hidden=NO;
         vwHideMap.hidden=YES;
     }
     
     lblLimit.text=[NSString stringWithFormat:@"%@",[dict valueForKey:@"max_people"]];
-    //lblJoin.text=[NSString stringWithFormat:@"%@",[dict valueForKey:@"already_joined_count"]];
     int intFlokLimit=[[dict valueForKey:@"max_people"] intValue];
     int intjoinMember=[[dict valueForKey:@"already_joined_count"] intValue];
     int remain=intFlokLimit - intjoinMember;
     lblLimit.text=[NSString stringWithFormat:@"%@",[dict valueForKey:@"max_people"]];
-    //lblJoin.text=[NSString stringWithFormat:@"%d",remain];
     lblJoin.text=[NSString stringWithFormat:@"%d/%d",remain,intFlokLimit];
-    //lblLimit.text=[NSString stringWithFormat:@"%@/%@",joinMember,flokLimit];
-    //lblLimit.backgroundColor=[UIColor blueColor];
     
-     NSLog(@"kashmir========%@",[dict valueForKey:@"floksImage"]);
+    
+    
     if([[dict valueForKey:@"floksImage"] length]>0){
     
     [self setImageWithurl:[dict valueForKey:@"floksImage"] andImageView:imgBanner and:nil];
@@ -1220,8 +1223,9 @@ static CGFloat frameWidth;
     
 }
 -(void)postCommentAPI{
+     NSString *strTime=[self getCurrentDate];
     NSString *tempMessage=[Global addSpclCharecters:tfComment.text];
-    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&flok_id=%@&comment=%@",userId,flokId,tempMessage];
+    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&flok_id=%@&comment=%@&date_time=%@",userId,flokId,tempMessage,strTime];
     [[Global sharedInstance] setDelegate:(id)self];
      [[Global sharedInstance] serviceCall:dataString servicename:@"flok/postFlokComment" serviceType:@"POST"];
     tfComment.text=nil;
@@ -1238,9 +1242,9 @@ static CGFloat frameWidth;
 
 -(void)reportToAdmin{
     
-    NSString *dataString=[NSString stringWithFormat:@"my_id=%@&flok_id=%@&user_id=%@",userId,flokId,[DicFlok valueForKey:@"user_id"]];
+    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&post_id=%@&reason=",userId,flokId];
     [[Global sharedInstance] setDelegate:(id)self];
-    [[Global sharedInstance] serviceCall:dataString servicename:@"flok/reportToAdmin" serviceType:@"POST"];
+    [[Global sharedInstance] serviceCall:dataString servicename:@"users/reportToAdminFolk" serviceType:@"POST"];
 }
 
 #pragma mark Save image
@@ -1492,8 +1496,9 @@ static CGFloat frameWidth;
         if (buttonIndex == 1) {
             //UIButton *btn=(UIButton*)sender;
             //[Global disableAfterClick:btn];
+            NSString *strTime=[self getCurrentDate];
             [Global showOnlyAlert:@"" :@"A request has been sent."];
-            NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@",[DicFlok valueForKey:@"id"],userId];
+            NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@&date_time=%@",[DicFlok valueForKey:@"id"],userId,strTime];
             [[Global sharedInstance] setDelegate:(id)self];
             [[Global sharedInstance] serviceCall:dataString servicename:@"flok/joinFlok" serviceType:@"POST"];
         }

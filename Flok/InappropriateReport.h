@@ -20,4 +20,5 @@
 @property(retain ,nonatomic)NSString *OtherUserId;
 @property(retain ,nonatomic)NSString *OtherUserImg;
 @property(retain ,nonatomic)NSString *OtherUserName;
+@property(retain ,nonatomic)NSDictionary *userDic;
 @end

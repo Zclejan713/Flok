@@ -309,8 +309,7 @@
     {
         datepicker=[[UIDatePicker alloc]init];
         datepicker.datePickerMode=UIDatePickerModeDate;
-      //  [datepicker setMaximumDate:[NSDate date]];
-        
+      
         NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
         NSDate *currentDate = [NSDate date];
         NSDateComponents *comps = [[NSDateComponents alloc] init];

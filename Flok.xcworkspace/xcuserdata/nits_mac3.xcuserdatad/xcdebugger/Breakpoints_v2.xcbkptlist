@@ -26,7 +26,7 @@
                   moduleName = "Flok"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nits_mac3/Documents/New%20Folder%20With%20Items/flok-git/Flok/Flok/EditProfileViewController.m"
-                  timestampString = "516864572.690486"
+                  timestampString = "518417755.918487"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "501"
@@ -41,7 +41,7 @@
                   moduleName = "Flok"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nits_mac3/Documents/New%20Folder%20With%20Items/flok-git/Flok/Flok/EditProfileViewController.m"
-                  timestampString = "516864572.692585"
+                  timestampString = "518417755.91977"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "501"
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518078313.420867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1094"
-            endingLineNumber = "1094"
+            startingLineNumber = "1097"
+            endingLineNumber = "1097"
             landmarkName = "-ReflokAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -136,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "489"
-            endingLineNumber = "489"
+            startingLineNumber = "491"
+            endingLineNumber = "491"
             landmarkName = "-checkuser:"
             landmarkType = "7">
          </BreakpointContent>
@@ -264,11 +264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1024"
-            endingLineNumber = "1024"
+            startingLineNumber = "1026"
+            endingLineNumber = "1026"
             landmarkName = "-WebServiceCallFinishWithData:withFlag:"
             landmarkType = "7">
          </BreakpointContent>
@@ -328,11 +328,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518078313.420867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1061"
-            endingLineNumber = "1061"
+            startingLineNumber = "1064"
+            endingLineNumber = "1064"
             landmarkName = "-ReflokAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -392,11 +392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ChatViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518077515.442748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1005"
-            endingLineNumber = "1005"
+            startingLineNumber = "1006"
+            endingLineNumber = "1006"
             landmarkName = "-unBlockUser"
             landmarkType = "7">
          </BreakpointContent>
@@ -408,11 +408,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ChatViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518077515.442748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "995"
-            endingLineNumber = "995"
+            startingLineNumber = "996"
+            endingLineNumber = "996"
             landmarkName = "-blockUser"
             landmarkType = "7">
          </BreakpointContent>
@@ -440,11 +440,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ChatViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518077515.442748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "944"
-            endingLineNumber = "944"
+            startingLineNumber = "945"
+            endingLineNumber = "945"
             landmarkName = "-WebServiceCallFinishWithData:withFlag:"
             landmarkType = "7">
          </BreakpointContent>
@@ -456,11 +456,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ChatViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518077515.442748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "850"
-            endingLineNumber = "850"
+            startingLineNumber = "851"
+            endingLineNumber = "851"
             landmarkName = "-uploadOnlyPhoto::"
             landmarkType = "7">
          </BreakpointContent>
@@ -472,11 +472,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ChatViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518077515.442748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "842"
-            endingLineNumber = "842"
+            startingLineNumber = "843"
+            endingLineNumber = "843"
             landmarkName = "-uploadOnlyPhoto::"
             landmarkType = "7">
          </BreakpointContent>
@@ -488,11 +488,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ChatViewController.m"
-            timestampString = "507714812.188624"
+            timestampString = "518077515.442748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "732"
-            endingLineNumber = "732"
+            startingLineNumber = "733"
+            endingLineNumber = "733"
             landmarkName = "-btnSendPressed:"
             landmarkType = "7">
          </BreakpointContent>
@@ -536,11 +536,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ChatViewController.m"
-            timestampString = "506842935.360873"
+            timestampString = "518077515.442748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "351"
-            endingLineNumber = "351"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
             landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
             landmarkType = "7">
          </BreakpointContent>
@@ -696,11 +696,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/NotificationPage.m"
-            timestampString = "513781388.899818"
+            timestampString = "518087519.448899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "475"
-            endingLineNumber = "475"
+            startingLineNumber = "479"
+            endingLineNumber = "479"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -712,11 +712,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/NotificationPage.m"
-            timestampString = "513781388.899818"
+            timestampString = "518087519.448899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "491"
-            endingLineNumber = "491"
+            startingLineNumber = "495"
+            endingLineNumber = "495"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -728,11 +728,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/NotificationPage.m"
-            timestampString = "513781388.899818"
+            timestampString = "518087519.448899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "470"
-            endingLineNumber = "470"
+            startingLineNumber = "474"
+            endingLineNumber = "474"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -807,38 +807,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1220"
-            endingLineNumber = "1220"
-            landmarkName = "-actionSheet:clickedButtonAtIndex:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/NotificationPage.m"
-            timestampString = "513781388.899818"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Flok/JoinedMemberViewController.m"
             timestampString = "514797541.13077"
             startingColumnNumber = "9223372036854775807"
@@ -872,11 +840,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518078313.420867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "991"
-            endingLineNumber = "991"
+            startingLineNumber = "994"
+            endingLineNumber = "994"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -888,11 +856,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518078313.420867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1001"
-            endingLineNumber = "1001"
+            startingLineNumber = "1004"
+            endingLineNumber = "1004"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -920,11 +888,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ChatViewController.m"
-            timestampString = "507714812.188624"
+            timestampString = "518077515.442748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "672"
-            endingLineNumber = "672"
+            startingLineNumber = "673"
+            endingLineNumber = "673"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -936,11 +904,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ChatViewController.m"
-            timestampString = "507714812.188624"
+            timestampString = "518077515.442748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "681"
-            endingLineNumber = "681"
+            startingLineNumber = "682"
+            endingLineNumber = "682"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1047,22 +1015,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1294"
-            endingLineNumber = "1294"
-            landmarkName = "-WebServiceCallFinishWithData:withFlag:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Flok/LogInController.m"
             timestampString = "513781388.899818"
             startingColumnNumber = "9223372036854775807"
@@ -1078,11 +1030,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
+            timestampString = "518417423.397592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1205"
-            endingLineNumber = "1205"
+            startingLineNumber = "1206"
+            endingLineNumber = "1206"
             landmarkName = "-setDataToViewpage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1094,11 +1046,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
+            timestampString = "518417423.397592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1143"
-            endingLineNumber = "1143"
+            startingLineNumber = "1144"
+            endingLineNumber = "1144"
             landmarkName = "-setDataToViewpage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1110,11 +1062,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
+            timestampString = "518417423.397592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1176"
-            endingLineNumber = "1176"
+            startingLineNumber = "1177"
+            endingLineNumber = "1177"
             landmarkName = "-setDataToViewpage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1126,7 +1078,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserViewController.m"
-            timestampString = "515416495.965793"
+            timestampString = "518417423.397592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "934"
@@ -1142,11 +1094,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
+            timestampString = "518417423.397592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1145"
-            endingLineNumber = "1145"
+            startingLineNumber = "1146"
+            endingLineNumber = "1146"
             landmarkName = "-setDataToViewpage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1174,11 +1126,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "641"
-            endingLineNumber = "641"
+            startingLineNumber = "643"
+            endingLineNumber = "643"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1190,11 +1142,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/NotificationPage.m"
-            timestampString = "513781388.899818"
+            timestampString = "518087519.448899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-rejectFollow:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1254,11 +1206,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/SearchFlokViewController.m"
-            timestampString = "507626400.966889"
+            timestampString = "518080406.876318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
+            startingLineNumber = "356"
+            endingLineNumber = "356"
             landmarkName = "-followAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1270,11 +1222,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518090444.016447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1523"
-            endingLineNumber = "1523"
+            startingLineNumber = "1530"
+            endingLineNumber = "1530"
             landmarkName = "-colorWord:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1286,11 +1238,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/InappropriateReport.m"
-            timestampString = "507635200.198417"
+            timestampString = "518088332.242651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "-submitAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1301,28 +1253,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1217"
-            endingLineNumber = "1217"
-            landmarkName = "-actionSheet:clickedButtonAtIndex:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518090444.016447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1672"
-            endingLineNumber = "1672"
+            startingLineNumber = "1679"
+            endingLineNumber = "1679"
             landmarkName = "-tabBar:didSelectItem:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1334,11 +1270,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "853"
-            endingLineNumber = "853"
+            startingLineNumber = "855"
+            endingLineNumber = "855"
             landmarkName = "-setDataToVewpage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1350,11 +1286,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "552"
-            endingLineNumber = "552"
+            startingLineNumber = "554"
+            endingLineNumber = "554"
             landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1366,11 +1302,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "571"
-            endingLineNumber = "571"
+            startingLineNumber = "573"
+            endingLineNumber = "573"
             landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1382,11 +1318,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "601"
-            endingLineNumber = "601"
+            startingLineNumber = "603"
+            endingLineNumber = "603"
             landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1398,11 +1334,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "619"
-            endingLineNumber = "619"
+            startingLineNumber = "621"
+            endingLineNumber = "621"
             landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1414,11 +1350,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "635"
-            endingLineNumber = "635"
+            startingLineNumber = "637"
+            endingLineNumber = "637"
             landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1430,11 +1366,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "651"
-            endingLineNumber = "651"
+            startingLineNumber = "653"
+            endingLineNumber = "653"
             landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1446,11 +1382,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "667"
-            endingLineNumber = "667"
+            startingLineNumber = "669"
+            endingLineNumber = "669"
             landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1462,11 +1398,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "694"
-            endingLineNumber = "694"
+            startingLineNumber = "696"
+            endingLineNumber = "696"
             landmarkName = "-textViewDidChange:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1474,31 +1410,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "762"
-            endingLineNumber = "762"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "800"
-            endingLineNumber = "800"
+            startingLineNumber = "802"
+            endingLineNumber = "802"
             landmarkName = "-WebServiceCallFinishWithData:withFlag:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1510,11 +1430,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "785"
-            endingLineNumber = "785"
+            startingLineNumber = "787"
+            endingLineNumber = "787"
             landmarkName = "-WebServiceCallFinishWithData:withFlag:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1558,7 +1478,7 @@
                   moduleName = "Flok"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nits_mac3/Documents/New%20Folder%20With%20Items/flok-git/Flok/Flok/AppDelegate.m"
-                  timestampString = "516864573.137878"
+                  timestampString = "518417756.062289"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
@@ -1573,7 +1493,7 @@
                   moduleName = "Flok"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nits_mac3/Documents/New%20Folder%20With%20Items/flok-git/Flok/Flok/AppDelegate.m"
-                  timestampString = "516864573.139217"
+                  timestampString = "518417756.063559"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
@@ -1606,7 +1526,7 @@
                   moduleName = "Flok"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nits_mac3/Documents/New%20Folder%20With%20Items/flok-git/Flok/Flok/AppDelegate.m"
-                  timestampString = "516864573.142651"
+                  timestampString = "518417756.066105"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
@@ -1621,7 +1541,7 @@
                   moduleName = "Flok"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nits_mac3/Documents/New%20Folder%20With%20Items/flok-git/Flok/Flok/AppDelegate.m"
-                  timestampString = "516864573.143867"
+                  timestampString = "518417756.067355"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
@@ -1654,11 +1574,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518345752.074491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1483"
-            endingLineNumber = "1483"
+            startingLineNumber = "1490"
+            endingLineNumber = "1490"
             landmarkName = "-alertView:clickedButtonAtIndex:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1750,11 +1670,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "430"
-            endingLineNumber = "430"
+            startingLineNumber = "432"
+            endingLineNumber = "432"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1814,11 +1734,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518090444.016447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1735"
-            endingLineNumber = "1735"
+            startingLineNumber = "1742"
+            endingLineNumber = "1742"
             landmarkName = "-changeNotificationTabBarIcon"
             landmarkType = "7">
          </BreakpointContent>
@@ -1830,11 +1750,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ChatViewController.m"
-            timestampString = "508836529.936089"
+            timestampString = "518077515.442748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "721"
-            endingLineNumber = "721"
+            startingLineNumber = "722"
+            endingLineNumber = "722"
             landmarkName = "-btnSendPressed:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1862,11 +1782,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "-notNow:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1878,11 +1798,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1104"
-            endingLineNumber = "1104"
+            startingLineNumber = "1106"
+            endingLineNumber = "1106"
             landmarkName = "-getFacebook"
             landmarkType = "7">
          </BreakpointContent>
@@ -1894,11 +1814,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
             landmarkName = "-facebookInvite:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1910,11 +1830,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "902"
-            endingLineNumber = "902"
+            startingLineNumber = "904"
+            endingLineNumber = "904"
             landmarkName = "-facebookLoginAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1926,11 +1846,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1060"
-            endingLineNumber = "1060"
+            startingLineNumber = "1062"
+            endingLineNumber = "1062"
             landmarkName = "-getFacebook"
             landmarkType = "7">
          </BreakpointContent>
@@ -1942,11 +1862,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "-followOnFacebookAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1958,11 +1878,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "-followOnFacebookAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1974,11 +1894,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
             landmarkName = "-followOnFacebookAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1990,11 +1910,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
             landmarkName = "-inviteFriend:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2054,11 +1974,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "587"
-            endingLineNumber = "587"
+            startingLineNumber = "589"
+            endingLineNumber = "589"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2070,11 +1990,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1155"
-            endingLineNumber = "1155"
+            startingLineNumber = "1157"
+            endingLineNumber = "1157"
             landmarkName = "-checkAllFbuser:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2086,11 +2006,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "-followOnFacebookAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2102,11 +2022,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "513781388.899818"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "585"
-            endingLineNumber = "585"
+            startingLineNumber = "587"
+            endingLineNumber = "587"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2166,11 +2086,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518345752.074491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1193"
-            endingLineNumber = "1193"
+            startingLineNumber = "1199"
+            endingLineNumber = "1199"
             landmarkName = "-CommentPressed:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2262,11 +2182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518078313.420867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "719"
-            endingLineNumber = "719"
+            startingLineNumber = "722"
+            endingLineNumber = "722"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2325,22 +2245,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "992"
-            endingLineNumber = "992"
-            landmarkName = "-setDataToVewpage:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Flok/EditProfileViewController.m"
             timestampString = "515495885.56902"
             startingColumnNumber = "9223372036854775807"
@@ -2358,11 +2262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
+            timestampString = "518417423.397592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1078"
-            endingLineNumber = "1078"
+            startingLineNumber = "1079"
+            endingLineNumber = "1079"
             landmarkName = "-WebServiceCallFinishWithData:withFlag:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2374,11 +2278,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
+            timestampString = "518417423.397592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1058"
-            endingLineNumber = "1058"
+            startingLineNumber = "1059"
+            endingLineNumber = "1059"
             landmarkName = "-WebServiceCallFinishWithData:withFlag:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2390,11 +2294,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
+            timestampString = "518417423.397592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1099"
-            endingLineNumber = "1099"
+            startingLineNumber = "1100"
+            endingLineNumber = "1100"
             landmarkName = "-WebServiceCallFinishWithData:withFlag:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2406,11 +2310,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "505"
-            endingLineNumber = "505"
+            startingLineNumber = "507"
+            endingLineNumber = "507"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2422,11 +2326,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
+            timestampString = "518417423.397592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1530"
-            endingLineNumber = "1530"
+            startingLineNumber = "1532"
+            endingLineNumber = "1532"
             landmarkName = "-textTapped:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2438,11 +2342,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
+            timestampString = "518417423.397592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1539"
-            endingLineNumber = "1539"
+            startingLineNumber = "1541"
+            endingLineNumber = "1541"
             landmarkName = "-textTapped:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2454,11 +2358,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
+            timestampString = "518417423.397592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1543"
-            endingLineNumber = "1543"
+            startingLineNumber = "1545"
+            endingLineNumber = "1545"
             landmarkName = "-textTapped:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2470,11 +2374,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ListeningViewController.m"
-            timestampString = "514969451.193769"
+            timestampString = "518080406.876318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "581"
-            endingLineNumber = "581"
+            startingLineNumber = "582"
+            endingLineNumber = "582"
             landmarkName = "-checkFollowingUser:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2502,11 +2406,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ListeningViewController.m"
-            timestampString = "514969451.193769"
+            timestampString = "518080406.876318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "560"
-            endingLineNumber = "560"
+            startingLineNumber = "561"
+            endingLineNumber = "561"
             landmarkName = "-WebServiceCallFinishWithData:withFlag:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2518,11 +2422,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ListeningViewController.m"
-            timestampString = "514969451.193769"
+            timestampString = "518080406.876318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
+            startingLineNumber = "395"
+            endingLineNumber = "395"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2534,11 +2438,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ListeningViewController.m"
-            timestampString = "514969451.193769"
+            timestampString = "518080406.876318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "334"
-            endingLineNumber = "334"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2550,11 +2454,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ListeningViewController.m"
-            timestampString = "514965807.568295"
+            timestampString = "518080406.876318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "-unfriendAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2566,28 +2470,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518090444.016447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1935"
-            endingLineNumber = "1935"
+            startingLineNumber = "1942"
+            endingLineNumber = "1942"
             landmarkName = "-calculateStartTime:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/MessagePage.m"
-            timestampString = "515395671.942676"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
-            landmarkName = "-WebServiceCallFinishWithData:withFlag:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2614,11 +2502,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
             landmarkName = "-showJoinMember:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2662,11 +2550,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518090444.016447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1712"
-            endingLineNumber = "1712"
+            startingLineNumber = "1719"
+            endingLineNumber = "1719"
             landmarkName = "-changeTabBarIcon"
             landmarkType = "7">
          </BreakpointContent>
@@ -2742,27 +2630,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserViewController.m"
-            timestampString = "516700802.206422"
+            timestampString = "518417423.397592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "977"
-            endingLineNumber = "977"
-            landmarkName = "-btnFollowAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserViewController.m"
-            timestampString = "515416495.965793"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "953"
-            endingLineNumber = "953"
+            startingLineNumber = "978"
+            endingLineNumber = "978"
             landmarkName = "-btnFollowAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2774,11 +2646,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ListeningViewController.m"
-            timestampString = "514969042.67574"
+            timestampString = "518080406.876318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "-CancelUnfriendAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2790,11 +2662,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/ListeningViewController.m"
-            timestampString = "514969197.539456"
+            timestampString = "518080406.876318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "-ConfirmUnfriendAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2898,54 +2770,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "841"
-            endingLineNumber = "841"
-            landmarkName = "-actionSheet:clickedButtonAtIndex:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "839"
-            endingLineNumber = "839"
-            landmarkName = "-actionSheet:clickedButtonAtIndex:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1241"
-            endingLineNumber = "1241"
-            landmarkName = "-reportToAdmin"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -2966,11 +2790,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518345752.074491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1101"
-            endingLineNumber = "1101"
+            startingLineNumber = "1107"
+            endingLineNumber = "1107"
             landmarkName = "-setDataToVewpage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2982,11 +2806,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518078313.420867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "318"
-            endingLineNumber = "318"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "-flokEdit:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2998,43 +2822,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518078313.420867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "759"
-            endingLineNumber = "759"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "755"
-            endingLineNumber = "755"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "-getFlokList"
             landmarkType = "7">
          </BreakpointContent>
@@ -3046,28 +2838,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518078313.420867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
             landmarkName = "-flokEdit:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1148"
-            endingLineNumber = "1148"
-            landmarkName = "-flokLike:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3110,11 +2886,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518078313.420867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1181"
-            endingLineNumber = "1181"
+            startingLineNumber = "1186"
+            endingLineNumber = "1186"
             landmarkName = "-flokDisLike:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3126,11 +2902,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/TreePage.m"
-            timestampString = "516178645.782819"
+            timestampString = "518078313.420867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1191"
-            endingLineNumber = "1191"
+            startingLineNumber = "1196"
+            endingLineNumber = "1196"
             landmarkName = "-flokDisLike:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3174,7 +2950,7 @@
                   moduleName = "Flok"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nits_mac3/Documents/New%20Folder%20With%20Items/flok-git/Flok/Flok/EditProfileViewController.m"
-                  timestampString = "516864573.365506"
+                  timestampString = "518417756.274883"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "131"
@@ -3189,7 +2965,7 @@
                   moduleName = "Flok"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nits_mac3/Documents/New%20Folder%20With%20Items/flok-git/Flok/Flok/EditProfileViewController.m"
-                  timestampString = "516864573.366827"
+                  timestampString = "518417756.276136"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "132"
@@ -3206,11 +2982,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "515500866.819283"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1036"
-            endingLineNumber = "1036"
+            startingLineNumber = "1038"
+            endingLineNumber = "1038"
             landmarkName = "-WebServiceCallFinishWithData:withFlag:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3238,11 +3014,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/FindFriendsViewController.m"
-            timestampString = "515500931.172494"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "468"
-            endingLineNumber = "468"
+            startingLineNumber = "470"
+            endingLineNumber = "470"
             landmarkName = "-getContactsWithAddressBook:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3445,28 +3221,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Flok/TreePage.m"
-            timestampString = "516189207.577777"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1292"
-            endingLineNumber = "1292"
-            landmarkName = "-WebServiceCallFinishWithData:withFlag:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Flok/NotificationPage.m"
-            timestampString = "516691547.337589"
+            timestampString = "518087519.448899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3478,75 +3238,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516782702.262778"
+            timestampString = "518345752.074491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-viewDidAppear:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516783675.059107"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "-viewWillAppear:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516783676.036731"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "-viewDidAppear:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516783679.067546"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "-viewDidDisappear:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1288"
-            endingLineNumber = "1288"
+            startingLineNumber = "1295"
+            endingLineNumber = "1295"
             landmarkName = "-myNotificationMethod:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3558,11 +3254,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516784031.51982"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "532"
-            endingLineNumber = "532"
+            startingLineNumber = "534"
+            endingLineNumber = "534"
             landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3574,43 +3270,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516863009.131626"
+            timestampString = "518079055.492322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1002"
-            endingLineNumber = "1002"
-            landmarkName = "-setDataToVewpage:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516863013.787528"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "953"
-            endingLineNumber = "953"
-            landmarkName = "-setDataToVewpage:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516864552.521509"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "-joinfolkTap:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3622,11 +3286,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516864559.353232"
+            timestampString = "518345752.074491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "990"
-            endingLineNumber = "990"
+            startingLineNumber = "1068"
+            endingLineNumber = "1068"
             landmarkName = "-setDataToVewpage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3638,11 +3302,171 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516864563.271859"
+            timestampString = "518345752.074491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "997"
-            endingLineNumber = "997"
+            startingLineNumber = "1077"
+            endingLineNumber = "1077"
+            landmarkName = "-setDataToVewpage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flok/TreePage.m"
+            timestampString = "518078313.420867"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1177"
+            endingLineNumber = "1177"
+            landmarkName = "-flokLike:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flok/NotificationPage.m"
+            timestampString = "518087519.448899"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flok/NotificationPage.m"
+            timestampString = "518087519.448899"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "329"
+            endingLineNumber = "329"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flok/NotificationPage.m"
+            timestampString = "518087519.448899"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flok/NotificationPage.m"
+            timestampString = "518087519.448899"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "514"
+            endingLineNumber = "514"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flok/NotificationPage.m"
+            timestampString = "518087519.448899"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "637"
+            endingLineNumber = "637"
+            landmarkName = "-calculateTime:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flok/ChatViewController.m"
+            timestampString = "518077535.396629"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "-calculateTime:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flok/ChatViewController.m"
+            timestampString = "518077655.722334"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "769"
+            endingLineNumber = "769"
+            landmarkName = "-sendChatMessage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flok/TreePage.m"
+            timestampString = "518090182.890606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "-pullToRefresh"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flok/OtherUserFlok.m"
+            timestampString = "518341881.89416"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "854"
+            endingLineNumber = "854"
             landmarkName = "-setDataToVewpage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3654,11 +3478,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516864565.754322"
+            timestampString = "518341946.585434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1020"
-            endingLineNumber = "1020"
+            startingLineNumber = "960"
+            endingLineNumber = "960"
             landmarkName = "-setDataToVewpage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3670,11 +3494,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516864568.546498"
+            timestampString = "518345686.627119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1031"
-            endingLineNumber = "1031"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
+            landmarkName = "-joinfolkTap:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flok/OtherUserFlok.m"
+            timestampString = "518345814.146131"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "992"
+            endingLineNumber = "992"
             landmarkName = "-setDataToVewpage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3686,11 +3526,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516864574.223062"
+            timestampString = "518345815.330328"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1062"
-            endingLineNumber = "1062"
+            startingLineNumber = "999"
+            endingLineNumber = "999"
             landmarkName = "-setDataToVewpage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3702,11 +3542,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flok/OtherUserFlok.m"
-            timestampString = "516864588.673356"
+            timestampString = "518345818.76245"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1071"
-            endingLineNumber = "1071"
+            startingLineNumber = "1022"
+            endingLineNumber = "1022"
+            landmarkName = "-setDataToVewpage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flok/OtherUserFlok.m"
+            timestampString = "518345819.554523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1033"
+            endingLineNumber = "1033"
             landmarkName = "-setDataToVewpage:"
             landmarkType = "7">
          </BreakpointContent>

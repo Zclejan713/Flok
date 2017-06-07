@@ -261,6 +261,7 @@
     
     NSString *formatString = NSLocalizedString(@"%@ ago", @"Used to say how much time has passed. e.g. '2 hr ago'");
     NSLog(@"%@",[NSString stringWithFormat:formatString, [formatter stringFromDateComponents:components]]);
+    NSLog(@"check time-%@",[NSString stringWithFormat:formatString, [formatter stringFromDateComponents:components]]);
     return [NSString stringWithFormat:formatString, [formatter stringFromDateComponents:components]];
     
 }

@@ -56,11 +56,10 @@
 
 -(void)acceptRequest:(id)sender{
     [SVProgressHUD showWithStatus:@"Please wait.."];
-    
-   // NSString *userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
+    NSString *strTime=[self getCurrentDate];
     UIButton *btn=(UIButton*)sender;
     NSDictionary *dict=[arrList objectAtIndex:[btn tag]];
-    NSString *dataString=[NSString stringWithFormat:@"notification_id=%@&user_id=%@&flok_id=%@",[dict valueForKey:@"id"],[dict valueForKey:@"accept_user_id"],[dict valueForKey:@"flok_id"]];
+    NSString *dataString=[NSString stringWithFormat:@"notification_id=%@&user_id=%@&flok_id=%@&date_time=%@",[dict valueForKey:@"id"],[dict valueForKey:@"accept_user_id"],[dict valueForKey:@"flok_id"],strTime];
     [[Global sharedInstance] setDelegate:(id)self];
     [[Global sharedInstance] serviceCall:dataString servicename:@"flok/acceptJoinRequest" serviceType:@"POST"];
 }
@@ -71,19 +70,19 @@
     NSDictionary *dict=[arrList objectAtIndex:[btn tag]];
    // NSString *userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
     NSString *requestUserId=[dict valueForKey:@"user_id"];
-    
-    NSString *dataString=[NSString stringWithFormat:@"notification_id=%@&user_id=%@&flok_id=%@",[dict valueForKey:@"id"],requestUserId,[dict valueForKey:@"flok_id"]];
+    NSString *strTime=[self getCurrentDate];
+    NSString *dataString=[NSString stringWithFormat:@"notification_id=%@&user_id=%@&flok_id=%@&date_time=%@",[dict valueForKey:@"id"],requestUserId,[dict valueForKey:@"flok_id"],strTime];
     [[Global sharedInstance] setDelegate:(id)self];
     [[Global sharedInstance] serviceCall:dataString servicename:@"flok/rejectJoinRequest" serviceType:@"POST"];
 }
 
 -(void)acceptFollow:(id)sender{
     [SVProgressHUD showWithStatus:@"Please wait.."];
-    
-   NSString *userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
+    NSString *strTime=[self getCurrentDate];
+    NSString *userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
     UIButton *btn=(UIButton*)sender;
     NSDictionary *dict=[arrList objectAtIndex:[btn tag]];
-    NSString *dataString=[NSString stringWithFormat:@"follow_id=%@&user_id=%@",[dict valueForKey:@"user_id"],userId];
+    NSString *dataString=[NSString stringWithFormat:@"follow_id=%@&user_id=%@&date_time=%@",[dict valueForKey:@"user_id"],userId,strTime];
     [[Global sharedInstance] setDelegate:(id)self];
     [[Global sharedInstance] serviceCall:dataString servicename:@"users/acceptfollower" serviceType:@"POST"];
     
@@ -173,24 +172,7 @@
             [attributedText addAttribute: NSForegroundColorAttributeName value: [UIColor orangeColor] range: range2];
             tCell.lblNotification.attributedText = attributedText;
 
-           /* NSRange range1 = [tCell.lblNotification.text rangeOfString:[dict valueForKey:@"full_name"]];
-             NSRange range2 = [tCell.lblNotification.text rangeOfString:[dict valueForKey:@"flok_title"]];
-            
-            NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:tCell.lblNotification.text];
-            [attributedText addAttribute: NSForegroundColorAttributeName value: [UIColor blackColor] range: range1];
-            
-            [attributedText setAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:boldTextFontSize]}
-                                    range:range1];
-            tCell.lblNotification.attributedText = attributedText;
            
-            
-            NSMutableAttributedString *attributedText2 = [[NSMutableAttributedString alloc] initWithString:tCell.lblNotification.text];
-            [attributedText2 addAttribute: NSForegroundColorAttributeName value: [UIColor orangeColor] range: range2];
-            [attributedText2 setAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:boldTextFontSize]}
-                                    range:range2];
-            tCell.lblNotification.attributedText = attributedText2;*/
-            
-            //tCell.tvdesc.textColor=[UIColor grayColor];
             NSString *userImg=[dict valueForKey:@"user_image"];
             if ([userImg length]==0) {
                 tCell.ProfileImage.image=[UIImage imageNamed:@"no-profile"];
@@ -282,13 +264,6 @@
             [attributedText addAttribute: NSForegroundColorAttributeName value: [UIColor orangeColor] range: range2];
             tCell.lblNotification.attributedText = attributedText;
             
-           
-            /*NSMutableAttributedString *attributedText2 = [[NSMutableAttributedString alloc] initWithString:tCell.lblNotification.text];
-            [attributedText2 addAttribute: NSForegroundColorAttributeName value: [UIColor orangeColor] range: range2];
-            [attributedText2 setAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:boldTextFontSize]}
-                                     range:range2];
-            tCell.lblNotification.attributedText = attributedText2;*/
-
             
             tCell.Profileimg.layer.cornerRadius = 5;
             tCell.Profileimg.layer.masksToBounds = YES;
@@ -459,10 +434,39 @@
             }
             else if ([isFriend isEqualToString:@"Like"]) {
                 
+                tCell.lblNotification.text=[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"message"],[dict valueForKey:@"flok_title"]];
+                //tCell.lblNotification.text=[dict valueForKey:@"message"];
+                
+                CGFloat boldTextFontSize = 12.0f;
+                NSRange range1 = [tCell.lblNotification.text rangeOfString:[dict valueForKey:@"full_name"]];
+                NSRange range2 = [tCell.lblNotification.text rangeOfString:[dict valueForKey:@"flok_title"]];
+                NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:tCell.lblNotification.text];
+                
+                [attributedText setAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:boldTextFontSize]}
+                                        range:range1];
+                
+                [attributedText addAttribute: NSForegroundColorAttributeName value: [UIColor blackColor] range: range1];
+                [attributedText addAttribute: NSForegroundColorAttributeName value: [UIColor orangeColor] range: range2];
+                tCell.lblNotification.attributedText = attributedText;
+                
                 tCell.imgIcon.image=[UIImage imageNamed:@"like"];
                 
             }
             else if ([isFriend isEqualToString:@"Dislike"]) {
+                tCell.lblNotification.text=[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"message"],[dict valueForKey:@"flok_title"]];
+                //tCell.lblNotification.text=[dict valueForKey:@"message"];
+                
+                CGFloat boldTextFontSize = 12.0f;
+                NSRange range1 = [tCell.lblNotification.text rangeOfString:[dict valueForKey:@"full_name"]];
+                NSRange range2 = [tCell.lblNotification.text rangeOfString:[dict valueForKey:@"flok_title"]];
+                NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:tCell.lblNotification.text];
+                
+                [attributedText setAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:boldTextFontSize]}
+                                        range:range1];
+                
+                [attributedText addAttribute: NSForegroundColorAttributeName value: [UIColor blackColor] range: range1];
+                [attributedText addAttribute: NSForegroundColorAttributeName value: [UIColor orangeColor] range: range2];
+                tCell.lblNotification.attributedText = attributedText;
                 
                 tCell.imgIcon.image=[UIImage imageNamed:@"down-arrow-1"];
             }
@@ -630,6 +634,7 @@
     
     NSString *formatString = NSLocalizedString(@"%@ ago", @"Used to say how much time has passed. e.g. '2 hr ago'");
     NSLog(@"===%@",[NSString stringWithFormat:formatString, [formatter stringFromDateComponents:components]]);
+    NSLog(@"check time-%@",[NSString stringWithFormat:formatString, [formatter stringFromDateComponents:components]]);
     return [NSString stringWithFormat:formatString, [formatter stringFromDateComponents:components]];
     
 }
@@ -819,5 +824,16 @@
     tabBarItem1.selectedImage = [[UIImage imageNamed:@"message-orange-round"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     
     
+}
+
+-(NSString *)getCurrentDate{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    
+    NSTimeZone *gmt = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    [dateFormatter setTimeZone:gmt];
+    NSString *timeStamp = [dateFormatter stringFromDate:[NSDate date]];
+    return timeStamp;
 }
 @end

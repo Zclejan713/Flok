@@ -31,6 +31,7 @@
     int feed_state;
      NSTimer *updateTimer;
     UIRefreshControl *refreshControl;
+    UIRefreshControl *refreshControlHot;
 }
 -(IBAction)newflok:(id)sender;
 -(void)changeTabBarIcon;
