@@ -25,7 +25,7 @@
     DistanceSlider.value = 10;
     
     miles=[[NSUserDefaults standardUserDefaults] objectForKey:@"miles"];
-    scrlMain.contentSize=CGSizeMake(SCREEN_WIDTH, 580);
+    scrlMain.contentSize=CGSizeMake(SCREEN_WIDTH, 600);
     
     slider = [[RangeSlider alloc] initWithFrame:CGRectMake(0, 0,vwTemp.frame.size.width, 30)]; // the slider enforces a height of 30, although I'm not sure that this is necessary
     
@@ -147,6 +147,13 @@
     miles=[@((int)sender.value) stringValue];
     [prefs setObject:miles forKey:@"distance"];
     [prefs synchronize];
+    
+    CGRect trackRect = [sender trackRectForBounds:slider.bounds];
+    CGRect thumbRect = [sender thumbRectForBounds:slider.bounds
+                                             trackRect:trackRect
+                                                 value:sender.value];
+    
+    lblMiles.center = CGPointMake(thumbRect.origin.x + sender.frame.origin.x, sender.frame.origin.y - 15);
 }
 
 - (IBAction)ageSliderValueChanged:(UISlider *)sender {
@@ -172,6 +179,7 @@
 
 }
 - (void)reportForAge:(RangeSlider *)sender {
+    UISlider *agesleder=(UISlider*)sender;
     
     sliderMin=[NSString stringWithFormat:@"%f",slider.min];
     sliderMax =[NSString stringWithFormat:@"%f",slider.max];
@@ -181,8 +189,21 @@
     lblMinAge.text=[NSString stringWithFormat:@"%.f", 16+(44.5*slider.min)];
     lblMaxAge.text=[NSString stringWithFormat:@"%.f",16+(44.0*slider.max)];
     
+    /*float sliderRange = agesleder.frame.size.width - agesleder.currentThumbImage.size.width;
+    float sliderOrigin = agesleder.frame.origin.x + (agesleder.currentThumbImage.size.width / 2.0);
     
+     float sliderValueToPixels = (((agesleder.value - agesleder.minimumValue)/(agesleder.maximumValue - agesleder.minimumValue)) * sliderRange) + sliderOrigin;
     
+    NSLog(@"sliderValueToPixels---%f",sliderValueToPixels);
+    
+  //  CGRect trackRect = [agesleder trackRectForBounds:agesleder.bounds];
+    CGRect thumbRect = [agesleder thumbRectForBounds:agesleder.bounds
+                                        trackRect:trackRect
+                                            value:agesleder.value];
+    
+    lblMinAge.center = CGPointMake(thumbRect.origin.x + agesleder.frame.origin.x, agesleder.frame.origin.y - 15);*/
+    
+  //  lblMinAge.center = CGPointMake(thumbRect.origin.x + agesleder.frame.origin.x, agesleder.frame.origin.y - 15);
 
     
 }
@@ -316,15 +337,19 @@
           NSString *max=[NSString stringWithFormat:@"%@",[dict objectForKey:@"max_age"]];
           NSString *min=[NSString stringWithFormat:@"%@",[dict objectForKey:@"min_age"]];
           
-         // float floatMax=[[dict objectForKey:@"max_age"] floatValue];
-         // float floatMin=[[dict objectForKey:@"max_age"] floatValue];
-          
          floatMax=[[dict objectForKey:@"sliderMax"] floatValue];
          floatMin=[[dict objectForKey:@"sliderMin"] floatValue];
          floatGender=[[dict objectForKey:@"sliderGender"] floatValue];
           DistanceSlider.value=floatGender;
           sliderMin=[NSString stringWithFormat:@"%@",[dict objectForKey:@"min_age"]];
           sliderMax=[NSString stringWithFormat:@"%@",[dict objectForKey:@"max_age"]];
+          
+          CGRect trackRect = [DistanceSlider trackRectForBounds:DistanceSlider.bounds];
+          CGRect thumbRect = [DistanceSlider thumbRectForBounds:DistanceSlider.bounds
+                                                   trackRect:trackRect
+                                                       value:DistanceSlider.value];
+          
+          lblMiles.center = CGPointMake(thumbRect.origin.x + DistanceSlider.frame.origin.x+15,  DistanceSlider.frame.origin.y -15);
           
           if ([max length]!=0) {
               lblMaxAge.text=max;
@@ -348,7 +373,7 @@
               
               [slider setMin:floatMin];
           }
-          
+           lblMiles.text =[NSString stringWithFormat:@"%@ miles",[@((int)DistanceSlider.value) stringValue]];
       }
         
         

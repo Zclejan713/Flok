@@ -26,6 +26,10 @@
     [super viewDidLoad];
      NSLog(@"FindFriendsViewController");
     
+    arrSection=[[NSArray alloc] initWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil];
+    
+    
+    
     
     app= (AppDelegate *)[UIApplication sharedApplication].delegate;
     userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
@@ -495,6 +499,20 @@
     }
     return dict;
 }
+
+#pragma mark- Table datasource & delegate
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return [arrSection count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [arrSection objectAtIndex:section];
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 54;

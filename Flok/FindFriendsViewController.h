@@ -38,6 +38,8 @@
     NSArray *arrAppUser;
     NSMutableArray *arrPhone;
     NSMutableArray *arrFacebook;
+    NSArray *arrSection;
+    NSArray *animalSectionTitles;
     //NSArray *arrUsers;
     NSArray *arrAppFbUser;
     NSString *strSessName,*strSessVal;

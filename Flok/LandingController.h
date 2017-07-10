@@ -14,5 +14,6 @@
     NSDictionary *userDetailsDic;
      UITabBar *tabBar ;
 }
+@property (strong,nonatomic) UIWindow *window;
 @end
 

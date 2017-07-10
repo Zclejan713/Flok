@@ -114,16 +114,37 @@
     [refreshControl addTarget:self action:@selector(pullToRefresh) forControlEvents:UIControlEventValueChanged];
     [refreshControlHot addTarget:self action:@selector(pullToRefresh) forControlEvents:UIControlEventValueChanged];
     
+   /* UITabBar *tabBar = self.tabBarController.tabBar;
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
+    button.frame = CGRectMake(0.0, 0.0, 60, 60);
+    [button setBackgroundImage:[UIImage imageNamed:@"acorn"] forState:UIControlStateNormal];
+    //[button setBackgroundImage:highlightImage forState:UIControlStateHighlighted];
     
+    CGFloat heightDifference = 60 - tabBar.frame.size.height;
+    if (heightDifference < 0)
+        button.center =tabBar.center;
+    else
+    {
+        CGPoint center =tabBar.center;
+        center.y = center.y - heightDifference/2.0;
+        button.center = center;
+    }
+    
+    [self.view addSubview:button];
+    [button bringSubviewToFront:self.view];*/
 
 }
-
+-(void)willAppearIn:(UINavigationController *)navigationController
+{
+    [self addCenterButtonWithImage:[UIImage imageNamed:@"acorn.png"] highlightImage:[UIImage imageNamed:@"acorn.png"]];
+}
 -(void)viewWillAppear:(BOOL)animated
 {
      [btnBubble setFrame:CGRectMake(btnBubble.frame.origin.x,-60, btnBubble.frame.size.width, btnBubble.frame.size.height)];
     [super viewWillAppear:YES];
     vwLocService.hidden=YES;
-   
+    [self addCenterButtonWithImage:[UIImage imageNamed:@"acorn.png"] highlightImage:[UIImage imageNamed:@"acorn.png"]];
     
     miles=[[NSUserDefaults standardUserDefaults] objectForKey:@"miles"];
     coming_miles=[[NSUserDefaults standardUserDefaults] objectForKey:@"miles"];
@@ -389,10 +410,16 @@
 
 }
 -(IBAction)creatFlokAction:(id)sender{
-   
-    vwPost.hidden=YES;
+    
+   vwPost.hidden=YES;
     CreateFlokPage *vc=(CreateFlokPage*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"CreateFlokPage"];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)sendInviteMsg{
+    
+    NSString *dataString=[NSString stringWithFormat:@"AppSid=7zvVZ3z99lNth97njshMpckn9bJo0F&Recipient=918436773925&Body=Test msg"];
+    [self serviceCall:dataString servicename:@"" serviceType:@"POST"];
 }
 -(IBAction)FindFriends:(id)sender{
     
@@ -1954,6 +1981,115 @@
     [dateFormatter setTimeZone:gmt];
     NSString *timeStamp = [dateFormatter stringFromDate:[NSDate date]];
     return timeStamp;
+}
+
+
+-(void)serviceCall:(NSString *)dataString servicename:(NSString *)serviceName serviceType:(NSString*)serviceType
+{
+    if([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable)
+    {
+        [SVProgressHUD dismiss];
+        [Global showNetworkError];
+        return;
+    }
+    if ([serviceName isEqualToString:@"flok/getChatMsg"] ||[serviceName isEqualToString:@"flok/sendChat"]) {
+        
+        
+    }else{
+        //  [SVProgressHUD showWithStatus:@"Please wait.."];
+    }
+    
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    [sessionConfiguration setAllowsCellularAccess:YES];
+    [sessionConfiguration setHTTPAdditionalHeaders:@{ @"Accept" : @"application/json" }];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+    
+    NSURL *url;
+    if ([serviceType isEqualToString:@"POST"])
+    {
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"http://api.unifonic.com/rest/Messages/Send"]];
+        
+    }
+    NSLog(@"complete url: >>> %@",url);
+    NSLog(@"datastring: >>> %@",dataString);
+    
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:1200000000000000];
+    if ([serviceType isEqualToString:@"POST"])
+    {
+        request.HTTPBody = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+    }
+    request.HTTPMethod = serviceType;
+    
+    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                                          {
+                                              if(error)
+                                              {
+                                                  NSLog(@"%@",[NSString stringWithFormat:@"Connection failed.: %@.", [error description]]);
+                                                  
+                                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                                      
+                                                      [[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:NO];
+                                                      [SVProgressHUD dismiss];
+                                                      
+                                                  });
+                                                  return;
+                                              }
+                                              NSArray * cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:request.URL];
+                                              for (NSHTTPCookie * cookie in cookies)
+                                              {
+                                                  NSLog(@"%@=%@", cookie.name, cookie.value);
+                                              }
+                                              
+                                              // Update the View
+                                              dispatch_async(dispatch_get_main_queue(), ^{
+                                                  [[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:NO];
+                                                  [SVProgressHUD dismiss];
+                                                  
+                                                  /* NSString *strReturn=[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];*/
+                                                  NSDictionary *tdict=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                                                  NSDictionary *dict=[Global cleanJsonToObject:tdict];
+                                                  
+                                                  if (dict.count>0) {
+                                                      
+                                                      
+                                                  }else{
+                                                      
+                                                      
+                                                      
+                                                  }
+                                                  
+                                                  
+                                                  
+                                              });
+                                          }];
+    
+    // Initiate the Request
+    [postDataTask resume];
+    
+}
+
+
+-(void) addCenterButtonWithImage:(UIImage*)buttonImage highlightImage:(UIImage*)highlightImage
+{
+    UITabBar *tabBar = self.tabBarController.tabBar;
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
+    button.frame = CGRectMake(0.0, 0.0, 60, 60);
+    [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [button setBackgroundImage:highlightImage forState:UIControlStateHighlighted];
+    
+    CGFloat heightDifference = 60 - tabBar.frame.size.height;
+    if (heightDifference < 0)
+        button.center =tabBar.center;
+    else
+    {
+        CGPoint center =tabBar.center;
+        center.y = center.y - heightDifference/2.0;
+        button.center = center;
+    }
+    
+    [self.view addSubview:button];
 }
 
 @end

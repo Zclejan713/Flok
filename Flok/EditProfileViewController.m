@@ -20,7 +20,8 @@
     
     NSLog(@"EditProfileViewController");
      scroll.contentSize=CGSizeMake(self.view.frame.size.width,900);
-    
+    [self adddonebutton:tfSchool];
+    [self adddonebutton:tfWork];
     imgTextBg.layer.cornerRadius=4;
     imgTextBg.layer.borderWidth=1;
     imgTextBg.layer.borderColor=[UIColor lightGrayColor].CGColor;
@@ -342,10 +343,7 @@
 //    {
 //        [Global showOnlyAlert:@"Empty!" :@"Add bio to your profile"];
 //    }
-    else if (tfWork.text.length==0)
-    {
-        [Global showOnlyAlert:@"Empty!" :@"Please enter your work"];
-    }
+    
     else if (tfSchool.text.length==0)
     {
         [Global showOnlyAlert:@"Empty!" :@"Please enter your school"];
@@ -360,7 +358,13 @@
         if (isImageEdit==YES) {
            // [self uploadPhoto:@"users/updateProfile"];
         }else{
-            NSString *dataString=[NSString stringWithFormat:@"work=%@&school=%@&about_me=%@&user_id=%@",tfWork.text,tfSchool.text,tvAboutMe.text,userId];
+            NSString *work;
+            if ([tfWork.text length]==0) {
+                work=@"";
+            }else{
+                work=tfWork.text;
+            }
+            NSString *dataString=[NSString stringWithFormat:@"work=%@&school=%@&about_me=%@&user_id=%@",work,tfSchool.text,tvAboutMe.text,userId];
             [[Global sharedInstance] setDelegate:(id)self];
             [[Global sharedInstance] serviceCall:dataString servicename:@"users/updateProfile" serviceType:@"POST"];
         }
@@ -793,7 +797,19 @@
     [tfYear resignFirstResponder];*/
     
 }
-
+-(void)adddonebutton:(UITextField*)tf
+{
+    UIToolbar * toolBar = [[UIToolbar alloc]init];
+    toolBar.barTintColor=RGB(239, 244, 244);
+    [toolBar sizeToFit];
+    toolBar.barStyle = UIBarStyleDefault;
+    
+    UIBarButtonItem *doneBtn=[[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneTap:)];
+    UIBarButtonItem *space=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [toolBar setItems:[NSArray arrayWithObjects:space,doneBtn, nil]];
+    tf.inputAccessoryView = toolBar;
+    
+}
 -(UIToolbar *)keyboard_toolbar
 {
     UIToolbar * keyboardToolBar = [[UIToolbar alloc]init];
@@ -948,6 +964,13 @@
     } else {
         [self presentViewController:controller animated:YES completion:NULL];
     }
+}
+
+-(void)doneTap:(UIButton*)sender
+{
+    [self.view endEditing:YES];
+    [tfSchool resignFirstResponder];
+    [tfWork resignFirstResponder];
 }
 @end
 

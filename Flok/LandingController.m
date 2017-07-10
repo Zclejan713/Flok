@@ -9,7 +9,6 @@
 #import "LandingController.h"
 #import "AppDelegate.h"
 #import "RegistraionPage1.h"
-
 @interface LandingController ()
 {
     IBOutlet UIButton *btnLogin;
@@ -26,6 +25,8 @@
     [super viewDidLoad];
     NSLog(@"LandingController");
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    
+    
     
     [self.navigationController setNavigationBarHidden:YES];
     self.view.backgroundColor=[UIColor clearColor];
@@ -63,6 +64,10 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     UIViewController *myVC =(UIViewController*)[storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
     [self.navigationController pushViewController:myVC animated:YES];
+    
+   /* self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[TabBarViewController alloc] init];
+    [self.window makeKeyAndVisible];*/
 }
 
 
@@ -197,5 +202,73 @@
     }
 }
 
+
+-(void)setUpTabBar{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UIViewController *myVC =[storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+    
+   // UIImage* tabBarBackground = [UIImage imageNamed:@"fot_bg"];
+   // [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+    //[[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"fot_bg"]];
+    
+    UITabBarController *tabBarController =(UITabBarController *)myVC;
+    
+    tabBar = tabBarController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+    UITabBarItem *tabBarItem4 = [tabBar.items objectAtIndex:3];
+    UITabBarItem *tabBarItem5 = [tabBar.items objectAtIndex:4];
+    
+    
+    [tabBarItem1 setImage:[[UIImage imageNamed:@"gray-tree"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    tabBarItem1.selectedImage = [[UIImage imageNamed:@"gray-tree"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    
+    [tabBarItem1 setTitle:@"Tree"];
+    
+    [tabBarItem2 setImage:[[UIImage imageNamed:@"notification-grey"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    tabBarItem2.selectedImage = [[UIImage imageNamed:@"notification-grey"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    
+    [tabBarItem2 setTitle:@"Notifications"];
+    
+    [tabBarItem3 setImage:[[UIImage imageNamed:@"acorn"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    tabBarItem3.selectedImage = [[UIImage imageNamed:@"acorn"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    [tabBarItem3 setBadgeColor:[UIColor greenColor]];
+    
+    [tabBarItem3 setTitle:@"Flok"];
+    
+    [tabBarItem4 setImage:[[UIImage imageNamed:@"message-grey"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    tabBarItem4.selectedImage = [[UIImage imageNamed:@"message-grey"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    
+    [tabBarItem4 setTitle:@"Messages"];
+    
+    [tabBarItem5 setImage:[[UIImage imageNamed:@"user"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    tabBarItem5.selectedImage = [[UIImage imageNamed:@"user"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    
+    [tabBarItem5 setTitle:@"Me"];
+    
+    // [[tabBar.items objectAtIndex:3] setBadgeValue:@"1"];
+    
+  /*  UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0.0, 0.0,80, 80);
+    [button setBackgroundImage:[UIImage imageNamed:@"acorn"] forState:UIControlStateNormal];
+    //[button setBackgroundImage:highlightImage forState:UIControlStateHighlighted];
+    
+    CGFloat heightDifference = 80 - tabBar.frame.size.height;
+    if (heightDifference < 0)
+        button.center = tabBar.center;
+    else
+    {
+        CGPoint center = tabBar.center;
+        center.y = center.y - heightDifference/2.0;
+        button.center = center;
+    }
+    
+    [self.view addSubview:button];*/
+    
+    [self.navigationController pushViewController:myVC animated:NO];
+    
+    
+}
 
 @end

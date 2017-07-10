@@ -484,7 +484,7 @@ NSLog(@"clearView1tap");
     [Global disableAfterClick:btn];
     
     int limit=[tfFlokLimit.text intValue];
-    if (limit>300) {
+    if (limit>1000) {
        // [AppWindow makeToast:@"Request too high, why not click the ‘unlimited box’?" duration:2 position:CSToastPositionBottom];
         
         [[[UIAlertView alloc]initWithTitle:@"Request too high" message:@"Why not click the ‘unlimited box'?" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
@@ -544,7 +544,7 @@ NSLog(@"clearView1tap");
     }else{
         [imgCheck setImage:[UIImage imageNamed:@"check"]];
         isCheck=YES;
-        tfFlokLimit.text=@"300";
+        tfFlokLimit.text=@"1000";
         [tfFlokLimit setUserInteractionEnabled:NO];
     }
 }
@@ -663,8 +663,9 @@ NSLog(@"clearView1tap");
         tfMinfolk.inputView=pickerMaxmin;
         [self adddonebutton:tfMinfolk];
         
-    }
-    else if (textField==tfMaxfolk){
+   }else if (textField==tfTitle){
+       lblPlaceHolder.hidden=YES;
+   }else if (textField==tfMaxfolk){
         if (arrPeople.count==0) {
             return NO;
         }
@@ -678,6 +679,9 @@ NSLog(@"clearView1tap");
         tfMaxfolk.inputView=pickerMaxmin;
         [self adddonebutton:tfMaxfolk];
 
+    }else if (textField==tfTitle){
+        
+        lblPlaceHolder.hidden=YES;
     }
     else{
         //[self adddonebutton:textField];
@@ -707,6 +711,20 @@ NSLog(@"clearView1tap");
     
     if (textField==tfTitle) {
         [self colorWord:textField.text];
+        
+        if(range.length + range.location > textField.text.length)
+        {
+            return NO;
+        }
+        
+        NSUInteger newLength = [textField.text length] + [string length] - range.length;
+        if (newLength <= 60) {
+            lblMaxLimit.hidden=YES;
+            return YES;
+        }else{
+            lblMaxLimit.hidden=NO;
+            return NO;
+        }
     }
    /*     }*/
     return YES;
@@ -734,7 +752,8 @@ NSLog(@"clearView1tap");
 //        } completion:NULL];
         [textView resignFirstResponder];
     }
-    return  YES;
+    
+        return  YES;
 }
 
 -(void)textFieldDidChange :(UITextField *)textField{
@@ -1262,8 +1281,8 @@ calloutAccessoryControlTapped:(UIControl *)control
 -(void)doneTap:(UIButton*)sender
 {
     int limit=[tfFlokLimit.text intValue];
-    if (limit>300) {
-        [AppWindow makeToast:@"You can't add people more then 300" duration:2 position:CSToastPositionBottom];
+    if (limit>1000) {
+        [AppWindow makeToast:@"You can't add people more then 1000" duration:2 position:CSToastPositionBottom];
         tfFlokLimit.text=@"";
     }
     [self.view endEditing:YES];
@@ -1309,7 +1328,7 @@ calloutAccessoryControlTapped:(UIControl *)control
     if (tfTitle.text.length==0) {
         [AppWindow makeToast:@"Enter flok title" duration:2 position:CSToastPositionBottom];
     }
-    else if (tfTitle.text.length>100){
+    else if (tfTitle.text.length>60){
         [AppWindow makeToast:@"Flok Title may not exceed 100 character limit." duration:2 position:CSToastPositionBottom];
     }
     

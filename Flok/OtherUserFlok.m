@@ -1063,7 +1063,7 @@ static CGFloat frameWidth;
     
     BOOL isExp=[[dict valueForKey:@"isExpired"] boolValue];
     if (isExp==YES) {
-        btnJoinfolk.hidden=YES;
+       // btnJoinfolk.hidden=YES;               //  block in second phases
         [vwComment setFrame:CGRectMake(0, self.view.frame.size.height,vwComment.frame.size.width,vwComment.frame.size.height)];
         [tblvw setFrame:CGRectMake(0, tblvw.frame.origin.y,tblvw.frame.size.width,tblvw.frame.size.height+vwComment.frame.size.height)];
     }

@@ -34,9 +34,14 @@
                     action:@selector(textFieldDidChange:)
           forControlEvents:UIControlEventEditingChanged];
     tblMain.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    vwSearch.layer.cornerRadius=5.0f;
+    [vwSearch.layer setMasksToBounds:YES];
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     
+    vwNoData.hidden=NO;
+    tblMain.hidden=YES;
     [self performSelector:@selector(searchApiCall:) withObject:tfSearch.text afterDelay:0.2];
 }
 -(void)textFieldDidChange :(UITextField *)textField{
@@ -404,10 +409,14 @@
                 isHashtag=NO;
                 
             }
+            vwNoData.hidden=YES;
+            tblMain.hidden=NO;
             [tblMain reloadData];
         }
         else{
             arrFlok=arrUser=[[NSMutableArray alloc] init];
+            vwNoData.hidden=NO;
+            tblMain.hidden=YES;
 
         }
         [tblMain reloadData];

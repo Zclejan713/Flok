@@ -30,6 +30,9 @@
     [[UITabBar appearance] setTintColor:appOrangedark];
   //  [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
     
+   // UIImage *whiteBackground = [UIImage imageNamed:@"whiteBackground"];
+   // [[UITabBar appearance] setSelectionIndicatorImage:whiteBackground];
+    
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
     {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
@@ -55,6 +58,8 @@
 
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
+    
+    
     return YES;
 }
 

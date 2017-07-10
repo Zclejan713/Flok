@@ -14,6 +14,7 @@
 {
     IBOutlet UITableView *tblMsg;
     IBOutlet UIView *vwNoProduct;
+    IBOutlet UISegmentedControl *segmentedControl;
     NSArray *arrList;
 }
 -(void)changeTabBarIcon;

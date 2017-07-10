@@ -12,7 +12,8 @@
 {
     IBOutlet UISearchBar *searchBar;
     IBOutlet UITableView *tblMain;
-    
+    IBOutlet UIView *vwSearch;
+    IBOutlet UIView *vwNoData;
     NSMutableArray *arrFlok;
     NSMutableArray *arrUser;
     NSMutableArray *arrHashTag;

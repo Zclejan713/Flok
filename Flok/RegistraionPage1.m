@@ -81,7 +81,7 @@
     UIButton *btn=(UIButton*)sender;
     [Global disableAfterClick:btn];
 
-    UIViewController *vc=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"RegistraionPage2"];
+    UIViewController *vc=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"RegistraionPage3"];
     [self.navigationController pushViewController:vc animated:YES];
     
 }
@@ -313,7 +313,7 @@
         NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
         NSDate *currentDate = [NSDate date];
         NSDateComponents *comps = [[NSDateComponents alloc] init];
-        [comps setYear:-12];
+        [comps setYear:-20];
         NSDate *maxDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
         [comps setYear:-80];
         NSDate *minDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
@@ -438,7 +438,7 @@
 #pragma mark- Webservice
 - (IBAction)signupTap:(id)sender {
     [self.view endEditing:YES];
-    
+    [self forwardTap:self];
     UIButton *btn=(UIButton*)sender;
     [Global disableAfterClick:btn];
 

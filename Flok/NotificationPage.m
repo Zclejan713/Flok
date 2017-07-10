@@ -41,6 +41,9 @@
     self.tabBarController.delegate = self;
 
 }
+- (IBAction)segmentSwitch:(id)sender {
+    
+}
 
 
 #pragma mark- call notification list api

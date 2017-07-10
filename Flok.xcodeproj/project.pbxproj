@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A1A1D9D1F13F7A0005C02C8 /* NewTreeCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A1D9B1F13F7A0005C02C8 /* NewTreeCellTableViewCell.m */; };
+		2A1A1D9E1F13F7A0005C02C8 /* NewTreeCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1A1D9C1F13F7A0005C02C8 /* NewTreeCellTableViewCell.xib */; };
+		2A869ACE1F0EB80C0052F0F1 /* FindYourFlokViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A869ACD1F0EB80C0052F0F1 /* FindYourFlokViewController.m */; };
 		3181AA8B03FFAEBFFE589972 /* Pods_Flok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2269C1825858C9E5F707F18 /* Pods_Flok.framework */; };
 		7B772666E289546F1173BC88 /* Pods_FlokTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC978FEE9E72E87590408A92 /* Pods_FlokTests.framework */; };
 		AA6E5C511DE33B41000E1755 /* SearchMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6E5C501DE33B41000E1755 /* SearchMessage.m */; };
@@ -141,6 +144,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A1A1D9A1F13F7A0005C02C8 /* NewTreeCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTreeCellTableViewCell.h; sourceTree = "<group>"; };
+		2A1A1D9B1F13F7A0005C02C8 /* NewTreeCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTreeCellTableViewCell.m; sourceTree = "<group>"; };
+		2A1A1D9C1F13F7A0005C02C8 /* NewTreeCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTreeCellTableViewCell.xib; sourceTree = "<group>"; };
+		2A869ACC1F0EB80C0052F0F1 /* FindYourFlokViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindYourFlokViewController.h; sourceTree = "<group>"; };
+		2A869ACD1F0EB80C0052F0F1 /* FindYourFlokViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindYourFlokViewController.m; sourceTree = "<group>"; };
 		48E75B5A8F76DCE971E0660C /* Pods-FlokTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlokTests/Pods-FlokTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6A774C1421EDC432727BB135 /* Pods-FlokUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlokUITests/Pods-FlokUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D2D2CBD4A3296AF0C1243B6 /* Pods-FlokUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlokUITests/Pods-FlokUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -479,6 +487,8 @@
 				AEB5DBC71D644F41005DB7D2 /* ChatPage.m */,
 				AEDB91811D65808A00613C9F /* CreateFlokPage.h */,
 				AEDB91821D65808A00613C9F /* CreateFlokPage.m */,
+				2A869ACC1F0EB80C0052F0F1 /* FindYourFlokViewController.h */,
+				2A869ACD1F0EB80C0052F0F1 /* FindYourFlokViewController.m */,
 				ADC259FA1DF694D300B436F9 /* EditFlokViewController.h */,
 				ADC259FB1DF694D300B436F9 /* EditFlokViewController.m */,
 				AEDB91841D65969400613C9F /* SearchLocationPage.h */,
@@ -590,6 +600,9 @@
 				AEBFB7F31D635747002B0CE6 /* TreeCell.h */,
 				AEBFB7F41D635747002B0CE6 /* TreeCell.m */,
 				AEBFB7F51D635747002B0CE6 /* TreeCell.xib */,
+				2A1A1D9A1F13F7A0005C02C8 /* NewTreeCellTableViewCell.h */,
+				2A1A1D9B1F13F7A0005C02C8 /* NewTreeCellTableViewCell.m */,
+				2A1A1D9C1F13F7A0005C02C8 /* NewTreeCellTableViewCell.xib */,
 				AEB5DBBC1D6446F5005DB7D2 /* MessageCell.h */,
 				AEB5DBBD1D6446F5005DB7D2 /* MessageCell.m */,
 				AEB5DBBE1D6446F5005DB7D2 /* MessageCell.xib */,
@@ -803,6 +816,7 @@
 				ADD4A27E1D928EC500460137 /* JoinedMemberTableViewCell.xib in Resources */,
 				AEB5DC001D64A429005DB7D2 /* Roboto-Bold.ttf in Resources */,
 				AD13A2231D940BE200145EFD /* NotificationTableViewCell.xib in Resources */,
+				2A1A1D9E1F13F7A0005C02C8 /* NewTreeCellTableViewCell.xib in Resources */,
 				AEC2E8CF1D6F081A002D1853 /* Flags.xcassets in Resources */,
 				AEC2E8CB1D6F022A002D1853 /* CountryListViewController.xib in Resources */,
 				AEBFB7B11D62FDCC002B0CE6 /* LaunchScreen.storyboard in Resources */,
@@ -971,6 +985,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1A1D9D1F13F7A0005C02C8 /* NewTreeCellTableViewCell.m in Sources */,
 				AEACE3861D6D669000FF3865 /* LogInController.m in Sources */,
 				AD97CD401DB639E300D92DCE /* PECropRectView.m in Sources */,
 				AD0B03251DF5B004009AE6AD /* NotificationCell.m in Sources */,
@@ -1019,6 +1034,7 @@
 				AD13A2221D940BE200145EFD /* NotificationTableViewCell.m in Sources */,
 				AEC2E8DA1D6F0AB2002D1853 /* CountryCell.m in Sources */,
 				ADD4A2751D9272F900460137 /* ListeningTableViewCell.m in Sources */,
+				2A869ACE1F0EB80C0052F0F1 /* FindYourFlokViewController.m in Sources */,
 				AD0459FF1D783FE40074BCBA /* WebImageOperations.m in Sources */,
 				ADFBBA141D82B705004E1398 /* FriendTableViewCell.m in Sources */,
 				AD97CD3F1DB639E300D92DCE /* PECropView.m in Sources */,

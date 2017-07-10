@@ -38,6 +38,8 @@
     IBOutlet UITextField *tfStarttime;
     IBOutlet UITextField *tfEndtime;
     IBOutlet UITextField *tfFlokLimit;
+    IBOutlet UILabel *lblPlaceHolder;
+    IBOutlet UILabel *lblMaxLimit;
     IBOutlet UISearchBar *search;
     IBOutlet UIView *vwSub;
     NSString *latitude;
