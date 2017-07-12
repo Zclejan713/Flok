@@ -20,7 +20,7 @@
 #import "MePage.h"
 #import "EditFlokViewController.h"
 #import "HashTagFeed.h"
-
+#import "NewTreeCellTableViewCell.h"
 @interface TreePage ()
 {
     NSUserDefaults *prefs;
@@ -697,7 +697,7 @@
 {
     if (tableView==tblNew)
     {
-        return 131;
+        return 490;
     }
     if (tableView==tblHot)
     {
@@ -714,109 +714,183 @@
 {
     if (tableView==tblNew)
     {
-        //table_View=@"tblNew";
-        NSString *strIdentifier=@"tcell";
-        TreeCell *tCell=(TreeCell*)[tableView dequeueReusableCellWithIdentifier:strIdentifier];
-        NSArray *nib=[[NSBundle mainBundle] loadNibNamed:@"TreeCell" owner:self options:nil];
-        tCell=[nib objectAtIndex:0];
         NSDictionary *dict=[arrList objectAtIndex:indexPath.row];
-        tCell.lblFlokName.text=[dict valueForKey:@"title"];
-        [self colorWord:tCell.lblFlokName];
-        //[tCell.lblFlokName setTextColor:[UIColor greenColor]];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textTapped:)];
-        [tCell.lblFlokName addGestureRecognizer:tap];
-        tCell.lblFlokName.editable =NO;
-      
-       // NSString *time=[self calculateStartTime:[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"start_date"],[dict valueForKey:@"start_time"]]];
-        
-        NSString *time2=[self timerValue:[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"start_date"],[dict valueForKey:@"start_time"]]];
-        tCell.lblUserName.text=[NSString stringWithFormat:@"%@",time2];
-        
-         NSLog(@"start date-- %@",time2);
-        if ([type isEqualToString:@"local"]) {
-            NSString *fullName=[dict valueForKey:@"uploaded_by"];
-            NSMutableArray * array = [[NSMutableArray alloc] initWithArray:[fullName componentsSeparatedByString:@" "]];
-            NSString *Name=[array objectAtIndex:0];
-            NSString *strTemp=[NSString stringWithFormat:@"%@ @%@",Name,[dict valueForKey:@"username"]];
-            tCell.lblName.attributedText=[self setTextAttribute:strTemp Name:Name and:dict];
-        }else{
-            NSString *fullName=[dict valueForKey:@"uploaded_by"];
-            NSString *strTemp=[NSString stringWithFormat:@"%@ @%@ .%@",[dict valueForKey:@"uploaded_by"],[dict valueForKey:@"username"],tCell.lblTime.text];
-            tCell.lblName.attributedText=[self setTextAttribute:strTemp Name:fullName and:dict];
-        }
-       
-        
-        tCell.lblDistance.text=[NSString stringWithFormat:@"%.01f miles",[[dict valueForKey:@"distance"] floatValue]];
-        //tCell.lblTime.text=[dict valueForKey:@""];
-        tCell.lblLikeCount.text=[NSString stringWithFormat:@"%@ " ,[dict valueForKey:@"likecount"]];
-        tCell.lblDisLikeCount.text=[NSString stringWithFormat:@"%@ " ,[dict valueForKey:@"dislikecount"]];
-        tCell.lblReflokCount.text=[NSString stringWithFormat:@"%@" ,[dict valueForKey:@"reflok_count"]];
-       
-        BOOL isReflok=[[dict valueForKey:@"isReFlokByMe"] intValue];
-        if (isReflok) {
-            tCell.imgReflok.image=[UIImage imageNamed:@"reflok_hover"];
-            [tCell.btnReflok setUserInteractionEnabled:NO];
-        }else{
-            tCell.imgReflok.image=[UIImage imageNamed:@"reflok"];
-            [tCell.btnReflok setUserInteractionEnabled:YES];
-        }
-        
-         NSString *strType=[dict valueForKey:@"type"];
-         if ([strType isEqualToString:@"social"]) {
-            //tCell.vwReflok.hidden=NO;
-         }else{
-             tCell.vwReflok.hidden=YES;
-         }
-        
-        NSString *userImg=[dict valueForKey:@"uploaded_by_userImage"];
-        
-        if ([userImg length]==0) {
-            tCell.imgFlag.image=[UIImage imageNamed:@"no-profile"];
-        }else{
-            [tCell.indicator startAnimating];
-            [self setImageWithurl:[dict valueForKey:@"uploaded_by_userImage"] andImageView:tCell.imgFlag and:tCell.indicator];
-        }
-        NSString *user_Id=[dict valueForKey:@"user_id"];
-        if ([userId isEqualToString:user_Id]) {
-            [tCell.btnProfile addTarget:self action:@selector(showOtherProfile:) forControlEvents:UIControlEventTouchUpInside];
-        }else{
-           [tCell.btnProfile addTarget:self action:@selector(showOtherProfile:) forControlEvents:UIControlEventTouchUpInside];
-        }
-        tCell.btnProfile.tag=indexPath.row;
-        tCell.btnReflok.tag=indexPath.row;
-        tCell.btnLike.tag=indexPath.row;
-        tCell.btnDislike.tag=indexPath.row;
-        tCell.btnEdit.tag=indexPath.row;
-        tCell.btnDelete.tag=indexPath.row;
-        
-        [tCell.btnLike addTarget:self action:@selector(flokLike:)forControlEvents:UIControlEventTouchUpInside];
-        [tCell.btnDislike addTarget:self action:@selector(flokDisLike:)forControlEvents:UIControlEventTouchUpInside];
-        [tCell.btnReflok addTarget:self action:@selector(ReflokAction:)forControlEvents:UIControlEventTouchUpInside];
-       
-        tCell.vwExpired.hidden=YES;
-        
-        if ([userId isEqualToString:[dict valueForKey:@"user_id"]]) {
-            tCell.btnMsg.hidden=YES;
-            tCell.MsgImg.hidden=YES;
+        NSString *strImg=[dict valueForKey:@"floksImage"];
+        if ([strImg length]==0) {
+            NSString *strIdentifier=@"tcell";
+            TreeCell *tCell=(TreeCell*)[tableView dequeueReusableCellWithIdentifier:strIdentifier];
+            NSArray *nib=[[NSBundle mainBundle] loadNibNamed:@"TreeCell" owner:self options:nil];
+            tCell=[nib objectAtIndex:0];
             
-            tCell.btnEdit.hidden=NO;
-            tCell.btnDelete.hidden=NO;
-            tCell.btnEditImg.hidden=NO;
-            tCell.btnDeleteImg.hidden=NO;
-            [tCell.btnDelete addTarget:self action:@selector(flokDelete:)forControlEvents:UIControlEventTouchUpInside];
-            [tCell.btnEdit addTarget:self action:@selector(flokEdit:)forControlEvents:UIControlEventTouchUpInside];
-        }else{
-            tCell.btnEdit.hidden=YES;
-            tCell.btnDelete.hidden=YES;
-            tCell.btnEditImg.hidden=YES;
-            tCell.btnDeleteImg.hidden=YES;
-           [tCell.btnMsg addTarget:self action:@selector(messageAction:)forControlEvents:UIControlEventTouchUpInside];
+            tCell.lblFlokName=[dict valueForKey:@"title"];
+           // [self colorWord:tCell.lblFlokName];
+            //[tCell.lblFlokName setTextColor:[UIColor greenColor]];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textTapped:)];
+              [tCell.lblFlokName addGestureRecognizer:tap];
+            //tCell.lblTitle.editable =NO;
+            
+            // NSString *time=[self calculateStartTime:[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"start_date"],[dict valueForKey:@"start_time"]]];
+            
+            NSString *time2=[self timerValue:[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"start_date"],[dict valueForKey:@"start_time"]]];
+            tCell.lblName.text=[NSString stringWithFormat:@"%@",time2];
+            
+            NSLog(@"start date-- %@",time2);
+            if ([type isEqualToString:@"local"]) {
+                NSString *fullName=[dict valueForKey:@"uploaded_by"];
+                NSMutableArray * array = [[NSMutableArray alloc] initWithArray:[fullName componentsSeparatedByString:@" "]];
+                NSString *Name=[array objectAtIndex:0];
+                NSString *strTemp=[NSString stringWithFormat:@"%@ @%@",Name,[dict valueForKey:@"username"]];
+                tCell.lblName.attributedText=[self setTextAttribute:strTemp Name:Name and:dict];
+            }else{
+                NSString *fullName=[dict valueForKey:@"uploaded_by"];
+                NSString *strTemp=[NSString stringWithFormat:@"%@ @%@ .%@",[dict valueForKey:@"uploaded_by"],[dict valueForKey:@"username"],tCell.lblTime.text];
+                tCell.lblName.attributedText=[self setTextAttribute:strTemp Name:fullName and:dict];
+            }
+            // tCell.lblDistance.text=[NSString stringWithFormat:@"%.01f miles",[[dict valueForKey:@"distance"] floatValue]];
+            //tCell.lblTime.text=[dict valueForKey:@""];
+            tCell.lblLikeCount.text=[NSString stringWithFormat:@"%@ " ,[dict valueForKey:@"likecount"]];
+            //  tCell.lblDisLikeCount.text=[NSString stringWithFormat:@"%@ " ,[dict valueForKey:@"dislikecount"]];
             
             
+            
+            
+            NSString *strType=[dict valueForKey:@"type"];
+            if ([strType isEqualToString:@"social"]) {
+                //tCell.vwReflok.hidden=NO;
+            }else{
+                // tCell.vwReflok.hidden=YES;
+            }
+            
+            NSString *userImg=[dict valueForKey:@"uploaded_by_userImage"];
+            
+            if ([userImg length]==0) {
+                tCell.imgUser.image=[UIImage imageNamed:@"no-profile"];
+            }else{
+                [tCell.indicator startAnimating];
+                [self setImageWithurl:[dict valueForKey:@"uploaded_by_userImage"] andImageView:tCell.imgUser and:tCell.indicator];
+            }
+            
+            NSString *user_Id=[dict valueForKey:@"user_id"];
+            if ([userId isEqualToString:user_Id]) {
+                [tCell.btnProfile addTarget:self action:@selector(showOtherProfile:) forControlEvents:UIControlEventTouchUpInside];
+            }else{
+                [tCell.btnProfile addTarget:self action:@selector(showOtherProfile:) forControlEvents:UIControlEventTouchUpInside];
+            }
+            tCell.btnProfile.tag=indexPath.row;
+            //tCell.btnReflok.tag=indexPath.row;
+            tCell.btnLike.tag=indexPath.row;
+            
+            //tCell.btnEdit.tag=indexPath.row;
+            //tCell.btnDelete.tag=indexPath.row;
+            
+            [tCell.btnLike addTarget:self action:@selector(flokLike:)forControlEvents:UIControlEventTouchUpInside];
+            //
+            //  [tCell.btnReflok addTarget:self action:@selector(ReflokAction:)forControlEvents:UIControlEventTouchUpInside];
+            
+            tCell.vwExpired.hidden=YES;
+            
+            if ([userId isEqualToString:[dict valueForKey:@"user_id"]]) {
+                
+            }else{
+                
+                
+                
+            }
+            
+            tCell.selectionStyle=UITableViewCellSelectionStyleNone;
+            return tCell;
+        }else{
+            NSString *strIdentifier=@"tcell";
+            NewTreeCellTableViewCell *tCell=(NewTreeCellTableViewCell*)[tableView dequeueReusableCellWithIdentifier:strIdentifier];
+            NSArray *nib=[[NSBundle mainBundle] loadNibNamed:@"NewTreeCellTableViewCell" owner:self options:nil];
+            tCell=[nib objectAtIndex:0];
+            
+            tCell.lblFlokName=[dict valueForKey:@"title"];
+           // [self colorWord:tCell.lblFlokName];
+            //[tCell.lblFlokName setTextColor:[UIColor greenColor]];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textTapped:)];
+           // [tCell.lblFlokName addGestureRecognizer:tap];
+            //tCell.lblTitle.editable =NO;
+            
+            // NSString *time=[self calculateStartTime:[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"start_date"],[dict valueForKey:@"start_time"]]];
+            
+            NSString *time2=[self timerValue:[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"start_date"],[dict valueForKey:@"start_time"]]];
+            tCell.lblName.text=[NSString stringWithFormat:@"%@",time2];
+            
+            NSLog(@"start date-- %@",time2);
+            if ([type isEqualToString:@"local"]) {
+                NSString *fullName=[dict valueForKey:@"uploaded_by"];
+                NSMutableArray * array = [[NSMutableArray alloc] initWithArray:[fullName componentsSeparatedByString:@" "]];
+                NSString *Name=[array objectAtIndex:0];
+                NSString *strTemp=[NSString stringWithFormat:@"%@ @%@",Name,[dict valueForKey:@"username"]];
+                tCell.lblName.attributedText=[self setTextAttribute:strTemp Name:Name and:dict];
+            }else{
+                NSString *fullName=[dict valueForKey:@"uploaded_by"];
+                NSString *strTemp=[NSString stringWithFormat:@"%@ @%@ .%@",[dict valueForKey:@"uploaded_by"],[dict valueForKey:@"username"],tCell.lblTime.text];
+                tCell.lblName.attributedText=[self setTextAttribute:strTemp Name:fullName and:dict];
+            }
+            tCell.imgPost.layer.borderColor=[[UIColor grayColor] CGColor];
+            tCell.imgPost.layer.borderWidth=1.0f;
+            tCell.btnJoin.layer.cornerRadius=5.0;
+            // tCell.lblDistance.text=[NSString stringWithFormat:@"%.01f miles",[[dict valueForKey:@"distance"] floatValue]];
+            //tCell.lblTime.text=[dict valueForKey:@""];
+            tCell.lblLikeCount.text=[NSString stringWithFormat:@"%@ " ,[dict valueForKey:@"likecount"]];
+            //  tCell.lblDisLikeCount.text=[NSString stringWithFormat:@"%@ " ,[dict valueForKey:@"dislikecount"]];
+            
+            
+            
+            
+            NSString *strType=[dict valueForKey:@"type"];
+            if ([strType isEqualToString:@"social"]) {
+                //tCell.vwReflok.hidden=NO;
+            }else{
+                // tCell.vwReflok.hidden=YES;
+            }
+            
+            NSString *userImg=[dict valueForKey:@"uploaded_by_userImage"];
+            
+            if ([userImg length]==0) {
+                tCell.imgProfile.image=[UIImage imageNamed:@"no-profile"];
+            }else{
+                [tCell.indicator startAnimating];
+                [self setImageWithurl:[dict valueForKey:@"uploaded_by_userImage"] andImageView:tCell.imgProfile and:tCell.indicator];
+            }
+            
+            [self setImageWithurl:[dict valueForKey:@"floksImage"] andImageView:tCell.imgPost and:tCell.indicator];
+            
+            NSString *user_Id=[dict valueForKey:@"user_id"];
+            if ([userId isEqualToString:user_Id]) {
+                [tCell.btnProfile addTarget:self action:@selector(showOtherProfile:) forControlEvents:UIControlEventTouchUpInside];
+            }else{
+                [tCell.btnProfile addTarget:self action:@selector(showOtherProfile:) forControlEvents:UIControlEventTouchUpInside];
+            }
+            tCell.btnProfile.tag=indexPath.row;
+            //tCell.btnReflok.tag=indexPath.row;
+            tCell.btnLike.tag=indexPath.row;
+            
+            //tCell.btnEdit.tag=indexPath.row;
+            //tCell.btnDelete.tag=indexPath.row;
+            
+            [tCell.btnLike addTarget:self action:@selector(flokLike:)forControlEvents:UIControlEventTouchUpInside];
+            //
+            //  [tCell.btnReflok addTarget:self action:@selector(ReflokAction:)forControlEvents:UIControlEventTouchUpInside];
+            
+            tCell.vwExpired.hidden=YES;
+            
+            if ([userId isEqualToString:[dict valueForKey:@"user_id"]]) {
+                
+            }else{
+                
+                
+                
+            }
+            
+            tCell.selectionStyle=UITableViewCellSelectionStyleNone;
+            return tCell;
         }
+        
 
-        tCell.selectionStyle=UITableViewCellSelectionStyleNone;
-        return tCell;
+       
 
 
     }
@@ -873,10 +947,10 @@
         NSString *userImg=[dict valueForKey:@"uploaded_by_userImage"];
         
         if ([userImg length]==0) {
-            tCell.imgFlag.image=[UIImage imageNamed:@"no-profile"];
+        //    tCell.imgFlag.image=[UIImage imageNamed:@"no-profile"];
         }else{
             [tCell.indicator startAnimating];
-            [self setImageWithurl:[dict valueForKey:@"uploaded_by_userImage"] andImageView:tCell.imgFlag and:tCell.indicator];
+          //  [self setImageWithurl:[dict valueForKey:@"uploaded_by_userImage"] andImageView:tCell.imgFlag and:tCell.indicator];
         }
         NSString *user_Id=[dict valueForKey:@"user_id"];
         if ([userId isEqualToString:user_Id]) {
@@ -967,10 +1041,10 @@
         NSString *userImg=[dict valueForKey:@"uploaded_by_userImage"];
         
         if ([userImg length]==0) {
-            tCell.imgFlag.image=[UIImage imageNamed:@"no-profile"];
+           // tCell.imgFlag.image=[UIImage imageNamed:@"no-profile"];
         }else{
             [tCell.indicator startAnimating];
-            [self setImageWithurl:[dict valueForKey:@"uploaded_by_userImage"] andImageView:tCell.imgFlag and:tCell.indicator];
+          //  [self setImageWithurl:[dict valueForKey:@"uploaded_by_userImage"] andImageView:tCell.imgFlag and:tCell.indicator];
         }
         
         BOOL isReflok=[[dict valueForKey:@"isReFlokByMe"] intValue];

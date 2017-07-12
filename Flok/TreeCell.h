@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface TreeCell : UITableViewCell
-@property(nonatomic,strong) IBOutlet UIImageView *imgFlag;
+@property(nonatomic,strong) IBOutlet UIImageView *imgUser;
 @property(nonatomic,strong) IBOutlet UIImageView *imgReflok;
 @property(nonatomic,strong) IBOutlet UILabel *lblName;
 @property(nonatomic,strong) IBOutlet UILabel *lblUserName;
 @property(nonatomic,strong) IBOutlet UILabel *lblDistance;
+@property(nonatomic,strong) IBOutlet UILabel *lblAddress;
 @property(nonatomic,strong) IBOutlet UILabel *lblTime;
+@property(nonatomic,strong) IBOutlet UILabel *lblcommentCount;
+@property(nonatomic,strong) IBOutlet UIButton *btnJoin;
 @property(nonatomic,strong) IBOutlet UIButton *btnReflok;
 @property(nonatomic,strong) IBOutlet UIButton *btnLike;
 @property(nonatomic,strong) IBOutlet UIButton *btnDislike;
@@ -26,6 +29,7 @@
 @property(nonatomic,strong) IBOutlet UIButton *btnEditImg;
 //@property(nonatomic,strong) IBOutlet UILabel *lblFlokName;
 @property(nonatomic,strong) IBOutlet UITextView *lblFlokName;
+@property(nonatomic,strong) IBOutlet UITextView *tvComment;
 @property(nonatomic,strong) IBOutlet UILabel *lblLikeCount;
 @property(nonatomic,strong) IBOutlet UILabel *lblDisLikeCount;
 @property(nonatomic,strong) IBOutlet UILabel *lblReflokCount;

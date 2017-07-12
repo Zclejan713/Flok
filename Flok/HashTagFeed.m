@@ -98,10 +98,10 @@
         NSString *userImg=[dict valueForKey:@"uploaded_by_userImage"];
         
         if ([userImg length]==0) {
-            tCell.imgFlag.image=[UIImage imageNamed:@"no-profile"];
+          //  tCell.imgFlag.image=[UIImage imageNamed:@"no-profile"];
         }else{
             [tCell.indicator startAnimating];
-            [self setImageWithurl:[dict valueForKey:@"uploaded_by_userImage"] andImageView:tCell.imgFlag and:tCell.indicator];
+           // [self setImageWithurl:[dict valueForKey:@"uploaded_by_userImage"] andImageView:tCell.imgFlag and:tCell.indicator];
         }
         NSString *user_Id=[dict valueForKey:@"user_id"];
         if ([userId isEqualToString:user_Id]) {

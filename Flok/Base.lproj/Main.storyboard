@@ -350,7 +350,7 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="i6g-Nz-LNo">
                                         <rect key="frame" x="0.0" y="6" width="320" height="368"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.8587414026260376" green="0.8588828444480896" blue="0.85871130228042603" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="dataSource" destination="OzX-dp-byH" id="IT1-me-nR1"/>
                                             <outlet property="delegate" destination="OzX-dp-byH" id="Hqd-TB-AYj"/>
@@ -359,7 +359,7 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="e6r-cY-239">
                                         <rect key="frame" x="0.0" y="6" width="320" height="368"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.87050509452819824" green="0.87064832448959351" blue="0.87047457695007324" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="dataSource" destination="OzX-dp-byH" id="xp4-Wb-9I4"/>
                                             <outlet property="delegate" destination="OzX-dp-byH" id="YgN-Ps-NsH"/>
@@ -368,7 +368,7 @@
                                     <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5s5-uY-UXn">
                                         <rect key="frame" x="-325" y="6" width="320" height="368"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.87050509452819824" green="0.87064832448959351" blue="0.87047457695007324" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="dataSource" destination="OzX-dp-byH" id="gJz-SX-pe6"/>
                                             <outlet property="delegate" destination="OzX-dp-byH" id="9VI-7B-6UC"/>

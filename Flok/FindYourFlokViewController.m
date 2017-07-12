@@ -1368,11 +1368,13 @@ calloutAccessoryControlTapped:(UIControl *)control
         
     {
         [self showCamera];
+        isImageUpload=YES;
     }
     else if(buttonIndex == 1)
         
     {
         [self openPhotoAlbum];
+        isImageUpload=YES;
     }
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -1509,7 +1511,10 @@ calloutAccessoryControlTapped:(UIControl *)control
         myRequestData=[Global makeData:myRequestData :boundary :@"String":@"":@"start":[startDate dataUsingEncoding:NSUTF8StringEncoding]];
         myRequestData=[Global makeData:myRequestData :boundary :@"String":@"":@"end":[endDate dataUsingEncoding:NSUTF8StringEncoding]];
         
-        myRequestData=[Global makeData:myRequestData :boundary :@"File":@"jpg":@"flok_image":UIImageJPEGRepresentation(imgBanner.image, 0.7)];
+        if (isImageUpload==YES) {
+           myRequestData=[Global makeData:myRequestData :boundary :@"File":@"jpg":@"flok_image":UIImageJPEGRepresentation(imgBanner.image, 0.7)]; 
+        }
+        
         
         
     }

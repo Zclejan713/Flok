@@ -52,6 +52,7 @@
     NSMutableArray *arrHashtag;
     BOOL isFilter;
     BOOL isCheck;
+    BOOL isImageUpload;
     NSMutableArray *searchResults;
     NSString *strSessName,*strSessVal;
     AppDelegate *app;
