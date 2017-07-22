@@ -19,6 +19,7 @@
     IBOutlet UIScrollView *scrlMain;
     IBOutlet UIView *vwMain;
     IBOutlet UIView *vwImg;
+    IBOutlet UIView *vwRatingAlert;
     IBOutlet UIImageView *profileImg;
     IBOutlet UITextView *tvAbout;
     IBOutlet UILabel *lblName;

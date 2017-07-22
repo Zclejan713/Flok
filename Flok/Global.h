@@ -13,7 +13,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-//#define BASE_URL @"http://104.131.83.218/flok_new/"
+//#define BASE_URL @"https://192.169.245.132/flok/"
 #define BASE_URL @"http://findyourflok.com/"
 
 

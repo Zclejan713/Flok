@@ -14,6 +14,8 @@
     CLLocationManager *locationManager;
     IBOutlet UIView *vwPost;
     IBOutlet UIView *vwLocService;
+    IBOutlet UIView *vwTransparent;
+    IBOutlet UIView *vwAlert;
     IBOutlet UISegmentedControl *segmentedControl;
     NSMutableArray *arrList;
     NSString *latitude;

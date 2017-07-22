@@ -76,23 +76,22 @@
         [self colorWord:tCell.lblFlokName];
         //tCell.lblTime.text=[dict valueForKey:@""];
         tCell.lblLikeCount.text=[NSString stringWithFormat:@"%@ " ,[dict valueForKey:@"likecount"]];
-        tCell.lblDisLikeCount.text=[NSString stringWithFormat:@"%@ " ,[dict valueForKey:@"dislikecount"]];
-        tCell.lblReflokCount.text=[NSString stringWithFormat:@"%@" ,[dict valueForKey:@"reflok_count"]];
+    
         tCell.lblTime.text=[self calculateTime:[dict valueForKey:@"date"]];
         BOOL isReflok=[[dict valueForKey:@"isReFlokByMe"] intValue];
         if (isReflok) {
             tCell.imgReflok.image=[UIImage imageNamed:@"reflok_hover"];
-            [tCell.btnReflok setUserInteractionEnabled:NO];
+            //[tCell.btnReflok setUserInteractionEnabled:NO];
         }else{
             tCell.imgReflok.image=[UIImage imageNamed:@"reflok"];
-            [tCell.btnReflok setUserInteractionEnabled:YES];
+           // [tCell.btnReflok setUserInteractionEnabled:YES];
         }
         
         NSString *strType=[dict valueForKey:@"type"];
         if ([strType isEqualToString:@"social"]) {
            // tCell.vwReflok.hidden=NO;
         }else{
-            tCell.vwReflok.hidden=YES;
+           // tCell.vwReflok.hidden=YES;
         }
         
         NSString *userImg=[dict valueForKey:@"uploaded_by_userImage"];
@@ -110,16 +109,14 @@
             [tCell.btnProfile addTarget:self action:@selector(showOtherProfile:) forControlEvents:UIControlEventTouchUpInside];
         }
         tCell.btnProfile.tag=indexPath.row;
-        tCell.btnReflok.tag=indexPath.row;
+    
         tCell.btnLike.tag=indexPath.row;
-        tCell.btnDislike.tag=indexPath.row;
+    
         tCell.btnEdit.tag=indexPath.row;
         tCell.btnDelete.tag=indexPath.row;
         
         [tCell.btnLike addTarget:self action:@selector(flokLike:)forControlEvents:UIControlEventTouchUpInside];
-        [tCell.btnDislike addTarget:self action:@selector(flokDisLike:)forControlEvents:UIControlEventTouchUpInside];
-        [tCell.btnReflok addTarget:self action:@selector(ReflokAction:)forControlEvents:UIControlEventTouchUpInside];
-        
+               
         
         
         if ([userId isEqualToString:[dict valueForKey:@"user_id"]]) {
@@ -256,43 +253,6 @@
 }
 
 #pragma mark- Method
--(IBAction)ReflokAction:(UIButton *)sender{
-    
-    UIButton *btn=(UIButton*)sender;
-    [Global disableAfterClick:btn];
-    
-    id superView1 = sender.superview;
-    while (superView1 && ![superView1 isKindOfClass:[UITableViewCell class]]) {
-        superView1 = [superView1 superview];
-    }
-    
-    TreeCell *cell=(TreeCell*)superView1;
-    int temp=[cell.lblReflokCount.text intValue]+1;
-    NSIndexPath *indexPath;
-   
-    indexPath = [tblMain indexPathForCell:cell];
-        
-    
-    
-    NSMutableDictionary *oldDic = [[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:indexPath.row]];
-    //    int status=[[oldDic valueForKey:@"isReflokByMe"] integerValue];
-    //    if (status==0) {
-    cell.lblReflokCount.text=[NSString stringWithFormat:@"%@" ,[NSString stringWithFormat:@"%d",temp]];
-    cell.imgReflok.image=[UIImage imageNamed:@"reflok_hover"];
-    NSMutableDictionary *dic =[[NSMutableDictionary alloc] initWithDictionary:oldDic];
-    int totalVote=[[dic valueForKey:@"reflok_count"] intValue]+1;
-    [dic setObject:[NSString stringWithFormat:@"%d",totalVote ] forKey:@"reflok_count"];
-    [dic setObject:[NSString stringWithFormat:@"%d",1 ] forKey:@"isReflokByMe"];
-    [arrList replaceObjectAtIndex:indexPath.row withObject:dic];
-    
-    NSString *postid=[oldDic valueForKey:@"id"];
-    // NSString *userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
-    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&reflok_id=%@&lat=%@&lang=%@",userId,postid,latitude,longitude];
-    [[Global sharedInstance] setDelegate:(id)self];
-    [[Global sharedInstance] serviceCall:dataString servicename:@"flok/reFlok" serviceType:@"POST"];
-   
-    
-}
 
 -(IBAction)flokEdit:(UIButton *)sender{
     
@@ -383,44 +343,6 @@
     }
 }
 
--(IBAction)flokDisLike:(UIButton *)sender{
-    
-    UIButton *btn=(UIButton*)sender;
-    [Global disableAfterClick:btn];
-    id superView1 = sender.superview;
-    while (superView1 && ![superView1 isKindOfClass:[UITableViewCell class]]) {
-        
-        superView1 = [superView1 superview];
-    }
-    
-    TreeCell *cell=(TreeCell*)superView1;
-    int temp=[cell.lblDisLikeCount.text intValue]+1;
-    //tempCell=(TreeCell*)cell;
-    NSIndexPath *indexPath;
-    
-    indexPath = [tblMain indexPathForCell:cell];
-    
-    NSMutableDictionary *oldDic = [[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:indexPath.row]];
-    
-    int status=[[oldDic valueForKey:@"isDisLikedByMe"] intValue];
-    
-    if (status==0) {
-        
-        cell.lblDisLikeCount.text=[NSString stringWithFormat:@"%@" ,[NSString stringWithFormat:@"%d",temp]];
-        NSMutableDictionary *dic =[[NSMutableDictionary alloc] initWithDictionary:oldDic];
-        int totalVote=[[dic valueForKey:@"dislikecount"] intValue]+1;
-        [dic setObject:[NSString stringWithFormat:@"%d",totalVote ] forKey:@"dislikecount"];
-        [dic setObject:[NSString stringWithFormat:@"%d",1 ] forKey:@"isDisLikedByMe"];
-        [arrList replaceObjectAtIndex:indexPath.row withObject:dic];
-        
-        NSString *postid=[oldDic valueForKey:@"id"];
-        
-        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&flok_id=%@",userId,postid];
-        [[Global sharedInstance] setDelegate:(id)self];
-        [[Global sharedInstance] serviceCall:dataString servicename:@"flok/dislike" serviceType:@"POST"];
-    }
-    
-}
 
 -(NSString *)getCurrentDate{
     

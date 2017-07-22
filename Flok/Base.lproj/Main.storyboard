@@ -99,7 +99,7 @@
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Qkm-nK-QdY">
                                 <rect key="frame" x="0.0" y="71" width="320" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="General"/>
                                     <segment title="Requests"/>
@@ -228,7 +228,7 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="add-user-1" id="2TL-Qu-jci">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="add_friend-1" id="2TL-Qu-jci">
                                         <rect key="frame" x="17" y="14" width="23" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                     </imageView>
@@ -480,6 +480,56 @@
                                     <action selector="segmentSwitch:" destination="OzX-dp-byH" eventType="valueChanged" id="8qF-Tu-mtI"/>
                                 </connections>
                             </segmentedControl>
+                            <view alpha="0.75" contentMode="scaleToFill" misplaced="YES" id="Oj7-Cq-0n7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" id="RB2-wE-BIc">
+                                <rect key="frame" x="32" y="165" width="255" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to set reminder for this event?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p6B-a2-l43">
+                                        <rect key="frame" x="8" y="44" width="239" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o4k-J3-aRz">
+                                        <rect key="frame" x="8" y="19" width="239" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jzN-uU-TFT">
+                                        <rect key="frame" x="8" y="124" width="115" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.92538946870000005" green="0.92554819580000003" blue="0.92537951470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                        <state key="normal" title="CANCEL">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelReminder:" destination="OzX-dp-byH" eventType="touchUpInside" id="kZb-Zh-Wck"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ct8-bh-nPE">
+                                        <rect key="frame" x="132" y="124" width="115" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.95408958200000005" green="0.34828728440000001" blue="0.18640580770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                        <state key="normal" title="SET REMINDER">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveEvent:" destination="OzX-dp-byH" eventType="touchUpInside" id="NBH-U4-Szj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="tree-grey" id="rA6-K6-at5"/>
@@ -491,8 +541,10 @@
                         <outlet property="tblDistance" destination="5s5-uY-UXn" id="Rq0-aH-gw0"/>
                         <outlet property="tblHot" destination="e6r-cY-239" id="4Va-Ma-xTX"/>
                         <outlet property="tblNew" destination="i6g-Nz-LNo" id="Yy4-dY-LW3"/>
+                        <outlet property="vwAlert" destination="RB2-wE-BIc" id="50O-yE-uQW"/>
                         <outlet property="vwLocService" destination="T6P-DM-cUA" id="cfn-e9-Ch2"/>
                         <outlet property="vwPost" destination="eIl-oa-bzK" id="bM9-DN-fxI"/>
+                        <outlet property="vwTransparent" destination="Oj7-Cq-0n7" id="1Kx-wh-HDy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEv-zk-gNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1390,6 +1442,40 @@
                                 <rect key="frame" x="2" y="97" width="316" height="373"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" misplaced="YES" id="a43-CG-bgo">
+                                <rect key="frame" x="12" y="91" width="298" height="332"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XLe-cm-EUd">
+                                        <rect key="frame" x="12" y="69" width="277" height="185"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Posters of a flok have the option to report other users within 24 hours of it’s completion if they are rude/inappropriate in person or if they don’t show up to a scheduled flok. If you join a flok and don’t get reported, you will receive an automatic 5 star rating. Be kind, show up to floks you joined, and communicate well with the poster of a flok to ensure your rating stays high and nothing holds you back from flokking away!</string>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Star rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MIq-jh-LIm">
+                                        <rect key="frame" x="-2" y="14" width="298" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5KT-ik-Kzg">
+                                        <rect key="frame" x="0.0" y="288" width="296" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.92538946870000005" green="0.92554819580000003" blue="0.92537951470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                        <state key="normal" title="DONE">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeRatingInfo:" destination="b2L-nD-oor" eventType="touchUpInside" id="7P8-qu-tMQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" misplaced="YES" id="LS1-pW-RHs">
                                 <rect key="frame" x="412" y="88" width="316" height="335"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
@@ -1448,6 +1534,7 @@
                         <outlet property="vwFilter" destination="LS1-pW-RHs" id="pjF-of-10B"/>
                         <outlet property="vwImg" destination="Lu2-aI-ONV" id="YZe-gJ-HrA"/>
                         <outlet property="vwMain" destination="1dv-Ro-I4n" id="Ryz-oR-jiv"/>
+                        <outlet property="vwRatingAlert" destination="a43-CG-bgo" id="cOU-dS-uoZ"/>
                         <outlet property="vwStar" destination="mWT-aU-uoR" id="QBH-LB-BDJ"/>
                         <outlet property="vwTemp" destination="k1O-Tn-qTx" id="ufk-VK-sYv"/>
                         <outlet property="vwTransparent" destination="27C-v2-44q" id="3Vh-Eb-8AD"/>
@@ -2316,7 +2403,7 @@
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" id="ScC-mc-ky1">
                                 <rect key="frame" x="32" y="150" width="255" height="167"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="For the best user experience, please input DOB and Gender." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6qs-Vj-kMJ">
                                         <rect key="frame" x="8" y="44" width="239" height="64"/>
@@ -2334,7 +2421,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PsT-Su-mql">
                                         <rect key="frame" x="8" y="124" width="115" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.92538946866989136" green="0.92554819583892822" blue="0.92537951469421387" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <state key="normal" title="Cancel">
@@ -2346,7 +2433,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NXU-Ke-7Tm">
                                         <rect key="frame" x="132" y="124" width="115" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.95408958200000005" green="0.34828728440000001" blue="0.18640580770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <state key="normal" title="SIGN UP">
@@ -2533,7 +2620,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="wIL-am-PbQ">
                                                 <rect key="frame" x="20" y="225" width="284" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.42793581495098043" green="0.42793581495098043" blue="0.42793581495098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <connections>
@@ -7638,7 +7725,7 @@
         <image name="acorn-1" width="25" height="25"/>
         <image name="add" width="30" height="30"/>
         <image name="add-user" width="19" height="19"/>
-        <image name="add-user-1" width="25" height="25"/>
+        <image name="add_friend-1" width="29" height="19"/>
         <image name="back" width="20" height="13"/>
         <image name="back-left" width="19" height="13"/>
         <image name="back-right" width="19" height="13"/>

@@ -18,11 +18,11 @@
 @property(nonatomic,strong) IBOutlet UILabel *lblTime;
 @property(nonatomic,strong) IBOutlet UILabel *lblcommentCount;
 @property(nonatomic,strong) IBOutlet UIButton *btnJoin;
-@property(nonatomic,strong) IBOutlet UIButton *btnReflok;
 @property(nonatomic,strong) IBOutlet UIButton *btnLike;
-@property(nonatomic,strong) IBOutlet UIButton *btnDislike;
+@property(nonatomic,strong) IBOutlet UILabel *lblStartTime;
 @property(nonatomic,strong) IBOutlet UIButton *btnProfile;
 @property(nonatomic,strong) IBOutlet UIButton *btnMsg;
+@property(nonatomic,strong) IBOutlet UIButton *btnMore;
 @property(nonatomic,strong) IBOutlet UIButton *btnDelete;
 @property(nonatomic,strong) IBOutlet UIButton *btnEdit;
 @property(nonatomic,strong) IBOutlet UIButton *btnDeleteImg;
@@ -31,15 +31,11 @@
 @property(nonatomic,strong) IBOutlet UITextView *lblFlokName;
 @property(nonatomic,strong) IBOutlet UITextView *tvComment;
 @property(nonatomic,strong) IBOutlet UILabel *lblLikeCount;
-@property(nonatomic,strong) IBOutlet UILabel *lblDisLikeCount;
-@property(nonatomic,strong) IBOutlet UILabel *lblReflokCount;
-@property(nonatomic,strong) IBOutlet UIView *vwReflok;
 @property(nonatomic,strong)IBOutlet UIActivityIndicatorView *indicator;
 @property(nonatomic,strong) IBOutlet UIView *vwExpired;
 @property (weak, nonatomic) IBOutlet UIButton *EditBtn;
-
-@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
-
+@property (weak, nonatomic) IBOutlet UIButton *btnSetReminder;
+@property (weak, nonatomic) IBOutlet UIButton *btnShowMap;
 @property (weak, nonatomic) IBOutlet UIImageView *MsgImg;
 
 

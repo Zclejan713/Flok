@@ -313,7 +313,7 @@
         NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
         NSDate *currentDate = [NSDate date];
         NSDateComponents *comps = [[NSDateComponents alloc] init];
-        [comps setYear:-20];
+        [comps setYear:-17];
         NSDate *maxDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
         [comps setYear:-80];
         NSDate *minDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];

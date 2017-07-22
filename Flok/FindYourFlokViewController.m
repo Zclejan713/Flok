@@ -1511,9 +1511,9 @@ calloutAccessoryControlTapped:(UIControl *)control
         myRequestData=[Global makeData:myRequestData :boundary :@"String":@"":@"start":[startDate dataUsingEncoding:NSUTF8StringEncoding]];
         myRequestData=[Global makeData:myRequestData :boundary :@"String":@"":@"end":[endDate dataUsingEncoding:NSUTF8StringEncoding]];
         
-        if (isImageUpload==YES) {
+       /* if (isImageUpload==YES) {
            myRequestData=[Global makeData:myRequestData :boundary :@"File":@"jpg":@"flok_image":UIImageJPEGRepresentation(imgBanner.image, 0.7)]; 
-        }
+        }*/
         
         
         
@@ -1568,13 +1568,19 @@ calloutAccessoryControlTapped:(UIControl *)control
                                                           {
                                                               //                                                              [Global showOnlyAlert:@"Success" :@"Flok have been made successfully"];
                                                               
-                                                              [Global showOnlyAlert:@"Holy Flok! Success!" :nil];
-                                                              
+                                                            //  [Global showOnlyAlert:@"Holy Flok! Success!" :nil];
                                                               
                                                              
+                                                    
                                                               app.flokLocation=@"";
                                                               app.flokLat=@"";
                                                               app.flokLang=@"";
+                                                              
+                                                              
+                                                               [[[UIAlertView alloc]initWithTitle:@"Holy Flok!" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+                                                              
+                                                              
+                                                              
                                                               
                                                           }
                                                           else{
@@ -1591,6 +1597,18 @@ calloutAccessoryControlTapped:(UIControl *)control
     [postDataTask resume];
     
     
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if(buttonIndex == 0)//OK button pressed
+    {
+        self.tabBarController.selectedIndex = 0;
+    }
+    else if(buttonIndex == 1)//Annul button pressed.
+    {
+        //do something
+    }
 }
 
 #pragma mark Save image

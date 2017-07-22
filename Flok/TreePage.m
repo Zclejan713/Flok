@@ -21,6 +21,8 @@
 #import "EditFlokViewController.h"
 #import "HashTagFeed.h"
 #import "NewTreeCellTableViewCell.h"
+#import "JoinedMemberViewController.h"
+#import <EventKit/EventKit.h>
 @interface TreePage ()
 {
     NSUserDefaults *prefs;
@@ -43,8 +45,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"TreePage");
-    //[[UITabBar appearance]  setDelegate:self];
+    vwTransparent.hidden=YES;
+    vwAlert.hidden=YES;
      isValueGet=NO;
      [self performSelector:@selector(getProfileInfo) withObject:self afterDelay:1.0 ];
     
@@ -114,38 +116,19 @@
     [refreshControl addTarget:self action:@selector(pullToRefresh) forControlEvents:UIControlEventValueChanged];
     [refreshControlHot addTarget:self action:@selector(pullToRefresh) forControlEvents:UIControlEventValueChanged];
     
-   /* UITabBar *tabBar = self.tabBarController.tabBar;
-    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
-    button.frame = CGRectMake(0.0, 0.0, 60, 60);
-    [button setBackgroundImage:[UIImage imageNamed:@"acorn"] forState:UIControlStateNormal];
-    //[button setBackgroundImage:highlightImage forState:UIControlStateHighlighted];
-    
-    CGFloat heightDifference = 60 - tabBar.frame.size.height;
-    if (heightDifference < 0)
-        button.center =tabBar.center;
-    else
-    {
-        CGPoint center =tabBar.center;
-        center.y = center.y - heightDifference/2.0;
-        button.center = center;
-    }
-    
-    [self.view addSubview:button];
-    [button bringSubviewToFront:self.view];*/
+   
 
 }
 -(void)willAppearIn:(UINavigationController *)navigationController
 {
-    [self addCenterButtonWithImage:[UIImage imageNamed:@"acorn.png"] highlightImage:[UIImage imageNamed:@"acorn.png"]];
+   /* [self addCenterButtonWithImage:[UIImage imageNamed:@"acorn.png"] highlightImage:[UIImage imageNamed:@"acorn.png"]];*/
 }
 -(void)viewWillAppear:(BOOL)animated
 {
+    
      [btnBubble setFrame:CGRectMake(btnBubble.frame.origin.x,-60, btnBubble.frame.size.width, btnBubble.frame.size.height)];
     [super viewWillAppear:YES];
     vwLocService.hidden=YES;
-    [self addCenterButtonWithImage:[UIImage imageNamed:@"acorn.png"] highlightImage:[UIImage imageNamed:@"acorn.png"]];
-    
     miles=[[NSUserDefaults standardUserDefaults] objectForKey:@"miles"];
     coming_miles=[[NSUserDefaults standardUserDefaults] objectForKey:@"miles"];
     
@@ -388,6 +371,123 @@
     
     [alert show];
     
+}
+-(IBAction)userMoreOption:(id)sender{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Select image" delegate:self cancelButtonTitle:@"Cancel"           destructiveButtonTitle:nil otherButtonTitles:@"Edit Flok", @"Delete", nil];
+    
+    [actionSheet showInView:self.view];
+}
+-(IBAction)otherUserMoreOption:(id)sender{
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Select image" delegate:self cancelButtonTitle:@"Cancel"           destructiveButtonTitle:nil otherButtonTitles:@"Message", @"Edit Flok",@"Delete Flok",@"Hide Flok",@"Report Flok", nil];
+    
+    [actionSheet showInView:self.view];
+    
+}
+-(IBAction)reportFlokAction:(id)sender{
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert"
+                                                    message:@"Are you sure you want report this post?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"Delete", nil];
+    [alert setTag:5];
+    [alert show];
+    
+    
+    
+}
+-(IBAction)hideFlokAction:(id)sender{
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert"
+                                                    message:@"Are you sure you want hide this post?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"Delete", nil];
+    [alert setTag:3];
+    [alert show];
+    
+    
+    
+}
+-(IBAction)setReminderAlert:(UIButton*)sender{
+    
+    vwTransparent.hidden=NO;
+    vwAlert.hidden=NO;
+    tempDic = [[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:sender.tag]];
+}
+- (IBAction)cancelReminder:(id)sender {
+    
+    vwTransparent.hidden=YES;
+    vwAlert.hidden=YES;
+}
+-(void)reportToAdmin{
+    
+    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&post_id=%@&reason=",userId,[tempDic valueForKey:@"id"]];
+    [[Global sharedInstance] setDelegate:(id)self];
+    [[Global sharedInstance] serviceCall:dataString servicename:@"users/reportToAdminFolk" serviceType:@"POST"];
+}
+-(void)hideFlok{
+    
+    NSString *dataString=[NSString stringWithFormat:@"user_id=%@&post_id=%@&reason=",userId,[tempDic valueForKey:@"id"]];
+    [[Global sharedInstance] setDelegate:(id)self];
+    [[Global sharedInstance] serviceCall:dataString servicename:@"users/reportToAdminFolk" serviceType:@"POST"];
+}
+-(IBAction)saveEvent:(id)sender{
+    
+    vwTransparent.hidden=YES;
+    vwAlert.hidden=YES;
+    
+    EKEventStore *eventStore = [[EKEventStore alloc] init];
+    if([eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)])
+    {
+        // iOS 6 and later
+        // This line asks user's permission to access his calendar
+        [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error)
+         {
+             if (granted) // user user is ok with it
+             {
+                 EKEvent *event = [EKEvent eventWithEventStore:eventStore];
+                 event.title  = @"Final Event Check";
+                 event.allDay = YES;
+                 
+                 NSString *myString = [tempDic valueForKey:@"start_time"];
+                 NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+                 dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+                 [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+                 
+                 NSDate *yourDate = [dateFormatter dateFromString:myString];
+                 event.startDate =yourDate;
+                 event.endDate = [event.startDate dateByAddingTimeInterval:60*60];  //set 1 hour meeting
+                 event.startDate = [[NSDate alloc] init];
+                 event.location = [tempDic valueForKey:@"location"];
+                 event.notes = [tempDic valueForKey:@"title"];
+                 //event.allDay=NO;
+                 
+                 EKAlarm *alaram = [[EKAlarm alloc]init];
+                 [alaram setAbsoluteDate:yourDate];
+                 [event addAlarm:alaram];
+                 
+                 [event setCalendar:[eventStore defaultCalendarForNewEvents]];
+                 NSError *err;
+                 
+                 [eventStore saveEvent:event span:EKSpanThisEvent error:&err];
+                 //for alert set the aleram and notify the user rest is taken care by calendar for u
+                 
+                 if(err){
+                     NSLog(@"unable to save event to the calendar!: Error= %@", err);
+                 }else{
+                     NSLog(@"Success %@", err);
+                 }
+                 
+             }
+             else // if he does not allow
+             {
+                 [[[UIAlertView alloc]initWithTitle:nil message:@"" delegate:nil cancelButtonTitle:NSLocalizedString(@"plzAlowCalendar", nil)  otherButtonTitles: nil] show];
+                 return;
+             }
+         }];
+    }
 }
 
 #pragma mark- Method
@@ -697,7 +797,15 @@
 {
     if (tableView==tblNew)
     {
-        return 490;
+        NSDictionary *dict=[arrList objectAtIndex:indexPath.row];
+        NSString *strImg=[dict valueForKey:@"floksImage"];
+        if ([strImg length]==0) {
+            
+            return 415;
+        }else{
+           return 486;
+        }
+        
     }
     if (tableView==tblHot)
     {
@@ -721,19 +829,18 @@
             TreeCell *tCell=(TreeCell*)[tableView dequeueReusableCellWithIdentifier:strIdentifier];
             NSArray *nib=[[NSBundle mainBundle] loadNibNamed:@"TreeCell" owner:self options:nil];
             tCell=[nib objectAtIndex:0];
-            
-            tCell.lblFlokName=[dict valueForKey:@"title"];
+            NSLog(@"post value--%@",dict);
+            tCell.lblFlokName.text=[dict valueForKey:@"title"];
            // [self colorWord:tCell.lblFlokName];
-            //[tCell.lblFlokName setTextColor:[UIColor greenColor]];
+           // [tCell.lblFlokName setTextColor:[UIColor greenColor]];
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textTapped:)];
               [tCell.lblFlokName addGestureRecognizer:tap];
-            //tCell.lblTitle.editable =NO;
-            
-            // NSString *time=[self calculateStartTime:[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"start_date"],[dict valueForKey:@"start_time"]]];
+            tCell.lblFlokName.editable =NO;
+            tCell.lblStartTime.text=[NSString stringWithFormat:@"%@ %@",[self changeDateFormat:[dict valueForKey:@"start_date"] fullDate:YES],[dict valueForKey:@"start_time"]];
             
             NSString *time2=[self timerValue:[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"start_date"],[dict valueForKey:@"start_time"]]];
             tCell.lblName.text=[NSString stringWithFormat:@"%@",time2];
-            
+             tCell.lblTime.text=[self calculateStartTime:[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"start_date"],[dict valueForKey:@"start_time"]]];
             NSLog(@"start date-- %@",time2);
             if ([type isEqualToString:@"local"]) {
                 NSString *fullName=[dict valueForKey:@"uploaded_by"];
@@ -753,6 +860,7 @@
             
             
             
+            tCell.btnJoin.layer.cornerRadius=5.0;
             
             NSString *strType=[dict valueForKey:@"type"];
             if ([strType isEqualToString:@"social"]) {
@@ -779,21 +887,17 @@
             tCell.btnProfile.tag=indexPath.row;
             //tCell.btnReflok.tag=indexPath.row;
             tCell.btnLike.tag=indexPath.row;
-            
-            //tCell.btnEdit.tag=indexPath.row;
-            //tCell.btnDelete.tag=indexPath.row;
-            
             [tCell.btnLike addTarget:self action:@selector(flokLike:)forControlEvents:UIControlEventTouchUpInside];
             //
-            //  [tCell.btnReflok addTarget:self action:@selector(ReflokAction:)forControlEvents:UIControlEventTouchUpInside];
+            [tCell.btnSetReminder addTarget:self action:@selector(setReminderAlert:)forControlEvents:UIControlEventTouchUpInside];
+            
+             [tCell.btnShowMap addTarget:self action:@selector(setReminderAlert:)forControlEvents:UIControlEventTouchUpInside];
             
             tCell.vwExpired.hidden=YES;
             
             if ([userId isEqualToString:[dict valueForKey:@"user_id"]]) {
                 
             }else{
-                
-                
                 
             }
             
@@ -805,14 +909,17 @@
             NSArray *nib=[[NSBundle mainBundle] loadNibNamed:@"NewTreeCellTableViewCell" owner:self options:nil];
             tCell=[nib objectAtIndex:0];
             
-            tCell.lblFlokName=[dict valueForKey:@"title"];
+            tCell.lblFlokName.text=[dict valueForKey:@"title"];
+            tCell.lblStartTime.text=[NSString stringWithFormat:@"%@ %@",[self changeDateFormat:[dict valueForKey:@"start_date"] fullDate:YES],[dict valueForKey:@"start_time"]];
            // [self colorWord:tCell.lblFlokName];
             //[tCell.lblFlokName setTextColor:[UIColor greenColor]];
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textTapped:)];
+          //  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textTapped:)];
            // [tCell.lblFlokName addGestureRecognizer:tap];
-            //tCell.lblTitle.editable =NO;
+           // tCell.lblFlokName.editable =NO;
             
-            // NSString *time=[self calculateStartTime:[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"start_date"],[dict valueForKey:@"start_time"]]];
+            
+             tCell.lblTime.text=[self calculateStartTime:[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"start_date"],[dict valueForKey:@"start_time"]]];
+            
             
             NSString *time2=[self timerValue:[NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"start_date"],[dict valueForKey:@"start_time"]]];
             tCell.lblName.text=[NSString stringWithFormat:@"%@",time2];
@@ -914,23 +1021,23 @@
         tCell.lblDistance.text=[NSString stringWithFormat:@"%.01f miles",[[dict valueForKey:@"distance"] floatValue]];
         //tCell.lblTime.text=[dict valueForKey:@""];
         tCell.lblLikeCount.text=[NSString stringWithFormat:@"%@ " ,[dict valueForKey:@"likecount"]];
-        tCell.lblDisLikeCount.text=[NSString stringWithFormat:@"%@ " ,[dict valueForKey:@"dislikecount"]];
-        tCell.lblReflokCount.text=[NSString stringWithFormat:@"%@" ,[dict valueForKey:@"reflok_count"]];
+        
+        
         tCell.lblTime.text=[self calculateTime:[dict valueForKey:@"date"]];
         BOOL isReflok=[[dict valueForKey:@"isReFlokByMe"] intValue];
         if (isReflok) {
             tCell.imgReflok.image=[UIImage imageNamed:@"reflok_hover"];
-            [tCell.btnReflok setUserInteractionEnabled:NO];
+            //[tCell.btnReflok setUserInteractionEnabled:NO];
         }else{
             tCell.imgReflok.image=[UIImage imageNamed:@"reflok"];
-            [tCell.btnReflok setUserInteractionEnabled:YES];
+           // [tCell.btnReflok setUserInteractionEnabled:YES];
         }
         
         NSString *strType=[dict valueForKey:@"type"];
         if ([strType isEqualToString:@"social"]) {
             //tCell.vwReflok.hidden=NO;
         }else{
-            tCell.vwReflok.hidden=YES;
+            //tCell.vwReflok.hidden=YES;
         }
         if ([type isEqualToString:@"local"]) {
             NSString *fullName=[dict valueForKey:@"uploaded_by"];
@@ -959,15 +1066,12 @@
             [tCell.btnProfile addTarget:self action:@selector(showOtherProfile:) forControlEvents:UIControlEventTouchUpInside];
         }
         tCell.btnProfile.tag=indexPath.row;
-        tCell.btnReflok.tag=indexPath.row;
         tCell.btnLike.tag=indexPath.row;
-        tCell.btnDislike.tag=indexPath.row;
         tCell.btnEdit.tag=indexPath.row;
         tCell.btnDelete.tag=indexPath.row;
         
         [tCell.btnLike addTarget:self action:@selector(flokLike:)forControlEvents:UIControlEventTouchUpInside];
-        [tCell.btnDislike addTarget:self action:@selector(flokDisLike:)forControlEvents:UIControlEventTouchUpInside];
-       
+
         
         if ([userId isEqualToString:[dict valueForKey:@"user_id"]]) {
             tCell.btnMsg.hidden=YES;
@@ -1030,13 +1134,11 @@
         tCell.lblDistance.text=[NSString stringWithFormat:@"%.01f miles",[[dict valueForKey:@"distance"] floatValue]];
         tCell.lblTime.text=[self calculateTime:[dict valueForKey:@"date"]];
         tCell.lblLikeCount.text=[NSString stringWithFormat:@"%@" ,[dict valueForKey:@"likecount"]];
-        tCell.lblDisLikeCount.text=[NSString stringWithFormat:@"%@" ,[dict valueForKey:@"dislikecount"]];
-        tCell.lblReflokCount.text=[NSString stringWithFormat:@"%@" ,[dict valueForKey:@"reflok_count"]];
         NSString *strType=[dict valueForKey:@"type"];
         if ([strType isEqualToString:@"social"]) {
            // tCell.vwReflok.hidden=NO;
         }else{
-            tCell.vwReflok.hidden=YES;
+            //tCell.vwReflok.hidden=YES;
         }
         NSString *userImg=[dict valueForKey:@"uploaded_by_userImage"];
         
@@ -1061,15 +1163,14 @@
             [tCell.btnProfile addTarget:self action:@selector(showOtherProfile:) forControlEvents:UIControlEventTouchUpInside];
         }
         tCell.btnProfile.tag=indexPath.row;
-        tCell.btnReflok.tag=indexPath.row;
+        
         tCell.btnLike.tag=indexPath.row;
-        tCell.btnDislike.tag=indexPath.row;
+       
         tCell.btnEdit.tag=indexPath.row;
         tCell.btnDelete.tag=indexPath.row;
         
         [tCell.btnLike addTarget:self action:@selector(flokLike:)forControlEvents:UIControlEventTouchUpInside];
-        [tCell.btnDislike addTarget:self action:@selector(flokDisLike:)forControlEvents:UIControlEventTouchUpInside];
-        [tCell.btnReflok addTarget:self action:@selector(ReflokAction:)forControlEvents:UIControlEventTouchUpInside];
+        
         
         if ([userId isEqualToString:[dict valueForKey:@"user_id"]]) {
             tCell.btnMsg.hidden=YES;
@@ -1153,54 +1254,6 @@
     }
 }
 
--(IBAction)ReflokAction:(UIButton *)sender{
-    
-    UIButton *btn=(UIButton*)sender;
-    [Global disableAfterClick:btn];
-    
-    id superView1 = sender.superview;
-    while (superView1 && ![superView1 isKindOfClass:[UITableViewCell class]]) {
-        superView1 = [superView1 superview];
-    }
-    
-    TreeCell *cell=(TreeCell*)superView1;
-    int temp=[cell.lblReflokCount.text intValue]+1;
-    NSIndexPath *indexPath;
-    if ([table_View isEqualToString:@"tblNew"])
-    {
-        indexPath = [tblNew indexPathForCell:cell];
-        
-    }else if ([table_View isEqualToString:@"tblHot"])
-    {
-        indexPath = [tblHot indexPathForCell:cell];
-    }
-    else if ([table_View isEqualToString:@"tblDistance"])
-    {
-        indexPath = [tblDistance indexPathForCell:cell];
-    }
-    
-    NSMutableDictionary *oldDic = [[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:indexPath.row]];
-//    int status=[[oldDic valueForKey:@"isReflokByMe"] integerValue];
-//    if (status==0) {
-        cell.lblReflokCount.text=[NSString stringWithFormat:@"%@" ,[NSString stringWithFormat:@"%d",temp]];
-        cell.imgReflok.image=[UIImage imageNamed:@"reflok_hover"];
-        NSMutableDictionary *dic =[[NSMutableDictionary alloc] initWithDictionary:oldDic];
-        int totalVote=[[dic valueForKey:@"reflok_count"] intValue]+1;
-        [dic setObject:[NSString stringWithFormat:@"%d",totalVote ] forKey:@"reflok_count"];
-        [dic setObject:[NSString stringWithFormat:@"%d",1 ] forKey:@"isReflokByMe"];
-        [arrList replaceObjectAtIndex:indexPath.row withObject:dic];
-        
-        NSString *postid=[oldDic valueForKey:@"id"];
-       // NSString *userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
-        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&reflok_id=%@&lat=%@&lang=%@",userId,postid,latitude,longitude];
-        [[Global sharedInstance] setDelegate:(id)self];
-        [[Global sharedInstance] serviceCall:dataString servicename:@"flok/reFlok" serviceType:@"POST"];
-        
-    //}
-    
-  
-  
-}
 
 -(IBAction)messageAction:(UIButton *)sender{
     
@@ -1240,8 +1293,21 @@
 }
 -(IBAction)flokLike:(UIButton *)sender{
     
+
     UIButton *btn=(UIButton*)sender;
     [Global disableAfterClick:btn];
+
+/*    CGRect frame=btn.frame;
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.1f];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    frame.size.height=frame.size.height+10;
+    frame.size.width=frame.size.width+10;
+    btn.frame=frame;
+    [UIView commitAnimations];
+    [self performSelector:@selector(changePlayerGameOnes:) withObject:nil afterDelay:0.1];*/
+    
     
     id superView1 = sender.superview;
     while (superView1 && ![superView1 isKindOfClass:[UITableViewCell class]]) {
@@ -1281,47 +1347,150 @@
     
    
 }
-
--(IBAction)flokDisLike:(UIButton *)sender{
+-(void)changePlayerGameOnes:(UIButton*)sender{
+    
+  /*  CGRect frame=sender.frame;
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.20f];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    frame.size.height=frame.size.height-10;
+    frame.size.width=frame.size.width-10;
+    sender.frame=frame;
+    [UIView commitAnimations];*/
+}
+#pragma mark Flok join
+- (IBAction)joinfolkTap:(UIButton*)sender {
     
     UIButton *btn=(UIButton*)sender;
     [Global disableAfterClick:btn];
     id superView1 = sender.superview;
     while (superView1 && ![superView1 isKindOfClass:[UITableViewCell class]]) {
+        
         superView1 = [superView1 superview];
     }
     
     TreeCell *cell=(TreeCell*)superView1;
-    
-    
-     int temp=[cell.lblDisLikeCount.text intValue]+1;
-    //tempCell=(TreeCell*)cell;
+    int temp=[cell.lblLikeCount.text intValue]+1;
     NSIndexPath *indexPath;
+    
     if (segmentedControl.selectedSegmentIndex == 0) {
         indexPath = [tblNew indexPathForCell:cell];
     }else{
         indexPath = [tblHot indexPathForCell:cell];
     }
-     NSString *strTime=[self getCurrentDate];
-    NSMutableDictionary *oldDic = [[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:indexPath.row]];
+    NSDictionary *DicFlok=[[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:indexPath.row]];
+    BOOL isFlokLimited = [DicFlok valueForKey:@""];
+    int maxLimit=[[DicFlok valueForKey:@"max_people"] intValue];
+    int joined=[[DicFlok valueForKey:@"already_joined_count"] intValue];
+    //Flokker=[NSString stringWithFormat:@"Flokkers %d/%d",joined,maxLimit];
+    //lblJoin.text=[NSString stringWithFormat:@"%d/%d",joined,maxLimit];
+    // if (maxLimit>4) {
     
-    NSInteger status=[[oldDic valueForKey:@"isDisLikedByMe"] integerValue];
-    if (status==0) {
-    cell.lblDisLikeCount.text=[NSString stringWithFormat:@"%@" ,[NSString stringWithFormat:@"%d",temp]];
-    NSMutableDictionary *dic =[[NSMutableDictionary alloc] initWithDictionary:oldDic];
-    int totalVote=[[dic valueForKey:@"dislikecount"] intValue]+1;
-    [dic setObject:[NSString stringWithFormat:@"%d",totalVote ] forKey:@"dislikecount"];
-    [dic setObject:[NSString stringWithFormat:@"%d",1 ] forKey:@"isDisLikedByMe"];
-    [arrList replaceObjectAtIndex:indexPath.row withObject:dic];
+    /* int min=maxLimit/5;
+     int middle=min*2;
+     int half=min*3;
+     int max=min*4;*/
     
-        NSString *postid=[oldDic valueForKey:@"id"];
-        NSString *user_Id=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
-        NSString *dataString=[NSString stringWithFormat:@"user_id=%@&flok_id=%@&date_time=%@",user_Id,postid,strTime];
-        [[Global sharedInstance] setDelegate:(id)self];
-        [[Global sharedInstance] serviceCall:dataString servicename:@"flok/dislike" serviceType:@"POST"];
-     }
-   
+    
+    if (maxLimit==joined) {
+        isFlokLimited=YES;
+    }else{
+        isFlokLimited=NO;
+    }
+    
+    if (btn.tag==5) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert"
+                                                        message:@"Are you sure you want to leave?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"Yes", nil];
+        [alert setTag:5];
+        
+        [alert show];
+        
+    }else{
+        if (isFlokLimited==NO) {
+            
+            NSString *Access_string=[DicFlok valueForKey:@"access"];
+            if([Access_string isEqualToString:@"1"]||[Access_string isEqualToString:@"request based"]){
+                
+                BOOL access_type=[[DicFlok valueForKey:@"is_access"] boolValue];
+                if (access_type==1) {
+                    NSString *strTime=[self getCurrentDate];
+                    NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@&date_time=%@",[DicFlok valueForKey:@"id"],userId,strTime];
+                    [[Global sharedInstance] setDelegate:(id)self];
+                    [[Global sharedInstance] serviceCall:dataString servicename:@"flok/joinFlok" serviceType:@"POST"];
+                    
+                    cell.text=[tempDic valueForKey:@"address"];
+                    // btnShowMap.hidden=NO;
+                    // vwHideMap.hidden=YES;
+                    //  isRecentJoin=YES;
+                    [Global showOnlyAlert:@"" :@"You have successfully joined."];
+                }else{
+                    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"This flok is request-based" message:@"Do you want to request to join? Your profile will be submitted to the poster." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+                    [alert setTag:2];
+                    [alert show];
+                    
+                }
+            }else{
+                
+                NSString *strTime=[self getCurrentDate];
+                NSString *dataString=[NSString stringWithFormat:@"flok_id=%@&user_id=%@&date_time=%@",[tempDic valueForKey:@"id"],userId,strTime];
+                [[Global sharedInstance] setDelegate:(id)self];
+                [[Global sharedInstance] serviceCall:dataString servicename:@"flok/joinFlok" serviceType:@"POST"];
+                
+                
+                //  lblLocation.text=[DicFlok valueForKey:@"address"];
+                //  btnShowMap.hidden=NO;
+                //  vwHideMap.hidden=YES;
+                //  isRecentJoin=YES;
+                [Global showOnlyAlert:@"" :@"You have successfully joined."];
+            }
+        }else{
+            [Global showOnlyAlert:@"Sorry" :@"Flok has reached its limit."];
+        }
+        
+    }
+    
 }
+
+- (IBAction)showJoinMember:(UIButton*)sender {
+    
+    NSDictionary *DicFlok=[[NSMutableDictionary alloc] initWithDictionary:[arrList objectAtIndex:sender.tag]];
+    NSString *user_Id=[DicFlok valueForKey:@"user_id"];
+    BOOL isJoinByme=[[DicFlok valueForKey:@"is_joined_by_me"] intValue];
+    if ([userId isEqualToString:user_Id]) {
+        UIButton *btn=(UIButton*)sender;
+        [Global disableAfterClick:btn];
+        NSString *joinMember=[NSString stringWithFormat:@"%@",[DicFlok valueForKey:@"already_joined_count"]];
+        if (![joinMember isEqualToString:@" "]) {
+            JoinedMemberViewController *vc=(JoinedMemberViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"JoinedMemberViewController"];
+            //        vc.FlokId=[DicFlok valueForKey:@"id"];
+            //        vc.Flokker=Flokker;
+            //        vc.isAbleToReport=isAbleToReport;
+            //        vc.isOP=isOP;
+            vc.isExpired=[[DicFlok valueForKey:@"isExpired"] boolValue];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }else {
+        UIButton *btn=(UIButton*)sender;
+        [Global disableAfterClick:btn];
+        NSString *joinMember=[NSString stringWithFormat:@"%@",[DicFlok valueForKey:@"already_joined_count"]];
+        if (![joinMember isEqualToString:@"0"]) {
+            JoinedMemberViewController *vc=(JoinedMemberViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"JoinedMemberViewController"];
+            // vc.FlokId=[DicFlok valueForKey:@"id"];
+            //  vc.isAbleToReport=isAbleToReport;
+            //  vc.isOP=isOP;
+            //  vc.Flokker=Flokker;
+            //  vc.isExpired=[[DicFlok valueForKey:@"isExpired"] boolValue];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }
+    
+}
+
+
 
 #pragma mark WebServiceCallDeleGate Methods
 
@@ -2165,5 +2334,72 @@
     
     [self.view addSubview:button];
 }
-
+-(void)setValueToCell:(UITableViewCell*)tcell value:(NSDictionary*)dict{
+    
+    NSString *strImg=[dict valueForKey:@"floksImage"];
+    BOOL isJoinByme=[[dict valueForKey:@"is_joined_by_me"] intValue];
+    BOOL alreadyJoin=[[dict valueForKey:@"already_joined_count"] intValue];
+    BOOL isAccess=[[dict valueForKey:@"is_access"] intValue];
+    NSString *Access_string=[dict valueForKey:@"access"];
+    
+    if ([strImg length]==0) {
+        
+        TreeCell *cell=(TreeCell*)tcell;
+        if (isJoinByme==YES) {
+            if (isAccess==YES) {
+                [cell.btnJoin setTitle:@"Leave Flok" forState:UIControlStateNormal];
+                [cell.btnJoin setTag:5];
+                
+                cell.lblDistance.text=[dict valueForKey:@"address"];
+                cell.btnShowMap.hidden=NO;
+                
+                if([Access_string isEqualToString:@"1"]||[Access_string isEqualToString:@"request based"]){
+                    //lblRequest.hidden=NO;
+                }else{
+                    //lblRequest.hidden=YES;
+                }
+                
+            }
+        }else{
+            if([Access_string isEqualToString:@"1"]||[Access_string isEqualToString:@"request based"]){
+                
+                if (isAccess==YES) {
+                    [cell.btnJoin setTitle:@"Join" forState:UIControlStateNormal];
+                    [cell.btnJoin setFrame:CGRectMake(self.view.frame.size.width-100, cell.btnJoin.frame.origin.y,90,cell.btnJoin.frame.size.height)];
+                    cell.btnJoin.titleLabel.font = [UIFont systemFontOfSize:15.0];
+                }else{
+                    [cell.btnJoin setTitle:@"Request to Join" forState:UIControlStateNormal];
+                    [cell.btnJoin setFrame:CGRectMake(self.view.frame.size.width-120, cell.btnJoin.frame.origin.y,110,cell.btnJoin.frame.size.height)];
+                    cell.btnJoin.titleLabel.font = [UIFont systemFontOfSize:13.0];
+                }
+            }
+        }
+    }else{
+        NewTreeCellTableViewCell *cell=(NewTreeCellTableViewCell*)tcell;
+        
+    }
+        
+    
+        
+    
+    
+    
+}
+-(NSString*)changeDateFormat:(NSString*)dateString fullDate:(BOOL)isFull{
+    
+    // NSString *dateString = @"11-13-2013";
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+    NSDate *date = [dateFormatter dateFromString:dateString];
+    NSString *newDateString;
+    if (isFull==YES) {
+        [dateFormatter setDateFormat:@"EEEE ,MMMM dd,"];
+        newDateString= [dateFormatter stringFromDate:date];
+    }else{
+        [dateFormatter setDateFormat:@"EEEE ,MMM dd,"];
+        newDateString= [dateFormatter stringFromDate:date];
+    }
+    
+    return newDateString;
+}
 @end
