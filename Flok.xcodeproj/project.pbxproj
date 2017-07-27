@@ -11,6 +11,9 @@
 		2A1A1D9E1F13F7A0005C02C8 /* NewTreeCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1A1D9C1F13F7A0005C02C8 /* NewTreeCellTableViewCell.xib */; };
 		2A289BBF1F1D2B8E00DE1E70 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A289BBE1F1D2B8E00DE1E70 /* EventKit.framework */; };
 		2A869ACE1F0EB80C0052F0F1 /* FindYourFlokViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A869ACD1F0EB80C0052F0F1 /* FindYourFlokViewController.m */; };
+		2AE34F831F291FBF003B054A /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34F821F291FBF003B054A /* CommentViewController.m */; };
+		2AE34F871F2926A8003B054A /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34F851F2926A8003B054A /* CommentTableViewCell.m */; };
+		2AE34F881F2926A8003B054A /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE34F861F2926A8003B054A /* CommentTableViewCell.xib */; };
 		3181AA8B03FFAEBFFE589972 /* Pods_Flok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2269C1825858C9E5F707F18 /* Pods_Flok.framework */; };
 		7B772666E289546F1173BC88 /* Pods_FlokTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC978FEE9E72E87590408A92 /* Pods_FlokTests.framework */; };
 		AA6E5C511DE33B41000E1755 /* SearchMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6E5C501DE33B41000E1755 /* SearchMessage.m */; };
@@ -151,6 +154,11 @@
 		2A289BBE1F1D2B8E00DE1E70 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		2A869ACC1F0EB80C0052F0F1 /* FindYourFlokViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindYourFlokViewController.h; sourceTree = "<group>"; };
 		2A869ACD1F0EB80C0052F0F1 /* FindYourFlokViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindYourFlokViewController.m; sourceTree = "<group>"; };
+		2AE34F811F291FBF003B054A /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		2AE34F821F291FBF003B054A /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		2AE34F841F2926A8003B054A /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		2AE34F851F2926A8003B054A /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		2AE34F861F2926A8003B054A /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		48E75B5A8F76DCE971E0660C /* Pods-FlokTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlokTests/Pods-FlokTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6A774C1421EDC432727BB135 /* Pods-FlokUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlokUITests/Pods-FlokUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D2D2CBD4A3296AF0C1243B6 /* Pods-FlokUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlokUITests/Pods-FlokUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -503,6 +511,8 @@
 				AEDB918B1D659DFA00613C9F /* OtherUserFlok.m */,
 				AD0E29A61DB75B9B00157A48 /* FlikDetailsForRequestBase.h */,
 				AD0E29A71DB75B9B00157A48 /* FlikDetailsForRequestBase.m */,
+				2AE34F811F291FBF003B054A /* CommentViewController.h */,
+				2AE34F821F291FBF003B054A /* CommentViewController.m */,
 				AEC91AB31D672DDE00ABB26B /* ImagePreviewPage.h */,
 				AEC91AB41D672DDE00ABB26B /* ImagePreviewPage.m */,
 				AD64059D1D7D45AA0007A3FD /* SearchLocationViewController.m */,
@@ -649,6 +659,9 @@
 				AD0B03221DF5B004009AE6AD /* NotificationCell.h */,
 				AD0B03231DF5B004009AE6AD /* NotificationCell.m */,
 				AD0B03241DF5B004009AE6AD /* NotificationCell.xib */,
+				2AE34F841F2926A8003B054A /* CommentTableViewCell.h */,
+				2AE34F851F2926A8003B054A /* CommentTableViewCell.m */,
+				2AE34F861F2926A8003B054A /* CommentTableViewCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -822,6 +835,7 @@
 				AD13A2231D940BE200145EFD /* NotificationTableViewCell.xib in Resources */,
 				2A1A1D9E1F13F7A0005C02C8 /* NewTreeCellTableViewCell.xib in Resources */,
 				AEC2E8CF1D6F081A002D1853 /* Flags.xcassets in Resources */,
+				2AE34F881F2926A8003B054A /* CommentTableViewCell.xib in Resources */,
 				AEC2E8CB1D6F022A002D1853 /* CountryListViewController.xib in Resources */,
 				AEBFB7B11D62FDCC002B0CE6 /* LaunchScreen.storyboard in Resources */,
 				AD5497FC1D9B9E930032503B /* PhoneContactTableViewCell.xib in Resources */,
@@ -1002,6 +1016,7 @@
 				AEDB91901D65B34300613C9F /* OtheruserflokkCell.m in Sources */,
 				AD7E9D351E38826000F19978 /* SecurityViewController.m in Sources */,
 				AEC91AAA1D67172A00ABB26B /* AjeetAnnotation.m in Sources */,
+				2AE34F871F2926A8003B054A /* CommentTableViewCell.m in Sources */,
 				AD6405A41D7D6D4C0007A3FD /* OtherUserViewController.m in Sources */,
 				ADD4A2711D92726100460137 /* ListeningViewController.m in Sources */,
 				AD4E7D351E01620300DFEE76 /* InappropriateReport.m in Sources */,
@@ -1033,6 +1048,7 @@
 				AD6982791D954C67008E4CA9 /* SearchFlokViewController.m in Sources */,
 				AEC2E8CC1D6F022A002D1853 /* CountryListDataSource.m in Sources */,
 				AD4D704E1D992D2F00148922 /* SearchFlokTableViewCell.m in Sources */,
+				2AE34F831F291FBF003B054A /* CommentViewController.m in Sources */,
 				ADC259FC1DF694D300B436F9 /* EditFlokViewController.m in Sources */,
 				AEACE38C1D6D671A00FF3865 /* Global.m in Sources */,
 				AD13A2221D940BE200145EFD /* NotificationTableViewCell.m in Sources */,

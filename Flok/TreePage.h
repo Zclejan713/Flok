@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface TreePage : UIViewController<CLLocationManagerDelegate,MKMapViewDelegate,UITabBarDelegate,UITabBarControllerDelegate>
+@interface TreePage : UIViewController<CLLocationManagerDelegate,MKMapViewDelegate,UITabBarDelegate,UITabBarControllerDelegate,UIActionSheetDelegate>
 {
     CLLocationManager *locationManager;
     IBOutlet UIView *vwPost;

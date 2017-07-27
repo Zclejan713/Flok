@@ -10,6 +10,7 @@
 
 @interface TreeCell : UITableViewCell
 @property(nonatomic,strong) IBOutlet UIImageView *imgUser;
+@property(nonatomic,strong) IBOutlet UIImageView *imgTree;
 @property(nonatomic,strong) IBOutlet UIImageView *imgReflok;
 @property(nonatomic,strong) IBOutlet UILabel *lblName;
 @property(nonatomic,strong) IBOutlet UILabel *lblUserName;
@@ -17,8 +18,10 @@
 @property(nonatomic,strong) IBOutlet UILabel *lblAddress;
 @property(nonatomic,strong) IBOutlet UILabel *lblTime;
 @property(nonatomic,strong) IBOutlet UILabel *lblcommentCount;
+@property(nonatomic,strong) IBOutlet UILabel *lblLikeBy;
 @property(nonatomic,strong) IBOutlet UIButton *btnJoin;
 @property(nonatomic,strong) IBOutlet UIButton *btnLike;
+@property (weak, nonatomic) IBOutlet UIButton *btnShowLiked;
 @property(nonatomic,strong) IBOutlet UILabel *lblStartTime;
 @property(nonatomic,strong) IBOutlet UIButton *btnProfile;
 @property(nonatomic,strong) IBOutlet UIButton *btnMsg;

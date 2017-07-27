@@ -291,6 +291,8 @@
     
     
 }
+
+
 -(void)showOtherProfile:(id)sender{
     
     UIButton *btn=(UIButton*)sender;

@@ -154,6 +154,7 @@ static CGFloat frameWidth;
     isKeyOpen=NO;
     [tfComment resignFirstResponder];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 
