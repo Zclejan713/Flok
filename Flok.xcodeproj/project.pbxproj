@@ -3,13 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0647661F2BCE0600AE7743 /* CommentTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0647641F2BCE0600AE7743 /* CommentTitleTableViewCell.m */; };
+		2A0647671F2BCE0600AE7743 /* CommentTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A0647651F2BCE0600AE7743 /* CommentTitleTableViewCell.xib */; };
+		2A13CEAF1F2E49A100762133 /* MMMainTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A13CEAE1F2E49A100762133 /* MMMainTutorialViewController.m */; };
 		2A1A1D9D1F13F7A0005C02C8 /* NewTreeCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A1D9B1F13F7A0005C02C8 /* NewTreeCellTableViewCell.m */; };
 		2A1A1D9E1F13F7A0005C02C8 /* NewTreeCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1A1D9C1F13F7A0005C02C8 /* NewTreeCellTableViewCell.xib */; };
+		2A1BE4AE1F92A76A00F97DA3 /* MutualFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BE4AD1F92A76A00F97DA3 /* MutualFriendsViewController.m */; };
+		2A1BE4B21F92A9AF00F97DA3 /* MutualFriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BE4B01F92A9AF00F97DA3 /* MutualFriendTableViewCell.m */; };
+		2A1BE4B31F92A9AF00F97DA3 /* MutualFriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1BE4B11F92A9AF00F97DA3 /* MutualFriendTableViewCell.xib */; };
 		2A289BBF1F1D2B8E00DE1E70 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A289BBE1F1D2B8E00DE1E70 /* EventKit.framework */; };
+		2A2E784B1F2D298000171075 /* HashTagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2E78491F2D298000171075 /* HashTagTableViewCell.m */; };
+		2A2E784C1F2D298000171075 /* HashTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A2E784A1F2D298000171075 /* HashTagTableViewCell.xib */; };
+		2A2E784E1F2D384A00171075 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2E784D1F2D384A00171075 /* Contacts.framework */; };
+		2A4BFBB61F5B09FF00C4DE26 /* OtherUserFlokNoImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4BFBB51F5B09FF00C4DE26 /* OtherUserFlokNoImageViewController.m */; };
+		2A61A3401F513987004B1AA1 /* LikeUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A61A33F1F513987004B1AA1 /* LikeUsersViewController.m */; };
+		2A61A3441F5139D9004B1AA1 /* UserListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A61A3421F5139D9004B1AA1 /* UserListTableViewCell.m */; };
+		2A61A3451F5139D9004B1AA1 /* UserListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A61A3431F5139D9004B1AA1 /* UserListTableViewCell.xib */; };
 		2A869ACE1F0EB80C0052F0F1 /* FindYourFlokViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A869ACD1F0EB80C0052F0F1 /* FindYourFlokViewController.m */; };
 		2AE34F831F291FBF003B054A /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34F821F291FBF003B054A /* CommentViewController.m */; };
 		2AE34F871F2926A8003B054A /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34F851F2926A8003B054A /* CommentTableViewCell.m */; };
@@ -148,10 +161,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A0647631F2BCE0600AE7743 /* CommentTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTitleTableViewCell.h; sourceTree = "<group>"; };
+		2A0647641F2BCE0600AE7743 /* CommentTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTitleTableViewCell.m; sourceTree = "<group>"; };
+		2A0647651F2BCE0600AE7743 /* CommentTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTitleTableViewCell.xib; sourceTree = "<group>"; };
+		2A13CEAD1F2E49A100762133 /* MMMainTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMainTutorialViewController.h; sourceTree = "<group>"; };
+		2A13CEAE1F2E49A100762133 /* MMMainTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMainTutorialViewController.m; sourceTree = "<group>"; };
 		2A1A1D9A1F13F7A0005C02C8 /* NewTreeCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTreeCellTableViewCell.h; sourceTree = "<group>"; };
 		2A1A1D9B1F13F7A0005C02C8 /* NewTreeCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTreeCellTableViewCell.m; sourceTree = "<group>"; };
 		2A1A1D9C1F13F7A0005C02C8 /* NewTreeCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTreeCellTableViewCell.xib; sourceTree = "<group>"; };
+		2A1BE4AC1F92A76A00F97DA3 /* MutualFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutualFriendsViewController.h; sourceTree = "<group>"; };
+		2A1BE4AD1F92A76A00F97DA3 /* MutualFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutualFriendsViewController.m; sourceTree = "<group>"; };
+		2A1BE4AF1F92A9AF00F97DA3 /* MutualFriendTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutualFriendTableViewCell.h; sourceTree = "<group>"; };
+		2A1BE4B01F92A9AF00F97DA3 /* MutualFriendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutualFriendTableViewCell.m; sourceTree = "<group>"; };
+		2A1BE4B11F92A9AF00F97DA3 /* MutualFriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MutualFriendTableViewCell.xib; sourceTree = "<group>"; };
 		2A289BBE1F1D2B8E00DE1E70 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		2A2E78481F2D298000171075 /* HashTagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashTagTableViewCell.h; sourceTree = "<group>"; };
+		2A2E78491F2D298000171075 /* HashTagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HashTagTableViewCell.m; sourceTree = "<group>"; };
+		2A2E784A1F2D298000171075 /* HashTagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HashTagTableViewCell.xib; sourceTree = "<group>"; };
+		2A2E784D1F2D384A00171075 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		2A4BFBB41F5B09FF00C4DE26 /* OtherUserFlokNoImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherUserFlokNoImageViewController.h; sourceTree = "<group>"; };
+		2A4BFBB51F5B09FF00C4DE26 /* OtherUserFlokNoImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherUserFlokNoImageViewController.m; sourceTree = "<group>"; };
+		2A61A33E1F513987004B1AA1 /* LikeUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeUsersViewController.h; sourceTree = "<group>"; };
+		2A61A33F1F513987004B1AA1 /* LikeUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeUsersViewController.m; sourceTree = "<group>"; };
+		2A61A3411F5139D8004B1AA1 /* UserListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserListTableViewCell.h; sourceTree = "<group>"; };
+		2A61A3421F5139D9004B1AA1 /* UserListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserListTableViewCell.m; sourceTree = "<group>"; };
+		2A61A3431F5139D9004B1AA1 /* UserListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserListTableViewCell.xib; sourceTree = "<group>"; };
 		2A869ACC1F0EB80C0052F0F1 /* FindYourFlokViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindYourFlokViewController.h; sourceTree = "<group>"; };
 		2A869ACD1F0EB80C0052F0F1 /* FindYourFlokViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindYourFlokViewController.m; sourceTree = "<group>"; };
 		2AE34F811F291FBF003B054A /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
@@ -357,6 +391,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A2E784E1F2D384A00171075 /* Contacts.framework in Frameworks */,
 				2A289BBF1F1D2B8E00DE1E70 /* EventKit.framework in Frameworks */,
 				AD13A21E1D93DD8200145EFD /* Social.framework in Frameworks */,
 				AEC91AA41D67042400ABB26B /* MapKit.framework in Frameworks */,
@@ -389,6 +424,7 @@
 		8D1A5562B0C9C16AAFCE49E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A2E784D1F2D384A00171075 /* Contacts.framework */,
 				2A289BBE1F1D2B8E00DE1E70 /* EventKit.framework */,
 				AD13A21D1D93DD8200145EFD /* Social.framework */,
 				AEC91AA31D67042400ABB26B /* MapKit.framework */,
@@ -494,6 +530,11 @@
 				AEACE3831D6D669000FF3865 /* RegistraionPage2.m */,
 				AEACE3841D6D669000FF3865 /* RegistraionPage3.h */,
 				AEACE3851D6D669000FF3865 /* RegistraionPage3.m */,
+				2A61A33E1F513987004B1AA1 /* LikeUsersViewController.h */,
+				2A61A33F1F513987004B1AA1 /* LikeUsersViewController.m */,
+				2A61A3411F5139D8004B1AA1 /* UserListTableViewCell.h */,
+				2A61A3421F5139D9004B1AA1 /* UserListTableViewCell.m */,
+				2A61A3431F5139D9004B1AA1 /* UserListTableViewCell.xib */,
 				AEDB91801D65806D00613C9F /* Tabbar */,
 				AEB5DBC61D644F41005DB7D2 /* ChatPage.h */,
 				AEB5DBC71D644F41005DB7D2 /* ChatPage.m */,
@@ -509,6 +550,8 @@
 				AEDB91881D6599DA00613C9F /* SettingPage.m */,
 				AEDB918A1D659DFA00613C9F /* OtherUserFlok.h */,
 				AEDB918B1D659DFA00613C9F /* OtherUserFlok.m */,
+				2A4BFBB41F5B09FF00C4DE26 /* OtherUserFlokNoImageViewController.h */,
+				2A4BFBB51F5B09FF00C4DE26 /* OtherUserFlokNoImageViewController.m */,
 				AD0E29A61DB75B9B00157A48 /* FlikDetailsForRequestBase.h */,
 				AD0E29A71DB75B9B00157A48 /* FlikDetailsForRequestBase.m */,
 				2AE34F811F291FBF003B054A /* CommentViewController.h */,
@@ -541,6 +584,8 @@
 				AD7E9D341E38826000F19978 /* SecurityViewController.m */,
 				AD000D121EC44B3100D2F701 /* UpdateProfileViewController.h */,
 				AD000D131EC44B3100D2F701 /* UpdateProfileViewController.m */,
+				2A1BE4AC1F92A76A00F97DA3 /* MutualFriendsViewController.h */,
+				2A1BE4AD1F92A76A00F97DA3 /* MutualFriendsViewController.m */,
 				AD2F50801D87D05700999E8D /* ChatClasses */,
 				AEBFB7A11D62FDCC002B0CE6 /* Supporting Files */,
 				AA6E5C4F1DE33B41000E1755 /* SearchMessage.h */,
@@ -586,6 +631,8 @@
 				AEC2E8C01D6F01FE002D1853 /* Country list */,
 				AEACE38A1D6D671A00FF3865 /* Global.h */,
 				AEACE38B1D6D671A00FF3865 /* Global.m */,
+				2A13CEAD1F2E49A100762133 /* MMMainTutorialViewController.h */,
+				2A13CEAE1F2E49A100762133 /* MMMainTutorialViewController.m */,
 				AEC91AA81D67172A00ABB26B /* AjeetAnnotation.h */,
 				AEC91AA91D67172A00ABB26B /* AjeetAnnotation.m */,
 				AD64059F1D7D6AB10007A3FD /* myAnnotation.h */,
@@ -662,6 +709,15 @@
 				2AE34F841F2926A8003B054A /* CommentTableViewCell.h */,
 				2AE34F851F2926A8003B054A /* CommentTableViewCell.m */,
 				2AE34F861F2926A8003B054A /* CommentTableViewCell.xib */,
+				2A0647631F2BCE0600AE7743 /* CommentTitleTableViewCell.h */,
+				2A0647641F2BCE0600AE7743 /* CommentTitleTableViewCell.m */,
+				2A0647651F2BCE0600AE7743 /* CommentTitleTableViewCell.xib */,
+				2A2E78481F2D298000171075 /* HashTagTableViewCell.h */,
+				2A2E78491F2D298000171075 /* HashTagTableViewCell.m */,
+				2A2E784A1F2D298000171075 /* HashTagTableViewCell.xib */,
+				2A1BE4AF1F92A9AF00F97DA3 /* MutualFriendTableViewCell.h */,
+				2A1BE4B01F92A9AF00F97DA3 /* MutualFriendTableViewCell.m */,
+				2A1BE4B11F92A9AF00F97DA3 /* MutualFriendTableViewCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -751,6 +807,7 @@
 				AEBFB7BF1D62FDCC002B0CE6 /* Frameworks */,
 				AEBFB7C01D62FDCC002B0CE6 /* Resources */,
 				37C773103D88451A1191B201 /* [CP] Copy Pods Resources */,
+				FC741DF71A33655C56965ADA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -791,7 +848,7 @@
 				};
 			};
 			buildConfigurationList = AEBFB7991D62FDCB002B0CE6 /* Build configuration list for PBXProject "Flok" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -827,6 +884,7 @@
 				AD510F7A1E37907C0049563D /* FollowRequestTableViewCell.xib in Resources */,
 				AEB5DBC51D644F2D005DB7D2 /* ChatCell.xib in Resources */,
 				AEB5DC051D64A429005DB7D2 /* Roboto-Medium.ttf in Resources */,
+				2A61A3451F5139D9004B1AA1 /* UserListTableViewCell.xib in Resources */,
 				AD2F508C1D87D07200999E8D /* ChatUserCell.xib in Resources */,
 				ADD4A2761D9272F900460137 /* ListeningTableViewCell.xib in Resources */,
 				ADFBBA151D82B705004E1398 /* FriendTableViewCell.xib in Resources */,
@@ -837,12 +895,15 @@
 				AEC2E8CF1D6F081A002D1853 /* Flags.xcassets in Resources */,
 				2AE34F881F2926A8003B054A /* CommentTableViewCell.xib in Resources */,
 				AEC2E8CB1D6F022A002D1853 /* CountryListViewController.xib in Resources */,
+				2A0647671F2BCE0600AE7743 /* CommentTitleTableViewCell.xib in Resources */,
 				AEBFB7B11D62FDCC002B0CE6 /* LaunchScreen.storyboard in Resources */,
 				AD5497FC1D9B9E930032503B /* PhoneContactTableViewCell.xib in Resources */,
 				AEC2E8C91D6F022A002D1853 /* countries.json in Resources */,
+				2A1BE4B31F92A9AF00F97DA3 /* MutualFriendTableViewCell.xib in Resources */,
 				AEC2E8DB1D6F0AB2002D1853 /* CountryCell.xib in Resources */,
 				AEB5DC081D64A429005DB7D2 /* Roboto-Thin.ttf in Resources */,
 				AD0B03261DF5B004009AE6AD /* NotificationCell.xib in Resources */,
+				2A2E784C1F2D298000171075 /* HashTagTableViewCell.xib in Resources */,
 				AEB5DBFE1D64A429005DB7D2 /* Roboto-Black.ttf in Resources */,
 				AEC91AAF1D671F4000ABB26B /* AddressCell.xib in Resources */,
 				AEB5DBFF1D64A429005DB7D2 /* Roboto-BlackItalic.ttf in Resources */,
@@ -948,7 +1009,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		55D4B8B61593372544AB730B /* [CP] Copy Pods Resources */ = {
@@ -978,7 +1039,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FB12238DA5BB95AE63C31C42 /* [CP] Check Pods Manifest.lock */ = {
@@ -993,7 +1054,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FC741DF71A33655C56965ADA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlokUITests/Pods-FlokUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1003,6 +1079,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A0647661F2BCE0600AE7743 /* CommentTitleTableViewCell.m in Sources */,
 				2A1A1D9D1F13F7A0005C02C8 /* NewTreeCellTableViewCell.m in Sources */,
 				AEACE3861D6D669000FF3865 /* LogInController.m in Sources */,
 				AD97CD401DB639E300D92DCE /* PECropRectView.m in Sources */,
@@ -1020,6 +1097,8 @@
 				AD6405A41D7D6D4C0007A3FD /* OtherUserViewController.m in Sources */,
 				ADD4A2711D92726100460137 /* ListeningViewController.m in Sources */,
 				AD4E7D351E01620300DFEE76 /* InappropriateReport.m in Sources */,
+				2A1BE4AE1F92A76A00F97DA3 /* MutualFriendsViewController.m in Sources */,
+				2A61A3401F513987004B1AA1 /* LikeUsersViewController.m in Sources */,
 				AD97CD3E1DB639E300D92DCE /* PECropViewController.m in Sources */,
 				AD2F508D1D87D07200999E8D /* ChatUserCell.m in Sources */,
 				AEDB91891D6599DA00613C9F /* SettingPage.m in Sources */,
@@ -1029,11 +1108,14 @@
 				AEC91AAE1D671F4000ABB26B /* AddressCell.m in Sources */,
 				AEC2E8CA1D6F022A002D1853 /* CountryListViewController.m in Sources */,
 				AD8DF7AC1D8013C40003F8BB /* EditProfileViewController.m in Sources */,
+				2A13CEAF1F2E49A100762133 /* MMMainTutorialViewController.m in Sources */,
 				AEBFB7F61D635747002B0CE6 /* TreeCell.m in Sources */,
 				AD2F50891D87D07200999E8D /* ChatViewController.m in Sources */,
 				AD97CD411DB639E300D92DCE /* PEResizeControl.m in Sources */,
 				AEBFB7A91D62FDCC002B0CE6 /* LandingController.m in Sources */,
+				2A1BE4B21F92A9AF00F97DA3 /* MutualFriendTableViewCell.m in Sources */,
 				AEACE3871D6D669000FF3865 /* RegistraionPage1.m in Sources */,
+				2A2E784B1F2D298000171075 /* HashTagTableViewCell.m in Sources */,
 				AEBFB7A61D62FDCC002B0CE6 /* AppDelegate.m in Sources */,
 				AD000D141EC44B3100D2F701 /* UpdateProfileViewController.m in Sources */,
 				ADDFC3A11E1A625800AF82E9 /* TermsConditionsViewController.m in Sources */,
@@ -1043,6 +1125,7 @@
 				AEB5DBBF1D6446F5005DB7D2 /* MessageCell.m in Sources */,
 				AD0E29A81DB75B9B00157A48 /* FlikDetailsForRequestBase.m in Sources */,
 				AD9F57F81DBDE9C0002DA84F /* FeedbackViewController.m in Sources */,
+				2A61A3441F5139D9004B1AA1 /* UserListTableViewCell.m in Sources */,
 				AA6E5C511DE33B41000E1755 /* SearchMessage.m in Sources */,
 				AEC91AB51D672DDE00ABB26B /* ImagePreviewPage.m in Sources */,
 				AD6982791D954C67008E4CA9 /* SearchFlokViewController.m in Sources */,
@@ -1069,6 +1152,7 @@
 				AEDB91831D65808A00613C9F /* CreateFlokPage.m in Sources */,
 				AD2F508B1D87D07200999E8D /* ChatOtherCell.m in Sources */,
 				AEBFB7A31D62FDCC002B0CE6 /* main.m in Sources */,
+				2A4BFBB61F5B09FF00C4DE26 /* OtherUserFlokNoImageViewController.m in Sources */,
 				AEB5DBC41D644F2D005DB7D2 /* ChatCell.m in Sources */,
 				AD97CD421DB639E300D92DCE /* UIImage+PECrop.m in Sources */,
 				AD5497FB1D9B9E930032503B /* PhoneContactTableViewCell.m in Sources */,

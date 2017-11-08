@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0830"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C4012576D4D0955F4207E3317AA38647"
+               BlueprintIdentifier = "8039431E8ED06536587A80425F50B0CB"
                BuildableName = "Pods_FlokTests.framework"
                BlueprintName = "Pods-FlokTests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C4012576D4D0955F4207E3317AA38647"
+            BlueprintIdentifier = "8039431E8ED06536587A80425F50B0CB"
             BuildableName = "Pods_FlokTests.framework"
             BlueprintName = "Pods-FlokTests"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C4012576D4D0955F4207E3317AA38647"
-            BuildableName = "Pods_FlokTests.framework"
-            BlueprintName = "Pods-FlokTests"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

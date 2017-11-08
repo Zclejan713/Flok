@@ -1,0 +1,6 @@
+framework module CGLAlphabetizer {
+  umbrella header "CGLAlphabetizer-umbrella.h"
+
+  export *
+  module * { export * }
+}

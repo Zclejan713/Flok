@@ -13,7 +13,7 @@ pod 'SVProgressHUD'
 pod 'Reachability', '~> 3.1.1'
 pod 'HCSStarRatingView', '~> 1.4.5'
 pod 'Toast', '~> 3.0'
-
+pod 'CGLAlphabetizer', '~> 0.1'
 
 
 
